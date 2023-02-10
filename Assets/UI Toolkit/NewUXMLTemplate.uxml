@@ -1,0 +1,126 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/OnboardingButtonStyle.uss?fileID=7433441132597879392&amp;guid=1b0747e4727fcec4d8f80bd5fed81975&amp;type=3#OnboardingButtonStyle" />
+    <ui:VisualElement name="Top_bar" class="Top_bar">
+        <ui:GroupBox name="Top_TextGroup" style="flex-direction: row; align-items: center; position: relative; display: flex;">
+            <ui:Label text="미리보는 뉴 홈" display-tooltip-when-elided="true" name="TopsideTXT" style="position: relative; left: 3%; top: 2%; -unity-text-align: middle-left; color: rgb(255, 255, 255); font-size: 70px; -unity-font: resource(&apos;absolute&apos;); right: auto; height: 106px; width: 474px;" />
+        </ui:GroupBox>
+    </ui:VisualElement>
+    <ui:VisualElement name="Onboarding" style="width: 100%; height: 100%; background-color: rgba(129, 129, 129, 0.36); align-items: center; transform-origin: center; justify-content: center; background-image: none; flex-direction: row; -unity-background-image-tint-color: rgb(126, 126, 126); -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4; visibility: visible; display: none; opacity: 1;">
+        <ui:Label text="AR렌즈로 보고싶으신 항목을 골라주세요" display-tooltip-when-elided="true" name="infoTXT" style="position: absolute; left: auto; top: 13%; -unity-text-align: upper-center; color: rgb(255, 255, 255); font-size: 30px; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); right: auto;" />
+        <ui:VisualElement style="flex-direction: column; width: 50%; height: 100%;">
+            <ui:VisualElement style="width: 100%; height: 50%; align-items: flex-end; justify-content: flex-end; padding-left: 35px; padding-right: 70px; padding-top: 35px; padding-bottom: 35px;">
+                <ui:VisualElement style="width: 300px; height: 300px;" />
+                <ui:Button display-tooltip-when-elided="true" name="Button_on01" class="Button-Onboard">
+                    <ui:VisualElement style="width: 140px; height: 140px; background-image: resource(&apos;UI/02Onboarding/Empty Tray_5_94&apos;); background-color: rgba(0, 0, 0, 0);" />
+                </ui:Button>
+                <ui:VisualElement style="width: 386px; height: 67px; justify-content: flex-start; align-items: center;">
+                    <ui:Label text="주택평면" display-tooltip-when-elided="true" style="font-size: 40px; color: rgb(255, 255, 255); -unity-text-align: upper-center; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); -unity-font-style: normal;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="width: 100%; height: 50%; align-items: flex-end; justify-content: flex-start; padding-left: 35px; padding-right: 70px; padding-top: 35px; padding-bottom: 35px;">
+                <ui:Button text="Button" display-tooltip-when-elided="true" name="Button_on02" class="Button-Onboard">
+                    <ui:VisualElement style="width: 140px; height: 140px; background-image: resource(&apos;UI/02Onboarding/Smart Home Connection_5_91&apos;); background-color: rgba(0, 0, 0, 0);" />
+                </ui:Button>
+                <ui:VisualElement style="width: 386px; height: 67px; justify-content: flex-start; align-items: center;">
+                    <ui:Label text="스마트홈" display-tooltip-when-elided="true" style="font-size: 40px; color: rgb(255, 255, 255); -unity-text-align: upper-center; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); -unity-font-style: normal;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="width: 300px; height: 300px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-direction: column; width: 50%; height: 100%;">
+            <ui:VisualElement style="width: 100%; height: 50%; align-items: flex-start; justify-content: flex-end; padding-left: 70px; padding-right: 35px; padding-top: 35px; padding-bottom: 35px;">
+                <ui:VisualElement style="width: 300px; height: 300px;" />
+                <ui:Button display-tooltip-when-elided="true" class="Button-Onboard">
+                    <ui:VisualElement style="width: 140px; height: 140px; background-image: resource(&apos;UI/02Onboarding/Playground_5_90&apos;); background-color: rgba(0, 0, 0, 0);" />
+                </ui:Button>
+                <ui:VisualElement style="width: 386px; height: 67px; justify-content: flex-start; align-items: center;">
+                    <ui:Label text="외부공간" display-tooltip-when-elided="true" style="font-size: 40px; color: rgb(255, 255, 255); -unity-text-align: upper-center; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); -unity-font-style: normal;" />
+                    <ui:Label text="(편의시설)" display-tooltip-when-elided="true" style="font-size: 30px; color: rgb(255, 255, 255); -unity-text-align: upper-center; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); -unity-font-style: normal;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="width: 100%; height: 50%; align-items: flex-start; justify-content: flex-start; padding-left: 70px; padding-right: 35px; padding-top: 35px; padding-bottom: 35px;">
+                <ui:Button text="Button" display-tooltip-when-elided="true" class="Button-Onboard">
+                    <ui:VisualElement style="width: 140px; height: 140px; background-image: resource(&apos;UI/02Onboarding/Worker_5_89&apos;); background-color: rgba(0, 0, 0, 0);" />
+                </ui:Button>
+                <ui:VisualElement style="width: 386px; height: 67px; justify-content: flex-start; align-items: center;">
+                    <ui:Label text="품질혁신" display-tooltip-when-elided="true" style="font-size: 40px; color: rgb(255, 255, 255); -unity-text-align: upper-center; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); -unity-font-style: normal;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="width: 300px; height: 300px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="AR_screen" style="width: 100%; position: absolute; height: 100%; align-items: flex-end; display: none; visibility: visible;">
+        <ui:VisualElement name="Top_bar_space" class="Top_bar" style="visibility: visible; -unity-background-image-tint-color: rgba(255, 255, 255, 0); background-color: rgba(70, 70, 70, 0);">
+            <ui:GroupBox name="Top_TextGroup_" style="flex-direction: row; align-items: center; position: relative; display: flex; visibility: hidden; width: 428px;">
+                <ui:Label text="미리보는 뉴홈" display-tooltip-when-elided="true" name="TopsideTXT" style="position: relative; left: 3%; top: 2%; -unity-text-align: middle-left; color: rgb(255, 255, 255); font-size: 70px; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); right: auto; height: 106px; width: 474px;" />
+            </ui:GroupBox>
+            <ui:GroupBox name="topText01" style="flex-shrink: 1; width: 100%; height: 100%; display: flex; flex-direction: row; align-items: stretch; justify-content: flex-start;">
+                <ui:Label text="/" display-tooltip-when-elided="true" name="TopsideTXT_slash" style="position: relative; left: 3%; top: 2%; -unity-text-align: middle-left; color: rgb(255, 255, 255); font-size: 70px; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); right: auto; height: 114px; width: 34px;" />
+                <ui:Label text="주택평면" display-tooltip-when-elided="true" name="TopsideTXT_2" style="position: relative; left: 3%; top: 2%; -unity-text-align: middle-left; color: rgb(255, 255, 255); font-size: 70px; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); right: auto; height: 106px; width: 474px;" />
+            </ui:GroupBox>
+        </ui:VisualElement>
+        <ui:VisualElement name="Sidebar_Area" style="width: 100%; height: 100%; align-items: flex-end; flex-direction: row-reverse; display: flex;">
+            <ui:VisualElement name="SideSheet" class="SideSheet">
+                <ui:VisualElement name="space" style="height: 30%; width: auto;" />
+                <ui:VisualElement name="SeletedPannel" class="SeletedPannel">
+                    <ui:VisualElement style="background-image: resource(&apos;UI/02Onboarding/Empty Tray_5_94&apos;); width: 100px; height: 100px;" />
+                    <ui:Label text="주택평면" display-tooltip-when-elided="true" style="-unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SeletedPannel" class="SeletedPannel">
+                    <ui:VisualElement style="background-image: resource(&apos;UI/02Onboarding/Empty Tray_5_94&apos;); width: 100px; height: 100px;" />
+                    <ui:Label text="주택평면" display-tooltip-when-elided="true" style="-unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SeletedPannel" class="SeletedPannel">
+                    <ui:VisualElement style="background-image: resource(&apos;UI/02Onboarding/Empty Tray_5_94&apos;); width: 100px; height: 100px;" />
+                    <ui:Label text="주택평면" display-tooltip-when-elided="true" style="-unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SeletedPannel" class="SeletedPannel">
+                    <ui:VisualElement style="background-image: resource(&apos;UI/02Onboarding/Empty Tray_5_94&apos;); width: 100px; height: 100px;" />
+                    <ui:Label text="주택평면" display-tooltip-when-elided="true" style="-unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="space" style="height: 30%; width: auto;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="SideSheetTwo" class="SideSheetTwo" style="display: flex;">
+                <ui:VisualElement name="SideSheetTwo_b" style="width: 100%; height: 100%; position: relative; background-color: rgb(19, 24, 41);">
+                    <ui:VisualElement style="height: 25%; width: auto;" />
+                    <ui:Button text="주택1" display-tooltip-when-elided="true" name="HouseSelectButton1" view-data-key="1" class="Button_Side01" />
+                    <ui:Button text="주택2" display-tooltip-when-elided="true" name="HouseSelectButton2" view-data-key="2" class="Button_Side01" />
+                    <ui:Button text="주택3" display-tooltip-when-elided="true" name="HouseSelectButton3" class="Button_Side01" />
+                    <ui:VisualElement style="height: 25%; width: auto;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="ButtonSpace" style="height: 100%; width: 90px; justify-content: center; align-items: stretch;">
+                    <ui:Button display-tooltip-when-elided="true" name="CloseButton" style="height: 20%; background-image: none; background-color: rgba(67, 67, 67, 0.61); justify-content: center; align-items: center;">
+                        <ui:VisualElement style="align-items: center; justify-content: center; width: 100%; height: 100px; background-image: resource(&apos;UI/03-2/Vector_29_698&apos;);" />
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button text="HOME" display-tooltip-when-elided="true" name="ButtonHOME" style="position: absolute; left: 50px; top: 50%; right: 2264px; bottom: 50%; font-size: 36px; -unity-font: url(&apos;project://database/Assets/Resources/UI/Fonts/AppleSDGothicNeoM.ttf?fileID=12800000&amp;guid=63211a9198186184b9ee9d0924e048f9&amp;type=3#AppleSDGothicNeoM&apos;); width: 100px; height: 100px;">
+            <ui:VisualElement style="background-image: resource(&apos;UI/03ARUI_Elements/Vector_5_47&apos;);" />
+        </ui:Button>
+    </ui:VisualElement>
+    <ui:VisualElement name="House_Plan1" style="width: 100%; position: absolute; height: 100%; align-items: flex-end; display: flex; visibility: visible; top: auto;">
+        <ui:VisualElement name="Top_bar_space" class="Top_bar">
+            <ui:Button text="뒤로" display-tooltip-when-elided="true" name="BackButton" class="Button-Back">
+                <ui:VisualElement style="align-items: flex-start; flex-direction: row; width: 20px; height: 50px; background-image: resource(&apos;UI/04HousePlan/Vector_29_682&apos;); left: 119px;" />
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement name="Plan_Area" style="width: 100%; height: 100%; align-items: flex-end; flex-direction: row-reverse; display: flex; justify-content: space-between;">
+            <ui:VisualElement name="HousePlanImage" style="width: 600px; height: 600px; background-image: resource(&apos;UI/04HousePlan/dd&apos;);">
+                <ui:Button display-tooltip-when-elided="true" style="position: absolute; top: 162px; left: 250px; border-top-left-radius: 50px; border-bottom-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; width: 50px; height: 50px; background-color: rgb(255, 126, 126);" />
+                <ui:Button display-tooltip-when-elided="true" style="position: absolute; top: 316px; left: 113px; border-top-left-radius: 50px; border-bottom-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; width: 50px; height: 50px; background-color: rgb(255, 126, 126);" />
+                <ui:Button display-tooltip-when-elided="true" style="position: absolute; top: 420px; left: 263px; border-top-left-radius: 50px; border-bottom-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; width: 50px; height: 50px; background-color: rgb(255, 126, 126);" />
+                <ui:Button display-tooltip-when-elided="true" style="position: none; top: 408px; left: 469px; border-top-left-radius: 50px; border-bottom-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; width: 50px; height: 50px; background-color: rgb(255, 126, 126);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="OptionPannel" style="left: 0; position: none; top: 0; width: 500px; height: 600px; align-items: center; -unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Anton.ttf?fileID=12800000&amp;guid=997a43b767814dd0a7642ec9b78cba41&amp;type=3#Anton&apos;);">
+                <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: resource(&apos;UI/03ARUI_Elements/Rectangle 2_5_121&apos;); width: 100%;" />
+                <ui:GroupBox style="width: 100%; height: 10%; flex-direction: row; justify-content: space-around; align-items: center; flex-shrink: 1; padding-right: 0; padding-left: 0; margin-left: 0; margin-right: 0;">
+                    <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: resource(&apos;UI/03ARUI_Elements/Rectangle 2_5_121&apos;); width: 100%; height: 100%; flex-shrink: 1;" />
+                    <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: resource(&apos;UI/03ARUI_Elements/Rectangle 2_5_121&apos;); width: 100%; height: 100%; flex-shrink: 1;" />
+                    <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: resource(&apos;UI/03ARUI_Elements/Rectangle 2_5_121&apos;); width: 100%; height: 100%; flex-shrink: 1;" />
+                </ui:GroupBox>
+                <ui:VisualElement style="width: 100%; height: 100%; background-image: resource(&apos;UI/04HousePlan/mockup3d 1_21_338&apos;); background-color: rgb(115, 115, 115);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
