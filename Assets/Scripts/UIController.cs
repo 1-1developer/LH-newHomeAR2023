@@ -12,17 +12,19 @@ public class UIController : MonoBehaviour
 
     const string Onboarding = "Onboarding";
     const string UIContainer = "AR_screen";
-    const string SideSheet = "SideSheet";
-    const string OpenButton = "Button_on01";
+
+    const string OpenButton = "Button_on01"; //메인화면 버튼1
+
     const string HomeButton = "ButtonHOME";
-    const string CloseButton = "CloseButton";
+    const string SideSheet = "SideSheet";
     const string SideSheetTwo = "SideSheetTwo";
-    const string BackButton = "BackButton";
+    const string CloseButton = "CloseButton"; // sideTwo닫기 버튼
     const string TopTextGroup = "Top_TextGroup";
 
+    const string BackButton = "BackButton";
     const string HousePlan = "House_Plan1";
 
-    public int buttonNum = 3;
+    public int buttonNum = 3; // sidebar버튼s
 
     //온보딩 엘리먼트
     private VisualElement _Onboarding;
@@ -44,51 +46,49 @@ public class UIController : MonoBehaviour
 
     public List<Button> buttons = new List<Button>();
 
-
+    private VisualElement m_root; // 메인루트
+    private VisualElement ar_root; // ar선택창 루트
     RaycastHit hit;
     void Start()
     {
         // root visualElement참조
-        var root = GetComponent<UIDocument>().rootVisualElement;
+        m_root = GetComponent<UIDocument>().rootVisualElement;
+        ar_root = m_root.Q<VisualElement>("menu");
 
-        _UIContainer = root.Q<VisualElement>(UIContainer);
-        _Onboarding = root.Q<VisualElement>(Onboarding);
-        _HousePlan = root.Q<VisualElement>(HousePlan);
+        _UIContainer = ar_root.Q<VisualElement>(UIContainer);
+        _Onboarding = m_root.Q<VisualElement>(Onboarding);
+        _HousePlan = m_root.Q<VisualElement>(HousePlan);
+
         //온보딩 화면 버튼
-        _openButton = root.Q<Button>(OpenButton);
-        _TopTextGroup = root.Q<GroupBox>(TopTextGroup);
+        _openButton = m_root.Q<Button>(OpenButton);
+        _TopTextGroup = m_root.Q<GroupBox>(TopTextGroup);
 
         //홈버튼
-        _homeButton = root.Q<Button>(HomeButton);
+        _homeButton = m_root.Q<Button>(HomeButton);
 
 
         //버튼선택슬라이드1,2
-        _sideSheet = root.Q<VisualElement>(SideSheet);
-        _sideSheetTwo = root.Q<VisualElement>(SideSheetTwo);
+        _sideSheet = m_root.Q<VisualElement>(SideSheet);
+        _sideSheetTwo = m_root.Q<VisualElement>(SideSheetTwo);
         //닫기
-        _closeButton = root.Q<Button>(CloseButton);
+        _closeButton = m_root.Q<Button>(CloseButton);
         //뒤로가기
-        _BackButton = root.Q<Button>(BackButton);
+        _BackButton = m_root.Q<Button>(BackButton);
 
-        for (int i = 0; i < buttonNum; i++)
-        {
-            buttons.Add(root.Q<Button>("HouseSelectButton"+$"{i+1}"));
-            buttons[i].RegisterCallback<ClickEvent>(OnHouseButtonClicked);
-        }
+
         //시작할 때 감추기
-        _UIContainer.style.display = DisplayStyle.None;
+        ar_root.style.display = DisplayStyle.None;
         _HousePlan.style.display = DisplayStyle.None;
         _Onboarding.style.display = DisplayStyle.Flex;
 
+        SetupSelectButton();
 
         _openButton.RegisterCallback<ClickEvent>(OnBoardButtonClicked);
         _homeButton.RegisterCallback<ClickEvent>(OnHomeButtonClicked);
         _closeButton.RegisterCallback<ClickEvent>(OnCloseButtonClicked);
         _BackButton.RegisterCallback<ClickEvent>(OnBackButtonClicked);
-        _sideSheet.RegisterCallback<TransitionEndEvent>(OnSideSheetOut);
         
-
-
+        _sideSheet.RegisterCallback<TransitionEndEvent>(OnSideSheetOut);
     }
     private void OnEnable()
     {
@@ -97,6 +97,7 @@ public class UIController : MonoBehaviour
         //_homeButton.RegisterCallback<ClickEvent>(OnHomeButtonClicked);
         //_closeButton.RegisterCallback<ClickEvent>(OnCloseButtonClicked);
         //_sideSheet.RegisterCallback<TransitionEndEvent>(OnSideSheetOut);
+        //SetupSelectButton();
     }
 
     private void OnDisable()
@@ -120,7 +121,7 @@ public class UIController : MonoBehaviour
         _TopTextGroup.style.display = DisplayStyle.None;
         _BackButton.style.display = DisplayStyle.Flex;
         _HousePlan.style.display = DisplayStyle.Flex;
-        _UIContainer.style.display = DisplayStyle.None;
+        ar_root.style.display = DisplayStyle.None;
 
         //집 오브젝트
         onScreenObjectManager.OnHouse();
@@ -129,17 +130,21 @@ public class UIController : MonoBehaviour
     private void OnBackButtonClicked(ClickEvent evt)  //집내부 뒤로가기
     {
         _HousePlan.style.display = DisplayStyle.None;
-        _UIContainer.style.display = DisplayStyle.Flex;
+        ar_root.style.display = DisplayStyle.Flex;
         _BackButton.style.display = DisplayStyle.None;
         _TopTextGroup.style.display = DisplayStyle.Flex;
+
+        _homeButton.AddToClassList("Button_Home--in");
         //집 오브젝트
         onScreenObjectManager.OnMaker();
     }
     private void OnHomeButtonClicked(ClickEvent evt) // 홈으로 돌아가기
     {
         //시트그룹
+        ar_root.style.display = DisplayStyle.None;
         _Onboarding.style.display = DisplayStyle.Flex;
 
+        _homeButton.RemoveFromClassList("Button_Home--in");
         _sideSheet.RemoveFromClassList("SideSheet--in");
         _sideSheetTwo.RemoveFromClassList("SideSheetTwo--in");
 
@@ -150,9 +155,10 @@ public class UIController : MonoBehaviour
     private void OnBoardButtonClicked(ClickEvent evt)
     {
         //시트 열기
-        _UIContainer.style.display = DisplayStyle.Flex;
+        ar_root.style.display = DisplayStyle.Flex;
         _Onboarding.style.display = DisplayStyle.None;
 
+        _homeButton.AddToClassList("Button_Home--in");
         _sideSheet.AddToClassList("SideSheet--in");
 
         //마커표시
@@ -164,11 +170,45 @@ public class UIController : MonoBehaviour
         if (!_sideSheet.ClassListContains("SideSheet--in"))
         {
             //AR시트그룹 감추기
-            _UIContainer.style.display = DisplayStyle.None;
+            ar_root.style.display = DisplayStyle.None;
+        }
+    }
+    void SetupSelectButton() //버튼가져오기
+    {
+        for (int i = 0; i < buttonNum; i++)
+        {
+            buttons.Add(m_root.Q<Button>("HouseSelectButton" + $"{i + 1}"));
+            buttons[i].RegisterCallback<ClickEvent>(OnHouseButtonClicked);
+        }
+    }
+    public void PickHighlight(Button s_button) // 선택버튼 하이라이트 효과
+    {
+        foreach (Button bt in buttons)
+        {
+            if(bt == s_button)
+            {
+                bt?.AddToClassList("Button_Side01--sel");
+            }
+            else
+            {
+                bt?.RemoveFromClassList("Button_Side01--sel");
+            }
         }
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PickHighlight(buttons[0]);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            PickHighlight(buttons[1]);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            PickHighlight(buttons[2]);
+        }
         ////Debug.Log(_sideSheetTwo.ClassListContains("SideSheetTwo--in"));
         //if (Input.touchCount > 0)
         //{

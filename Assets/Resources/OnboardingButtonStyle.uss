@@ -43,7 +43,13 @@
 .Button_Side01:active {
     transition-duration: 0.2s;
     scale: 1.1 1.05;
-    background-color: rgba(73, 255, 91, 255);
+    background-color: rgb(73, 255, 91);
+}
+
+.Button_Side01--sel {
+    background-color: rgb(255, 0, 15);
+    transition-duration: 0.2s;
+    scale: 1.2 1;
 }
 
 .SideSheet {
@@ -113,7 +119,7 @@
 .Button-Back:active {
     transition-duration: 0.2s;
     scale: 1.1 1;
-    background-color: rgba(161, 161, 161, 255);
+    background-color: rgb(161, 161, 161);
 }
 
 .Top_bar {
@@ -126,4 +132,32 @@
     opacity: 1;
     display: flex;
     justify-content: flex-start;
+}
+
+.Button_Home {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    right: 2264px;
+    bottom: 50%;
+    font-size: 36px;
+    -unity-font: resource('UI/Fonts/AppleSDGothicNeoM');
+    width: 100px;
+    height: 100px;
+    translate: -200% 0;
+    transition-duration: 0.2s;
+}
+
+.Button_Home--in {
+    translate: 0 0;
+    transition-duration: 0.2s;
+}
+
+.onButton_textBox {
+    width: 386px;
+    height: 67px;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 40px;
+    -unity-font: resource('UI/Fonts/AppleSDGothicNeoL');
 }

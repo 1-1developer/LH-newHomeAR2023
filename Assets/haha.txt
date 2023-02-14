@@ -1,0 +1,77 @@
+로딩화면 만들기
+
+다중 선택창 구현
+->창마다 uxml 따로 만들어서 스크립트로 조합
+
+
+
+일정시간 지나면 돌아가기 
+-타임매니저
+ touchinput 체크 -> timer 리셋
+
+스크린별로 uxml따로, 관리 스크립트도 따로<=메뉴스크린 상속
+
+메뉴스크린이라는 추상클래스 있음
+-메인매뉴 uimanager
+-ui도큐먼트 불러옴 (null이면 getcomponet)
+=>얘를 통해 메인 uimanager불러옴
+메인 uimanager.show뭐뭐screen() 실행
+
+showscreen(메뉴스크린 모델스크린)
+foreach (메뉴스크린 m in 
+에휴..
+
+메인 UI Mgr
+[serializeField]로 관리스크립트 가져옴
+
+메뉴UI mgr
+레지스터 콜백 (함수이름)까지 동일
+->버튼활성화효과 함수(버튼변수)
+{}
+->마커 클릭함수(evt){ 
+만약 (evt.propagationPhase == Propagetionhalet.atTarget
+이면 moveActiveMarker(evt.target as VisualElemet);
+
++오디오매니저.디폴트버튼사운드()
+}
+
+
+버튼활성화 효과
+void Activate button(버튼 menuButton)
+만약 메뉴버튼null => 리턴
+
+하이라이트 엘리먼트(menuButton), 버튼 엑티브x클래스,버튼 엑티브클래스, 루트 ){
+ 
+라벨 라벨 > 메뉴버튼.q<라벨>(클래스이름:) //받아옴
+하이라이트 앨리먼트(똑같)
+
+비주얼엘리먼트 아이콘(똑같)
+}
+
+하이라이트 엘리먼트
+HighlightElement(VisualElement visualElem, string inactiveClass, string activeClass, VisualElement root)
+{ visualElem  널이면 리턴
+ve 커렌트 셀렉션 = 루트.쿼리<>(클래스이름)
+
+커렌셀력션 == visualElem  리턴
+
+커렌?.클래스삭제(엑티브)
+커렌?.클래스리스트에추가(엑티브x)
+
+visualElem .클래스삭제(엑티브x)
+visualElem .클래스리스트에추가(엑티브)
+}
+
+마커이동(개복잡)
+moveActiveMarker(VisualElemet targetelement){
+v3 타겟의 월드스페이스 = targetelement.parant. localtoworld(targetElement.layout.position) 
+
+v3 루트스페이스안의 타켓위치 = 메뉴마커.parent.월투로컬( 타겟의 월드스페이스)
+
+오프셋 = 뉴백터 ( 0, 타켓엘리먼트부모.높이-타겟엘리먼트 높이 + y오프셋(상수),0)
+
+v3 새포지션 = 루트스페이스안의 타켓위치  + 오프셋
+vector3 델타 = 메뉴마커.transform.position - newPosition;
+float 픽셀거리 = 매쓰.절대값(델타.y / 스페이싱 ??)
+
+

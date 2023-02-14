@@ -41,8 +41,7 @@ public class touhOBJtest : MonoBehaviour
                         catch (System.Exception)
                         {
                         }
-                        uIController.buttons[pointer.HouseID].style.backgroundColor = Color.red;
-                        //uIController.buttons[pointer.HouseID].style.backgroundColor = Color.black;
+                        uIController.PickHighlight(uIController.buttons[pointer.HouseID]);
                     }
                 }
             }
