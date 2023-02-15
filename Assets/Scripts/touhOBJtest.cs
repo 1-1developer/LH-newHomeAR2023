@@ -19,7 +19,7 @@ public class touhOBJtest : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0); //?? ???? ?????? ?? ?? ???? ?????? 
+            Touch touch = Input.GetTouch(0); //
                                                 //List<ARRaycastHit> hits = new List<ARRaycastHit>();
                                                 //List<RaycastHit> hits = new List<RaycastHit>();
             Ray ray = Camera.main.ScreenPointToRay(touch.position);

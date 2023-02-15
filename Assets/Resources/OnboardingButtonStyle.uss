@@ -1,31 +1,28 @@
 .Button-Onboard {
-    font-size: 100px;
-    width: 380px;
-    height: 380px;
-    background-image: resource('UI/02Onboarding/Ellipse 1_4_8');
+    width: 350px;
+    height: 420px;
+    background-image: resource('UI/02onboarding_02/onButton01');
     background-color: rgba(188, 188, 188, 0);
     align-items: center;
     justify-content: center;
     overflow: hidden;
     visibility: visible;
-    -unity-text-outline-color: rgba(0, 0, 0, 0);
     -unity-background-image-tint-color: rgb(255, 255, 255);
-    -unity-background-scale-mode: scale-and-crop;
-    -unity-font-style: normal;
+    -unity-background-scale-mode: stretch-to-fill;
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
     border-bottom-width: 0;
-    color: rgba(27, 27, 27, 0);
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
     transition-delay: 0s;
+    position: relative;
 }
 
 .Button-Onboard:active {
-    background-image: resource('UI/02Onboarding/Ellipse 4_5_19');
-    scale: 0.9 0.9;
+    transition-duration: 0.2s;
     -unity-background-image-tint-color: rgb(255, 255, 255);
-    transition-duration: 0.3s;
+    scale: 0.9 0.9;
+    position: absolute;
 }
 
 .Button_Side01 {
@@ -35,7 +32,7 @@
     background-color: rgba(150, 148, 255, 0.2);
     color: rgb(255, 255, 255);
     background-image: none;
-    align-items: center;
+    align-items: absolute;
     justify-content: space-around;
     flex-shrink: 1;
 }
@@ -160,4 +157,37 @@
     align-items: center;
     font-size: 40px;
     -unity-font: resource('UI/Fonts/AppleSDGothicNeoL');
+}
+
+.Button_Back_p {
+    width: 200px;
+    height: 100px;
+    justify-content: flex-start;
+    align-items: center;
+    -unity-font: resource('UI/Fonts/AppleSDGothicNeoL');
+    position: absolute;
+    background-image: resource('UI/02-1_perspecitve/button_back_image');
+    -unity-background-scale-mode: scale-to-fit;
+    left: 10px;
+    top: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.Button_Back_p:active {
+    position: absolute;
+    height: 83px;
+    width: 152px;
+    -unity-font: resource('UI/Fonts/AppleSDGothicNeoB');
+    background-image: resource('UI/02-1_perspecitve/button_back_image');
+    background-color: rgba(88, 88, 88, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    transition-duration: 0.2s;
+    scale: 1.1 1.1;
 }
