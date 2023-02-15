@@ -1,7 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="menu" src="project://database/Assets/UI%20Toolkit/menu.uxml?fileID=9197481963319205126&amp;guid=6ab3c9e9552aa7149ac14b3c460ef71b&amp;type=3#menu" />
+    <ui:Template name="ImageScreen" src="project://database/Assets/UI%20Toolkit/ImageScreen.uxml?fileID=9197481963319205126&amp;guid=fdd861ab796e2434b9fa69447d1f1cd4&amp;type=3#ImageScreen" />
     <Style src="project://database/Assets/Resources/OnboardingButtonStyle.uss?fileID=7433441132597879392&amp;guid=1b0747e4727fcec4d8f80bd5fed81975&amp;type=3#OnboardingButtonStyle" />
-    <ui:VisualElement name="Top_bar" class="Top_bar">
+    <ui:VisualElement name="Top_bar" class="Top_bar" style="display: flex;">
         <ui:GroupBox name="Top_TextGroup" style="flex-direction: row; align-items: center; position: relative; display: flex;">
             <ui:Label text="미리보는 뉴 홈" display-tooltip-when-elided="true" name="TopsideTXT" style="position: relative; left: 3%; top: 2%; -unity-text-align: middle-left; color: rgb(255, 255, 255); font-size: 70px; -unity-font: resource(&apos;absolute&apos;); right: auto; height: 106px; width: 474px;" />
         </ui:GroupBox>
@@ -80,5 +81,6 @@
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:Instance template="menu" name="menu" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; right: 0; bottom: 0; display: flex;" />
+    <ui:Instance template="menu" name="menu" picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; right: 0; bottom: 0; display: flex;" />
+    <ui:Instance template="ImageScreen" name="ImageScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />
 </ui:UXML>
