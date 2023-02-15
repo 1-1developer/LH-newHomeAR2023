@@ -13,28 +13,28 @@ public class UIController : MonoBehaviour
     const string Onboarding = "Onboarding";
     const string UIContainer = "AR_screen";
 
-    const string OpenButton = "Button_on01"; //¸ŞÀÎÈ­¸é ¹öÆ°1
+    const string OpenButton = "Button_on01"; //ë©”ì¸í™”ë©´ ë²„íŠ¼1
 
     const string HomeButton = "ButtonHOME";
     const string SideSheet = "SideSheet";
     const string SideSheetTwo = "SideSheetTwo";
-    const string CloseButton = "CloseButton"; // sideTwo´İ±â ¹öÆ°
+    const string CloseButton = "CloseButton"; // sideTwoë‹«ê¸° ë²„íŠ¼
     const string TopTextGroup = "Top_TextGroup";
 
     const string BackButton = "BackButton";
     const string HousePlan = "House_Plan1";
 
-    public int buttonNum = 3; // sidebar¹öÆ°s
+    public int buttonNum = 3; // sidebarë²„íŠ¼s
 
-    //¿Âº¸µù ¿¤¸®¸ÕÆ®
+    //ì˜¨ë³´ë”© ì—˜ë¦¬ë¨¼íŠ¸
     private VisualElement _Onboarding;
     private GroupBox _TopTextGroup;
-    //ÁÂÃø ¹öÆ° ui
+    //ì¢Œì¸¡ ë²„íŠ¼ ui
     private VisualElement _UIContainer;
     private VisualElement _sideSheet;
     private VisualElement _sideSheetTwo;
     private VisualElement _HousePlan;
-    //¹öÆ°
+    //ë²„íŠ¼
     private Button _openButton;
     private Button _homeButton;
     private Button _BackButton;
@@ -46,12 +46,12 @@ public class UIController : MonoBehaviour
 
     public List<Button> buttons = new List<Button>();
 
-    private VisualElement m_root; // ¸ŞÀÎ·çÆ®
-    private VisualElement ar_root; // ar¼±ÅÃÃ¢ ·çÆ®
+    private VisualElement m_root; // ë©”ì¸ë£¨íŠ¸
+    private VisualElement ar_root; // arì„ íƒì°½ ë£¨íŠ¸
     RaycastHit hit;
     void Start()
     {
-        // root visualElementÂüÁ¶
+        // root visualElementì°¸ì¡°
         m_root = GetComponent<UIDocument>().rootVisualElement;
         ar_root = m_root.Q<VisualElement>("menu");
 
@@ -59,24 +59,24 @@ public class UIController : MonoBehaviour
         _Onboarding = m_root.Q<VisualElement>(Onboarding);
         _HousePlan = m_root.Q<VisualElement>(HousePlan);
 
-        //¿Âº¸µù È­¸é ¹öÆ°
+        //ì˜¨ë³´ë”© í™”ë©´ ë²„íŠ¼
         _openButton = m_root.Q<Button>(OpenButton);
         _TopTextGroup = m_root.Q<GroupBox>(TopTextGroup);
 
-        //È¨¹öÆ°
+        //í™ˆë²„íŠ¼
         _homeButton = m_root.Q<Button>(HomeButton);
 
 
-        //¹öÆ°¼±ÅÃ½½¶óÀÌµå1,2
+        //ë²„íŠ¼ì„ íƒìŠ¬ë¼ì´ë“œ1,2
         _sideSheet = m_root.Q<VisualElement>(SideSheet);
         _sideSheetTwo = m_root.Q<VisualElement>(SideSheetTwo);
-        //´İ±â
+        //ë‹«ê¸°
         _closeButton = m_root.Q<Button>(CloseButton);
-        //µÚ·Î°¡±â
+        //ë’¤ë¡œê°€ê¸°
         _BackButton = m_root.Q<Button>(BackButton);
 
 
-        //½ÃÀÛÇÒ ¶§ °¨Ãß±â
+        //ì‹œì‘í•  ë•Œ ê°ì¶”ê¸°
         ar_root.style.display = DisplayStyle.None;
         _HousePlan.style.display = DisplayStyle.None;
         _Onboarding.style.display = DisplayStyle.Flex;
@@ -92,7 +92,7 @@ public class UIController : MonoBehaviour
     }
     private void OnEnable()
     {
-        //µî·ÏÇÒ Äİ¹éÇÔ¼öµé
+        //ë“±ë¡í•  ì½œë°±í•¨ìˆ˜ë“¤
         //_openButton.RegisterCallback<ClickEvent>(OnBoardButtonClicked);
         //_homeButton.RegisterCallback<ClickEvent>(OnHomeButtonClicked);
         //_closeButton.RegisterCallback<ClickEvent>(OnCloseButtonClicked);
@@ -108,26 +108,26 @@ public class UIController : MonoBehaviour
         _sideSheet.UnregisterCallback<TransitionEndEvent>(OnSideSheetOut);
     }
 
-    public void InPlanPannelAR()  //¸¶Ä¿¼±ÅÃ½Ã
+    public void InPlanPannelAR()  //ë§ˆì»¤ì„ íƒì‹œ
     {
         _sideSheetTwo.AddToClassList("SideSheetTwo--in");
     }
-    private void OnCloseButtonClicked(ClickEvent evt) //¼±ÅÃ´İ±â
+    private void OnCloseButtonClicked(ClickEvent evt) //ì„ íƒë‹«ê¸°
     {
         _sideSheetTwo.RemoveFromClassList("SideSheetTwo--in");
     }
-    private void OnHouseButtonClicked(ClickEvent evt)  //Áı³»ºÎ °ü¶÷ È­¸é
+    private void OnHouseButtonClicked(ClickEvent evt)  //ì§‘ë‚´ë¶€ ê´€ëŒ í™”ë©´
     {
         _TopTextGroup.style.display = DisplayStyle.None;
         _BackButton.style.display = DisplayStyle.Flex;
         _HousePlan.style.display = DisplayStyle.Flex;
         ar_root.style.display = DisplayStyle.None;
 
-        //Áı ¿ÀºêÁ§Æ®
+        //ì§‘ ì˜¤ë¸Œì íŠ¸
         onScreenObjectManager.OnHouse();
     }
 
-    private void OnBackButtonClicked(ClickEvent evt)  //Áı³»ºÎ µÚ·Î°¡±â
+    private void OnBackButtonClicked(ClickEvent evt)  //ì§‘ë‚´ë¶€ ë’¤ë¡œê°€ê¸°
     {
         _HousePlan.style.display = DisplayStyle.None;
         ar_root.style.display = DisplayStyle.Flex;
@@ -135,12 +135,12 @@ public class UIController : MonoBehaviour
         _TopTextGroup.style.display = DisplayStyle.Flex;
 
         _homeButton.AddToClassList("Button_Home--in");
-        //Áı ¿ÀºêÁ§Æ®
+        //ì§‘ ì˜¤ë¸Œì íŠ¸
         onScreenObjectManager.OnMaker();
     }
-    private void OnHomeButtonClicked(ClickEvent evt) // È¨À¸·Î µ¹¾Æ°¡±â
+    private void OnHomeButtonClicked(ClickEvent evt) // í™ˆìœ¼ë¡œ ëŒì•„ê°€ê¸°
     {
-        //½ÃÆ®±×·ì
+        //ì‹œíŠ¸ê·¸ë£¹
         ar_root.style.display = DisplayStyle.None;
         _Onboarding.style.display = DisplayStyle.Flex;
 
@@ -148,20 +148,20 @@ public class UIController : MonoBehaviour
         _sideSheet.RemoveFromClassList("SideSheet--in");
         _sideSheetTwo.RemoveFromClassList("SideSheetTwo--in");
 
-        //object Á¦°Å
+        //object ì œê±°
         onScreenObjectManager.NothingOn();
     }
 
     private void OnBoardButtonClicked(ClickEvent evt)
     {
-        //½ÃÆ® ¿­±â
+        //ì‹œíŠ¸ ì—´ê¸°
         ar_root.style.display = DisplayStyle.Flex;
         _Onboarding.style.display = DisplayStyle.None;
 
         _homeButton.AddToClassList("Button_Home--in");
         _sideSheet.AddToClassList("SideSheet--in");
 
-        //¸¶Ä¿Ç¥½Ã
+        //ë§ˆì»¤í‘œì‹œ
         onScreenObjectManager.OnMaker();
     }
 
@@ -169,11 +169,11 @@ public class UIController : MonoBehaviour
     {
         if (!_sideSheet.ClassListContains("SideSheet--in"))
         {
-            //AR½ÃÆ®±×·ì °¨Ãß±â
+            //ARì‹œíŠ¸ê·¸ë£¹ ê°ì¶”ê¸°
             ar_root.style.display = DisplayStyle.None;
         }
     }
-    void SetupSelectButton() //¹öÆ°°¡Á®¿À±â
+    void SetupSelectButton() //ë²„íŠ¼ê°€ì ¸ì˜¤ê¸°
     {
         for (int i = 0; i < buttonNum; i++)
         {
@@ -181,7 +181,7 @@ public class UIController : MonoBehaviour
             buttons[i].RegisterCallback<ClickEvent>(OnHouseButtonClicked);
         }
     }
-    public void PickHighlight(Button s_button) // ¼±ÅÃ¹öÆ° ÇÏÀÌ¶óÀÌÆ® È¿°ú
+    public void PickHighlight(Button s_button) // ì„ íƒë²„íŠ¼ í•˜ì´ë¼ì´íŠ¸ íš¨ê³¼
     {
         foreach (Button bt in buttons)
         {
