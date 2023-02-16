@@ -21,8 +21,8 @@ public class UIController : MonoBehaviour
     const string OpenButton5 = "Button_on_viewmap"; //메인화면 투시도 버4
 
     const string HomeButton = "ButtonHOME";
-    const string SideSheet = "SideSheet";
-    const string SideSheetTwo = "SideSheetTwo";
+    const string SideSheet = "SideSheet"; //side1단 
+    const string SideSheetTwo = "SideSheetTwo"; // side2단 
     const string CloseButton = "CloseButton"; // sideTwo닫기 버튼
     const string TopTextGroup = "Top_TextGroup";
 
@@ -133,7 +133,14 @@ public class UIController : MonoBehaviour
         _sideSheet.UnregisterCallback<TransitionEndEvent>(OnSideSheetOut);
     }
 
-
+    void SetupSelectButton() //사이드바 버튼가져오기
+    {
+        for (int i = 0; i < buttonNum; i++)
+        {
+            buttons.Add(m_root.Q<Button>("HouseSelectButton" + $"{i + 1}"));
+            buttons[i].RegisterCallback<ClickEvent>(OnHouseButtonClicked);
+        }
+    }
 
     private void OnHomeButtonClicked(ClickEvent evt) // 홈으로 돌아가기
     {
@@ -156,7 +163,7 @@ public class UIController : MonoBehaviour
         _Onboarding.style.display = DisplayStyle.None;
 
         _homeButton.AddToClassList("Button_Home--in");
-        _sideSheet.AddToClassList("SideSheet--in");
+        //_sideSheet.AddToClassList("SideSheet--in");
 
         //마커표시
         onScreenObjectManager.OnMaker();
@@ -179,14 +186,7 @@ public class UIController : MonoBehaviour
             ar_root.style.display = DisplayStyle.None;
         }
     }
-    void SetupSelectButton() //버튼가져오기
-    {
-        for (int i = 0; i < buttonNum; i++)
-        {
-            buttons.Add(m_root.Q<Button>("HouseSelectButton" + $"{i + 1}"));
-            buttons[i].RegisterCallback<ClickEvent>(OnHouseButtonClicked);
-        }
-    }
+
     public void PickHighlight(Button s_button) // 선택버튼 하이라이트 효과
     {
         foreach (Button bt in buttons)
@@ -206,11 +206,13 @@ public class UIController : MonoBehaviour
     public void InPlanPannelAR()  //마커선택시
     {
         _sideSheetTwo.AddToClassList("SideSheetTwo--in");
+        _sideSheet.AddToClassList("SideSheet--in");
     }
 
     private void OnCloseButtonClicked(ClickEvent evt) //선택닫기
     {
         _sideSheetTwo.RemoveFromClassList("SideSheetTwo--in");
+        _sideSheet.RemoveFromClassList("SideSheet--in");
     }
 
     private void OnHouseButtonClicked(ClickEvent evt)  //집내부 관람 화면

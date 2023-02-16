@@ -1,14 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Resources/OnboardingButtonStyle.uss?fileID=7433441132597879392&amp;guid=1b0747e4727fcec4d8f80bd5fed81975&amp;type=3#OnboardingButtonStyle" />
     <ui:VisualElement name="AR_screen" style="width: 100%; position: absolute; height: 100%; align-items: flex-end; display: flex; visibility: visible;">
-        <ui:VisualElement name="Top_bar_space" class="Top_bar" style="visibility: visible; -unity-background-image-tint-color: rgba(255, 255, 255, 0); background-color: rgba(70, 70, 70, 0);">
-            <ui:GroupBox name="Top_TextGroup_" style="flex-direction: row; align-items: center; position: relative; display: flex; visibility: hidden; width: 428px;">
-                <ui:Label text="미리보는 뉴홈" display-tooltip-when-elided="true" name="TopsideTXT" style="position: relative; left: 3%; top: 2%; -unity-text-align: middle-left; color: rgb(255, 255, 255); font-size: 70px; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); right: auto; height: 106px; width: 474px;" />
-            </ui:GroupBox>
-            <ui:GroupBox name="topText01" style="flex-shrink: 1; width: 100%; height: 100%; display: flex; flex-direction: row; align-items: stretch; justify-content: flex-start;">
-                <ui:Label text="/" display-tooltip-when-elided="true" name="TopsideTXT_slash" style="position: relative; left: 3%; top: 2%; -unity-text-align: middle-left; color: rgb(255, 255, 255); font-size: 70px; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); right: auto; height: 114px; width: 34px;" />
-                <ui:Label text="주택평면" display-tooltip-when-elided="true" name="TopsideTXT_2" style="position: relative; left: 3%; top: 2%; -unity-text-align: middle-left; color: rgb(255, 255, 255); font-size: 70px; -unity-font: resource(&apos;UI/Fonts/AppleSDGothicNeoL&apos;); right: auto; height: 106px; width: 474px;" />
-            </ui:GroupBox>
+        <ui:VisualElement name="Top_bar_space" class="Top_bar">
+            <ui:VisualElement name="topText01" style="position: relative; width: 328px; height: 134px; left: 804px; background-image: resource(&apos;UI/03AR_/toptext01&apos;); -unity-background-scale-mode: scale-to-fit; top: 30px;" />
         </ui:VisualElement>
         <ui:VisualElement name="Sidebar_Area" style="width: 100%; height: 100%; align-items: flex-end; flex-direction: row-reverse; display: flex;">
             <ui:VisualElement name="SideSheet" class="SideSheet">
@@ -46,8 +40,7 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:Button text="HOME" display-tooltip-when-elided="true" name="ButtonHOME" class="Button_Home Button_Home--in">
-            <ui:VisualElement style="background-image: resource(&apos;UI/03ARUI_Elements/Vector_5_47&apos;);" />
-        </ui:Button>
+        <ui:Button display-tooltip-when-elided="true" name="ButtonHOME" class="Button_Home Button_Home--in" />
     </ui:VisualElement>
+    <ui:VisualElement name="mockup" style="position: absolute; width: 100%; height: 100%; background-image: resource(&apos;UI/mockup/ar_2&apos;); opacity: 0.57; display: none;" />
 </ui:UXML>

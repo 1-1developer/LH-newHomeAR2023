@@ -7,12 +7,13 @@ using UnityEngine.XR.ARSubsystems;
 public class ARImageTracker : MonoBehaviour
 {
     public UIController uIController;
-
+    public OnScreenObjectManager onScreenObjectManager;
     private ARTrackedImageManager trackedImageManager;
     [SerializeField]
     private GameObject[] _markerPointers;
 
     private Dictionary<string, GameObject> spawnedObjects;
+
     private void Awake()
     {
         trackedImageManager = GetComponent<ARTrackedImageManager>();
@@ -36,6 +37,7 @@ public class ARImageTracker : MonoBehaviour
     {
         trackedImageManager.trackedImagesChanged -= onTrackedImageChanged;
     }
+
     void onTrackedImageChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
         foreach (ARTrackedImage trackedImage in eventArgs.added)
@@ -54,12 +56,16 @@ public class ARImageTracker : MonoBehaviour
     }
     void UpdateSpawnObject(ARTrackedImage trackedImage)
     {
-        string referenceImageName = trackedImage.referenceImage.name;
+        if (onScreenObjectManager.ARok)
+        {
+            string referenceImageName = trackedImage.referenceImage.name;
 
-        spawnedObjects[referenceImageName].transform.position = trackedImage.transform.position;
-        spawnedObjects[referenceImageName].transform.rotation = trackedImage.transform.rotation;
+            spawnedObjects[referenceImageName].transform.position = trackedImage.transform.position;
+            spawnedObjects[referenceImageName].transform.rotation = trackedImage.transform.rotation;
 
-        spawnedObjects[referenceImageName].SetActive(true);
+            spawnedObjects[referenceImageName].SetActive(true);
+        }
+
     }
 
     void Start()

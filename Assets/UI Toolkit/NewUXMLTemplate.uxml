@@ -2,14 +2,14 @@
     <ui:Template name="menu" src="project://database/Assets/UI%20Toolkit/menu.uxml?fileID=9197481963319205126&amp;guid=6ab3c9e9552aa7149ac14b3c460ef71b&amp;type=3#menu" />
     <ui:Template name="ImageScreen" src="project://database/Assets/UI%20Toolkit/ImageScreen.uxml?fileID=9197481963319205126&amp;guid=fdd861ab796e2434b9fa69447d1f1cd4&amp;type=3#ImageScreen" />
     <Style src="project://database/Assets/Resources/OnboardingButtonStyle.uss?fileID=7433441132597879392&amp;guid=1b0747e4727fcec4d8f80bd5fed81975&amp;type=3#OnboardingButtonStyle" />
-    <ui:VisualElement name="Top_bar" class="Top_bar" style="display: flex; background-color: rgba(25, 25, 25, 0);">
-        <ui:GroupBox name="Top_TextGroup" style="flex-direction: row; align-items: center; position: relative; display: flex;">
-            <ui:Label text="미리보는 뉴 홈" display-tooltip-when-elided="true" name="TopsideTXT" style="position: relative; left: 3%; top: 2%; -unity-text-align: middle-left; color: rgb(255, 255, 255); font-size: 70px; -unity-font: resource(&apos;absolute&apos;); right: auto; height: 106px; width: 474px;" />
+    <ui:VisualElement name="Top_bar" class="Top_bar">
+        <ui:GroupBox name="Top_TextGroup" style="flex-direction: row; align-items: center; position: relative; display: flex; width: 100%; height: 100%;">
+            <ui:VisualElement style="opacity: 0.62; display: flex; width: 710px; height: 178px; position: absolute; background-image: resource(&apos;UI/02onboarding_02/newhomeLoco&apos;); -unity-background-scale-mode: scale-to-fit; left: 64px;" />
         </ui:GroupBox>
     </ui:VisualElement>
     <ui:VisualElement name="Onboarding" picking-mode="Ignore" style="width: 100%; height: 100%; background-color: rgba(26, 26, 26, 0.36); align-items: center; transform-origin: center; justify-content: center; background-image: none; flex-direction: row; -unity-background-image-tint-color: rgb(126, 126, 126); -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4; visibility: visible; display: flex; opacity: 1;">
-        <ui:Button display-tooltip-when-elided="true" name="Button_on_viewmap" class="Button-Onboard" style="position: absolute; top: 694px; left: 1728px; background-image: resource(&apos;UI/02onboarding_02/OnButton05&apos;); width: 280px; height: 340px;" />
-        <ui:VisualElement name="button_space" style="position: absolute; width: 888px; height: 996px; top: 384px;">
+        <ui:Button display-tooltip-when-elided="true" name="Button_on_viewmap" class="Button-Onboard" style="position: absolute; top: 631px; left: 1728px; background-image: resource(&apos;UI/02onboarding_02/OnButton05&apos;); width: 280px; height: 340px;" />
+        <ui:VisualElement name="button_space" style="position: absolute; width: 888px; height: 996px; top: 325px;">
             <ui:VisualElement style="width: 100%; height: 50%; flex-direction: row; justify-content: space-between; align-items: flex-start; padding-left: 7px; padding-right: 7px; padding-top: 7px; padding-bottom: 7px;">
                 <ui:Button display-tooltip-when-elided="true" name="Button_on01" class="Button-Onboard" />
                 <ui:Button display-tooltip-when-elided="true" name="Button_on03" class="Button-Onboard" style="background-image: resource(&apos;UI/02onboarding_02/onButton02&apos;); height: 450px;" />
@@ -19,7 +19,7 @@
                 <ui:Button display-tooltip-when-elided="true" name="Button_on02" class="Button-Onboard" style="background-image: resource(&apos;UI/02onboarding_02/OnButton04&apos;);" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement style="position: absolute; height: 50px; width: 700px; background-image: resource(&apos;UI/02onboarding_02/AR text&apos;); -unity-background-scale-mode: scale-to-fit; top: 215px; left: auto;" />
+        <ui:VisualElement style="position: absolute; height: 50px; width: 700px; background-image: resource(&apos;UI/02onboarding_02/AR text&apos;); -unity-background-scale-mode: scale-to-fit; top: 156px; left: auto;" />
     </ui:VisualElement>
     <ui:VisualElement name="House_Plan1" style="width: 100%; position: absolute; height: 100%; align-items: flex-end; display: none; visibility: visible; top: auto;">
         <ui:VisualElement name="Top_bar_space" class="Top_bar">
@@ -47,5 +47,5 @@
     </ui:VisualElement>
     <ui:Instance template="menu" name="menu" picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; right: 0; bottom: 0; display: none;" />
     <ui:Instance template="ImageScreen" name="ImageScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />
-    <ui:VisualElement picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%; background-image: resource(&apos;UI/mockup/main&apos;); display: none; opacity: 0.47;" />
+    <ui:VisualElement picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%; background-image: resource(&apos;UI/mockup/ar_2&apos;); display: none; opacity: 0.41;" />
 </ui:UXML>
