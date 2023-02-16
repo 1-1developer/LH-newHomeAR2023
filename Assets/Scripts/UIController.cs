@@ -242,7 +242,23 @@ public class UIController : MonoBehaviour
         //집 오브젝트
         onScreenObjectManager.OnMaker();
     }
+    public void GoHome() // 일정시간 후 홈으로 돌아가기 //수정필
+    {
+        //시트그룹
+        ar_root.style.display = DisplayStyle.None;
+        _perspective.style.display = DisplayStyle.None;
+        _HousePlan.style.display = DisplayStyle.None;
+        _Onboarding.style.display = DisplayStyle.Flex;
+        
 
+        if (_homeButton.ClassListContains("Button_Home--in"))
+            _homeButton.RemoveFromClassList("Button_Home--in");
+        _sideSheet.RemoveFromClassList("SideSheet--in");
+        _sideSheetTwo.RemoveFromClassList("SideSheetTwo--in");
+
+        //object 제거
+        onScreenObjectManager.NothingOn();
+    }
 
     void Update()
     {

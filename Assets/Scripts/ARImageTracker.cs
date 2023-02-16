@@ -10,7 +10,7 @@ public class ARImageTracker : MonoBehaviour
 
     private ARTrackedImageManager trackedImageManager;
     [SerializeField]
-    private GameObject[] placeablePrefabs;
+    private GameObject[] _markerPointers;
 
     private Dictionary<string, GameObject> spawnedObjects;
     private void Awake()
@@ -18,7 +18,7 @@ public class ARImageTracker : MonoBehaviour
         trackedImageManager = GetComponent<ARTrackedImageManager>();
         spawnedObjects = new Dictionary<string, GameObject>();
 
-        foreach (GameObject obj in placeablePrefabs)
+        foreach (GameObject obj in _markerPointers)
         {
             GameObject newObject = Instantiate(obj);
             newObject.name = obj.name;

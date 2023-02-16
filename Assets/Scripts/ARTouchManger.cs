@@ -8,59 +8,50 @@ using TMPro;
 
 public class ARTouchManger : MonoBehaviour
 {
-    public TextMesh debugTxt;
-    public GameObject placeObject;
-
-    public GameObject image;
-
-    Animator animator;
-    GameObject spawnObject;
-    // Start is called before the first frame update
+    public UIController uIController;
+    public GameObject touchedObj;
     RaycastHit hit;
+    Pointer[] pointers;
+    Pointer pointer;
+    // Start is called before the first frame update
     void Start()
     {
-        animator = placeObject.GetComponent<Animator>();
+        pointers = FindObjectsOfType<Pointer>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        PopUpObjectByTouch();
-        UILookAt();
-    }
-
-    GameObject hitObj;
     private void PopUpObjectByTouch()
     {
         if (Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0); //네 개의 손가락 중 몇 번째 인덱스 
-            //List<ARRaycastHit> hits = new List<ARRaycastHit>();
-            //List<RaycastHit> hits = new List<RaycastHit>();
-            Ray ray = Camera.current.ScreenPointToRay(touch.position);
+            Touch touch = Input.GetTouch(0); //
+                                             //List<ARRaycastHit> hits = new List<ARRaycastHit>();
+                                             //List<RaycastHit> hits = new List<RaycastHit>();
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
 
-            if (Physics.Raycast(ray, out hit, 10000, LayerMask.GetMask("Buliding")))
+            if (Physics.Raycast(ray, out hit, 10000, LayerMask.GetMask("Pointer")))
             {
-                hitObj = hit.transform.gameObject;
-                //Pose hitPose = hits[0].pose;
-                if (!spawnObject)
+                if (hit.transform.gameObject)
                 {
-                    spawnObject = Instantiate(placeObject, hit.transform.position, Quaternion.identity);
-                    spawnObject.GetComponent<Animator>().SetTrigger("pop");
+                    touchedObj = hit.transform.gameObject;
+                    touchedObj.transform.GetChild(0).GetComponent<MeshRenderer>().material.SetColor("_Color", Color.red);
+                    uIController.InPlanPannelAR();
+
+                    try
+                    {
+                        pointer = touchedObj.GetComponent<Pointer>();
+                    }
+                    catch (System.Exception)
+                    {
+                    }
+                    uIController.PickHighlight(uIController.buttons[pointer.HouseID]);
                 }
-                else
-                {
-                    spawnObject.transform.position = hit.transform.position + Vector3.up * .015f;
-                }
-                image.SetActive(true);
-                hitObj.GetComponent<MeshRenderer>().material.color = Color.green;
             }
+
         }
         else
         {
-            if (hitObj)
+            if (touchedObj)
             {
-                hitObj.GetComponent<MeshRenderer>().material.color = Color.white;
+                touchedObj.transform.GetChild(0).GetComponent<MeshRenderer>().material.SetColor("_Color", Color.white);
             }
         }
     }
@@ -68,7 +59,25 @@ public class ARTouchManger : MonoBehaviour
 
     private void UILookAt()
     {
-        spawnObject.transform.LookAt(transform.position + Camera.current.transform.rotation * Vector3.forward, Camera.current.transform.rotation * Vector3.up);
+
+        for (int i = 0; i < pointers.Length; i++)
+        {
+            //pointers[i].transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
+            pointers[i].transform.LookAt(Camera.main.transform);
+        }
+    }
+
+    private void HighlightPick()
+    {
+        var ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
+        RaycastHit hitPoint;
+
+        if(Physics.Raycast(ray, out hitPoint, 100.0f))
+        {
+
+        }
+
+        
     }
 
     private void UpdateCenterObject()
@@ -81,11 +90,17 @@ public class ARTouchManger : MonoBehaviour
         if (hits.Count > 0)
         {
             Pose placementPose = hits[0].pose;
-            placeObject.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
+            touchedObj.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
         }
         else
         {
-            placeObject.SetActive(false);
+            touchedObj.SetActive(false);
         }
+    }
+
+    private void Update()
+    {
+        PopUpObjectByTouch();
+        UILookAt();
     }
 }
