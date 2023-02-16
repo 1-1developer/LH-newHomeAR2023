@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4110ad9a02dd524faad26eb3ab7fc3b, type: 2}
+  - {fileID: 2100000, guid: 032a2f6a3131f4e3cb90edc688fb34e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 1109005392674966875}
   - component: {fileID: 8890988939729902135}
   m_Layer: 7
-  m_Name: ARPointer
+  m_Name: pointer_bulding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

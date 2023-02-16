@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Resources/OnboardingButtonStyle.uss?fileID=7433441132597879392&amp;guid=1b0747e4727fcec4d8f80bd5fed81975&amp;type=3#OnboardingButtonStyle" />
-    <ui:VisualElement name="PerspectiveView" style="width: 100%; height: 100%; background-image: resource(&apos;UI/02-1_perspecitve/KakaoTalk_20230208_210245242 1_90_62&apos;); -unity-background-scale-mode: stretch-to-fill;" />
+    <ui:VisualElement name="PerspectiveView" style="width: 100%; height: 100%; background-image: resource(&apos;UI/02-1_perspecitve/perspective&apos;); -unity-background-scale-mode: stretch-to-fill;" />
     <ui:Button name="Button_Back_p" class="Button_Back_p" style="-unity-background-scale-mode: scale-to-fit;" />
 </ui:UXML>

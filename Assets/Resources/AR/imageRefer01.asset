@@ -18,12 +18,32 @@ MonoBehaviour:
     m_Storage: []
   m_Images:
   - m_SerializedGuid:
-      m_GuidLow: 4752032784066002047
-      m_GuidHigh: 12299476831247169200
+      m_GuidLow: 4801758677895701218
+      m_GuidHigh: 13074263590089276069
     m_SerializedTextureGuid:
-      m_GuidLow: 9229113402897251542
-      m_GuidHigh: 2952385733018745113
-    m_Size: {x: 0.2, y: 0.1773077}
+      m_GuidLow: 7270760799318650683
+      m_GuidHigh: 8216950564515101659
+    m_Size: {x: 0.05, y: 0.04509346}
     m_SpecifySize: 1
-    m_Name: Poiners
-    m_Texture: {fileID: 2800000, guid: f37cbcd665bd8014197983882efbf828, type: 3}
+    m_Name: pointer_bulding
+    m_Texture: {fileID: 2800000, guid: c2392f3bee6c64e6db3bdece00790872, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5698795801639953714
+      m_GuidHigh: 8281115995391309749
+    m_SerializedTextureGuid:
+      m_GuidLow: 15297912217715598866
+      m_GuidHigh: 15859986659451271738
+    m_Size: {x: 0.05, y: 0.057614215}
+    m_SpecifySize: 1
+    m_Name: pointer_outside
+    m_Texture: {fileID: 2800000, guid: 360be6121a1cd44d3afa0643d6fd19dc, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5393497246421415237
+      m_GuidHigh: 18326144893712295808
+    m_SerializedTextureGuid:
+      m_GuidLow: 2625145118241824495
+      m_GuidHigh: 17882567071252861320
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: one
+    m_Texture: {fileID: 2800000, guid: 90a79eef6393246e88d11f6201a42bf8, type: 3}

@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
 public class ARImageTracker : MonoBehaviour
 {
-    public UIController uIController;
+    public Text debugt;
+    public Text debugt2;
     public OnScreenObjectManager onScreenObjectManager;
     private ARTrackedImageManager trackedImageManager;
     [SerializeField]
@@ -50,20 +52,24 @@ public class ARImageTracker : MonoBehaviour
         }
         foreach (ARTrackedImage trackedImage in eventArgs.removed)
         {
-            spawnedObjects[trackedImage.name].SetActive(false);
-            Debug.Log($"removed:{trackedImage.name}");
+            spawnedObjects[trackedImage.referenceImage.name].SetActive(false);
+            debugt2.text = $"removed:{trackedImage.name}";
         }
     }
+
     void UpdateSpawnObject(ARTrackedImage trackedImage)
     {
+        string referenceImageName = trackedImage.referenceImage.name;
         if (onScreenObjectManager.ARok)
         {
-            string referenceImageName = trackedImage.referenceImage.name;
-
             spawnedObjects[referenceImageName].transform.position = trackedImage.transform.position;
             spawnedObjects[referenceImageName].transform.rotation = trackedImage.transform.rotation;
 
             spawnedObjects[referenceImageName].SetActive(true);
+        }
+        else
+        {
+            spawnedObjects[referenceImageName].SetActive(false);
         }
 
     }
@@ -75,12 +81,12 @@ public class ARImageTracker : MonoBehaviour
 
     void Update()
     {
-        Debug.Log($"There are {trackedImageManager.trackables.count} images being tracked");
+        debugt.text = $"There are {trackedImageManager.trackables.count} images being tracked";
 
         foreach (var trakedImage in trackedImageManager.trackables)
         {
-            Debug.Log($"image : {trakedImage.referenceImage.name}is at +" +
-                $"{trakedImage.transform.position}");
+            debugt2.text = $"image : {trakedImage.referenceImage.name}is at +" +
+                $"{trakedImage.transform.position}";
         }
     }
 }

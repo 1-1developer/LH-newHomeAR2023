@@ -64,6 +64,7 @@ public class ARTouchManger : MonoBehaviour
         {
             //pointers[i].transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
             pointers[i].transform.LookAt(Camera.main.transform);
+            Debug.Log("look");
         }
     }
 
@@ -101,6 +102,6 @@ public class ARTouchManger : MonoBehaviour
     private void Update()
     {
         PopUpObjectByTouch();
-        UILookAt();
+        //UILookAt();
     }
 }
