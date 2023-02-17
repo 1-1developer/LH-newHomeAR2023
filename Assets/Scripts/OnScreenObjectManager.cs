@@ -6,7 +6,7 @@ public class OnScreenObjectManager : MonoBehaviour
 {
     public bool ARok;
     public GameObject maker;
-    public GameObject House;
+    public GameObject[] Houses;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,20 +22,26 @@ public class OnScreenObjectManager : MonoBehaviour
     {
         ARok = false;
         //maker.SetActive(false);
-        House.SetActive(false);
+        for (int i = 0; i < Houses.Length; i++)
+        {
+            Houses[i].SetActive(false);
+        }
     }
 
     public void OnMaker()
     {
         ARok = true;
         //maker.SetActive(true);
-        House.SetActive(false);
+        for (int i = 0; i < Houses.Length; i++)
+        {
+            Houses[i].SetActive(false);
+        }
     }
 
-    public void OnHouse()
+    public void OnHouse(int HouseID)
     {
         ARok = false;
-        House.SetActive(true);
+        Houses[HouseID].SetActive(true);
         //maker.SetActive(false);
     }
 }

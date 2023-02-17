@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UIElements;
 
 public class UIController : MonoBehaviour
 {
-    public TextMeshPro debugTxt;
-    public touhOBJtest touchManger;
+    [SerializeField] protected UIDocument m_Document;
+
+
+
+    //public ARTouchManger touchManger;
     public OnScreenObjectManager onScreenObjectManager;
 
-    const string Onboarding = "Onboarding";
+    const string Onboarding = "Onboarding_Main";
     const string UIContainer = "AR_screen";
     const string Perspective = "ImageScreen";
 
@@ -30,7 +32,7 @@ public class UIController : MonoBehaviour
     const string BackButtonP = "Button_Back_p";
     const string HousePlan = "House_Plan1";
 
-    public int buttonNum = 3; // sidebar버튼s
+    int buttonNum = 3; // ar sidebar버튼 개수
 
     //온보딩 엘리먼트
     private VisualElement _Onboarding;
@@ -42,7 +44,7 @@ public class UIController : MonoBehaviour
 
     //좌측 버튼 ui
     private VisualElement _UIContainer;
-    private VisualElement _sideSheet;
+    //private VisualElement _sideSheet;
     private VisualElement _sideSheetTwo;
     private VisualElement _HousePlan;
     //버튼
@@ -62,14 +64,28 @@ public class UIController : MonoBehaviour
 
     public List<Button> buttons = new List<Button>();
 
-    private VisualElement m_root; // 메인루트
-    private VisualElement ar_root; // ar선택창 루트
+    protected VisualElement m_root; // 메인루트
+    protected VisualElement ar_root; // ar선택창 루트
     RaycastHit hit;
-    void Start()
+
+    protected void Awake()
+    {
+        if (m_Document == null)
+            m_Document = GetComponent<UIDocument>();
+        SetVisualElements();
+    }
+
+    protected virtual void SetVisualElements()
+    {
+        // get a reference to the root VisualElement 
+        if (m_Document != null)
+            m_root = m_Document.rootVisualElement;
+    }
+    protected void Start()
     {
         // root visualElement참조
-        m_root = GetComponent<UIDocument>().rootVisualElement;
         ar_root = m_root.Q<VisualElement>("menu");
+
         _perspective = m_root.Q<VisualElement>(Perspective);
 
 
@@ -87,7 +103,6 @@ public class UIController : MonoBehaviour
 
 
         //버튼선택슬라이드1,2
-        _sideSheet = m_root.Q<VisualElement>(SideSheet);
         _sideSheetTwo = m_root.Q<VisualElement>(SideSheetTwo);
         //닫기
         _closeButton = m_root.Q<Button>(CloseButton);
@@ -112,7 +127,6 @@ public class UIController : MonoBehaviour
         _BackButton.RegisterCallback<ClickEvent>(OnBackButtonClicked);
         _BackButtonP.RegisterCallback<ClickEvent>(OnBackButtonPClicked);
 
-        _sideSheet.RegisterCallback<TransitionEndEvent>(OnSideSheetOut);
     }
 
     private void OnEnable()
@@ -127,10 +141,10 @@ public class UIController : MonoBehaviour
 
     private void OnDisable()
     {
-        _openButton1.UnregisterCallback<ClickEvent>(OnBoardButtonClicked);
-        _homeButton.UnregisterCallback<ClickEvent>(OnHomeButtonClicked);
-        _closeButton.UnregisterCallback<ClickEvent>(OnCloseButtonClicked);
-        _sideSheet.UnregisterCallback<TransitionEndEvent>(OnSideSheetOut);
+        //_openButton1.UnregisterCallback<ClickEvent>(OnBoardButtonClicked);
+        //_homeButton.UnregisterCallback<ClickEvent>(OnHomeButtonClicked);
+        //_closeButton.UnregisterCallback<ClickEvent>(OnCloseButtonClicked);
+        //_sideSheet.UnregisterCallback<TransitionEndEvent>(OnSideSheetOut);
     }
 
     void SetupSelectButton() //사이드바 버튼가져오기
@@ -149,7 +163,6 @@ public class UIController : MonoBehaviour
         _Onboarding.style.display = DisplayStyle.Flex;
 
         _homeButton.RemoveFromClassList("Button_Home--in");
-        _sideSheet.RemoveFromClassList("SideSheet--in");
         _sideSheetTwo.RemoveFromClassList("SideSheetTwo--in");
 
         //object 제거
@@ -180,7 +193,7 @@ public class UIController : MonoBehaviour
 
     private void OnSideSheetOut(TransitionEndEvent evt)
     {
-        if (!_sideSheet.ClassListContains("SideSheet--in"))
+        if (!_sideSheetTwo.ClassListContains("SideSheet--in"))
         {
             //AR시트그룹 감추기
             ar_root.style.display = DisplayStyle.None;
@@ -206,13 +219,11 @@ public class UIController : MonoBehaviour
     public void InPlanPannelAR()  //마커선택시
     {
         _sideSheetTwo.AddToClassList("SideSheetTwo--in");
-        _sideSheet.AddToClassList("SideSheet--in");
     }
 
     private void OnCloseButtonClicked(ClickEvent evt) //선택닫기
     {
         _sideSheetTwo.RemoveFromClassList("SideSheetTwo--in");
-        _sideSheet.RemoveFromClassList("SideSheet--in");
     }
 
     private void OnHouseButtonClicked(ClickEvent evt)  //집내부 관람 화면
@@ -223,7 +234,7 @@ public class UIController : MonoBehaviour
         ar_root.style.display = DisplayStyle.None;
 
         //집 오브젝트
-        onScreenObjectManager.OnHouse();
+        onScreenObjectManager.OnHouse(0);//트래커 id가져오기
     }
 
     private void OnBackButtonPClicked(ClickEvent evt)  //투시도 뒤로가기
@@ -255,7 +266,6 @@ public class UIController : MonoBehaviour
 
         if (_homeButton.ClassListContains("Button_Home--in"))
             _homeButton.RemoveFromClassList("Button_Home--in");
-        _sideSheet.RemoveFromClassList("SideSheet--in");
         _sideSheetTwo.RemoveFromClassList("SideSheetTwo--in");
 
         //object 제거
