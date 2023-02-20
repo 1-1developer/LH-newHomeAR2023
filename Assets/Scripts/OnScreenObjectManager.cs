@@ -41,7 +41,7 @@ public class OnScreenObjectManager : MonoBehaviour
     public void OnHouse(int HouseID)
     {
         ARok = false;
-        Houses[HouseID].SetActive(true);
+       // Houses[HouseID].SetActive(true);
         //maker.SetActive(false);
     }
 }

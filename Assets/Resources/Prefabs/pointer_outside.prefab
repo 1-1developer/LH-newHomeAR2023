@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1109005391483514425}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0.64, z: 0}
-  m_LocalScale: {x: 0.39896, y: 1.3, z: 0.39896}
+  m_LocalScale: {x: 0.5, y: 1.5, z: 0.39896}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1109005392674966872}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8a14a751db0e64cf1a3fe2dd303eb0bb, type: 2}
+  - {fileID: 2100000, guid: bc9fb9ec1c65a704dbd8d4f8b099cd0d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +93,7 @@ MeshCollider:
   m_GameObject: {fileID: 1109005391483514425}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -159,3 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HouseID: 1
   isSelected: 0
+  ispicked: 0
+  _default: {fileID: 21300000, guid: 29e57284ce8f1b047ac13bdb504ac401, type: 3}
+  red: {fileID: 21300000, guid: 012baffc08f432e4290bf350984af380, type: 3}
+  pick: {fileID: 21300000, guid: 7dcb1898759a07148bf7ac28fd14637c, type: 3}

@@ -1,0 +1,43 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/OnboardingButtonStyle.uss?fileID=7433441132597879392&amp;guid=1b0747e4727fcec4d8f80bd5fed81975&amp;type=3#OnboardingButtonStyle" />
+    <ui:VisualElement name="pop_screen" picking-mode="Ignore" style="width: 100%; height: 100%; justify-content: center; align-items: center; position: absolute;">
+        <ui:Button display-tooltip-when-elided="true" name="close_area" style="position: absolute; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.23);" />
+        <ui:VisualElement name="pop_window1" style="width: 1304px; height: 1220px; flex-direction: column;">
+            <ui:Button display-tooltip-when-elided="true" name="Button_x" style="background-image: resource(&apos;UI/pipScrollview/button_x_305_379&apos;); -unity-background-scale-mode: scale-to-fit; background-color: rgba(188, 188, 188, 0); width: 56px; height: 56px; margin-bottom: 18px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
+            <ui:VisualElement name="pip_top" style="background-image: resource(&apos;UI/pipScrollview/Vector_300_126&apos;); width: 1304px; height: 120px; flex-direction: row; justify-content: space-between; flex-shrink: 0; align-items: center;">
+                <ui:Button display-tooltip-when-elided="true" name="button_pip1" class="Button_pip Button_pip--high">
+                    <ui:VisualElement name="button_pip_text1" class="btext_pip btext_pip--high" />
+                </ui:Button>
+                <ui:Button display-tooltip-when-elided="true" name="button_pip2" class="Button_pip" style="padding-left: 0; padding-right: 0; padding-top: 45px; padding-bottom: 45px;">
+                    <ui:VisualElement name="button_pip_text2" class="btext_pip" style="background-image: resource(&apos;UI/pipScrollview/poptext2_300_129&apos;); width: 100%; height: 100%; -unity-background-scale-mode: scale-to-fit;" />
+                </ui:Button>
+                <ui:Button display-tooltip-when-elided="true" name="button_pip3" class="Button_pip">
+                    <ui:VisualElement name="button_pip_text3" class="btext_pip" style="background-image: resource(&apos;UI/pipScrollview/poptext3_300_130&apos;); width: 100%; height: 100%; -unity-background-scale-mode: scale-to-fit;" />
+                </ui:Button>
+                <ui:Button display-tooltip-when-elided="true" name="button_pip4" class="Button_pip" style="padding-left: 43px; padding-right: 43px; padding-top: 45px; padding-bottom: 45px;">
+                    <ui:VisualElement name="button_pip_text4" class="btext_pip" style="background-image: resource(&apos;UI/pipScrollview/poptext4_300_131&apos;); width: 100%; height: 100%; -unity-background-scale-mode: scale-to-fit;" />
+                </ui:Button>
+                <ui:Button display-tooltip-when-elided="true" name="button_pip5" class="Button_pip">
+                    <ui:VisualElement name="button_pip_text5" class="btext_pip" style="background-image: resource(&apos;UI/pipScrollview/poptext5_300_132&apos;); width: 100%; height: 100%; -unity-background-scale-mode: scale-to-fit;" />
+                </ui:Button>
+            </ui:VisualElement>
+            <ui:VisualElement name="scroll_container" style="width: 100%; height: 100%; display: flex;">
+                <ui:ScrollView touch-scroll-type="Clamped" mode="Vertical" name="m_scroll1" horizontal-scroller-visibility="Hidden" style="width: 100%; height: 100%; -unity-background-scale-mode: scale-and-crop; display: flex; align-items: stretch; position: absolute;">
+                    <ui:VisualElement style="width: 1300px; height: 2992px; background-image: resource(&apos;UI/pipScrollview/Group_300_136&apos;); -unity-background-scale-mode: scale-and-crop; left: auto;" />
+                </ui:ScrollView>
+                <ui:ScrollView touch-scroll-type="Clamped" mode="Vertical" name="m_scroll2" horizontal-scroller-visibility="Hidden" style="width: 100%; height: 100%; -unity-background-scale-mode: scale-and-crop; display: none; align-items: stretch; position: absolute;">
+                    <ui:VisualElement style="width: 1304px; height: 2228px; background-image: resource(&apos;UI/pipScrollview/Group (1)&apos;); -unity-background-scale-mode: scale-and-crop; left: auto; display: flex;" />
+                </ui:ScrollView>
+                <ui:ScrollView touch-scroll-type="Clamped" mode="Vertical" name="m_scroll3" horizontal-scroller-visibility="Hidden" style="width: 100%; height: 100%; -unity-background-scale-mode: scale-and-crop; display: none; align-items: stretch; position: absolute;">
+                    <ui:VisualElement style="width: 1304px; height: 2940px; background-image: resource(&apos;UI/pipScrollview/Group 63 (1)&apos;); -unity-background-scale-mode: scale-and-crop; left: auto;" />
+                </ui:ScrollView>
+                <ui:ScrollView touch-scroll-type="Clamped" mode="Vertical" name="m_scroll4" horizontal-scroller-visibility="Hidden" style="width: 100%; height: 100%; -unity-background-scale-mode: scale-and-crop; display: none; align-items: stretch; position: absolute;">
+                    <ui:VisualElement style="width: 1304px; height: 3686px; background-image: resource(&apos;UI/pipScrollview/Vector (6)&apos;); -unity-background-scale-mode: scale-and-crop; left: auto; display: flex;" />
+                </ui:ScrollView>
+                <ui:ScrollView touch-scroll-type="Clamped" mode="Vertical" name="m_scroll5" horizontal-scroller-visibility="Hidden" style="width: 100%; height: 100%; -unity-background-scale-mode: scale-and-crop; display: none; align-items: stretch; position: absolute;">
+                    <ui:VisualElement style="width: 1304px; height: 2528px; background-image: resource(&apos;UI/pipScrollview/Vector (2)&apos;); -unity-background-scale-mode: scale-and-crop; left: auto;" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

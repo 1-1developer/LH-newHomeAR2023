@@ -10,13 +10,20 @@ public class ARTouchManger : MonoBehaviour
 {
     public UIController uIController;
     public GameObject touchedObj;
+    public Text Debugtxt;
+
     RaycastHit hit;
     Pointer[] pointers;
     Pointer pointer;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         pointers = FindObjectsOfType<Pointer>();
+    }
+    private void Update()
+    {
+        PointerSet(uIController.GetID());
+        PopUpObjectByTouch();
     }
     private void PopUpObjectByTouch()
     {
@@ -32,18 +39,35 @@ public class ARTouchManger : MonoBehaviour
                 if (hit.transform.gameObject)
                 {
                     touchedObj = hit.transform.gameObject;
-                    touchedObj.transform.GetChild(0).GetComponent<MeshRenderer>().material.SetColor("_Color", Color.red);
-                    uIController.InPlanPannelAR();
-
+                    //touchedObj.transform.GetChild(0).GetComponent<MeshRenderer>().material.SetColor("Color", Color.red);       
+                    Debugtxt.text = $"터치 :{hit.transform.gameObject.name}";
                     try
                     {
                         pointer = touchedObj.GetComponent<Pointer>();
                     }
                     catch (System.Exception)
                     {
+                        Debugtxt.text = $"포인터 가져오기 실패";
                     }
-                    uIController.PickHighlight(uIController.buttons[pointer.HouseID]);
+                    //uIController.PickHighlight(uIController.buttons[pointer.HouseID]);
+                    if (pointer)
+                    {
+                        if ((pointer.HouseID == uIController.GetID()) && pointer.isSelected)
+                        {
+                            pointer.ispicked = true;
+                            uIController.InPlanPannelAR(pointer.HouseID);
+                        }
+                    }
+                    else
+                    {
+                        Debugtxt.text = $"포인터없음";
+                    }
                 }
+ 
+            }
+            else
+            {
+                Debugtxt.text = $"ray x";
             }
 
         }
@@ -51,15 +75,28 @@ public class ARTouchManger : MonoBehaviour
         {
             if (touchedObj)
             {
-                touchedObj.transform.GetChild(0).GetComponent<MeshRenderer>().material.SetColor("_Color", Color.white);
+                //touchedObj.transform.GetChild(0).GetComponent<MeshRenderer>().material.SetColor("Color", Color.white);
+            }
+        }
+    }
+    public void PointerSet(int id)
+    {
+        foreach (Pointer pt in pointers)
+        {
+            if(pt.HouseID == id)
+            {
+                pt.isSelected = true;
+            }
+            else
+            {
+                pt.isSelected = false;
             }
         }
     }
 
-
     private void UILookAt()
     {
-
+        
         for (int i = 0; i < pointers.Length; i++)
         {
             //pointers[i].transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
@@ -99,9 +136,5 @@ public class ARTouchManger : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        PopUpObjectByTouch();
-        //UILookAt();
-    }
+
 }

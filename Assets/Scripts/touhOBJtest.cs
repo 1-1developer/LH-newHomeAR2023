@@ -30,7 +30,6 @@ public class touhOBJtest : MonoBehaviour
                 {
                     touchedObj = hit.transform.gameObject;
                     touchedObj.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", Color.green);
-                    uIController.InPlanPannelAR();
 
                     try
                     {
@@ -39,7 +38,9 @@ public class touhOBJtest : MonoBehaviour
                     catch (System.Exception)
                     {
                     }
-                    uIController.PickHighlight(uIController.buttons[pointer.HouseID]);
+                    uIController.InPlanPannelAR(pointer.HouseID);
+
+                    //uIController.PickHighlight(uIController.buttons[pointer.HouseID]);
                 }
             }
             

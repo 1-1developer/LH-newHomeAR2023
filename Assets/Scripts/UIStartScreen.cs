@@ -13,19 +13,17 @@ public class UIStartScreen : UIController
     //private VisualElement _s2;
     //private VisualElement _s3;
     //private VisualElement _s4;
-    private VisualElement s_root; // 시작 루핑영상 루트
 
     private Button _startButton;
 
     List<VisualElement> _loops = new List<VisualElement>();
-    int count = 0;
+    int count = 1;
     // Start is called before the first frame update
 
     protected override void SetVisualElements()
     {
         base.SetVisualElements();
 
-        s_root= m_root.Q<VisualElement>("StartScreen");
         _startButton = m_root.Q<Button>("Button_Start");
 
         _startButton.RegisterCallback<ClickEvent>(OnStartButtonClicked);
@@ -47,6 +45,7 @@ public class UIStartScreen : UIController
 
     private void OnStartButtonClicked(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         // _Onboarding.style.display = DisplayStyle.Flex;
         s_root.style.display = DisplayStyle.None;
         count = 0;
@@ -68,24 +67,24 @@ public class UIStartScreen : UIController
     {
         if(count == 0)
         {
-            _loops[1].style.display = DisplayStyle.None;
-            _loops[2].style.display = DisplayStyle.None;
-            _loops[3].style.display = DisplayStyle.None;
+            _loops[3].AddToClassList("loopScreen-0");
             count++;
         }
         else if(count == 1)
         {
-            _loops[1].style.display = DisplayStyle.Flex;
+            _loops[1].RemoveFromClassList("loopScreen-0");
             count++;
         }
         else if (count == 2)
         {
-            _loops[2].style.display = DisplayStyle.Flex;
+            _loops[1].AddToClassList("loopScreen-0");
+            _loops[2].RemoveFromClassList("loopScreen-0");
             count++;
         }
         else if (count == 3)
         {
-            _loops[3].style.display = DisplayStyle.Flex;
+            _loops[2].AddToClassList("loopScreen-0");
+            _loops[3].RemoveFromClassList("loopScreen-0");
             count++;
         }
 

@@ -1,8 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="menu" src="project://database/Assets/UI%20Toolkit/menu.uxml?fileID=9197481963319205126&amp;guid=6ab3c9e9552aa7149ac14b3c460ef71b&amp;type=3#menu" />
     <ui:Template name="ImageScreen" src="project://database/Assets/UI%20Toolkit/ImageScreen.uxml?fileID=9197481963319205126&amp;guid=fdd861ab796e2434b9fa69447d1f1cd4&amp;type=3#ImageScreen" />
+    <ui:Template name="PopScreen" src="project://database/Assets/UI%20Toolkit/PopScreen.uxml?fileID=9197481963319205126&amp;guid=d10144ae7fab5e34a95cc1829a7f51dc&amp;type=3#PopScreen" />
     <ui:Template name="StartScreen" src="project://database/Assets/UI%20Toolkit/StartScreen.uxml?fileID=9197481963319205126&amp;guid=c4486197ac5fa7b4b8a5f3aa2b26e74c&amp;type=3#StartScreen" />
+    <ui:Template name="ImageScreen_o" src="project://database/Assets/UI%20Toolkit/ImageScreen_o.uxml?fileID=9197481963319205126&amp;guid=b99e04daad4db664ab46d3396f1a0ac5&amp;type=3#ImageScreen_o" />
+    <ui:Template name="SmartDetail" src="project://database/Assets/UI%20Toolkit/SmartDetail.uxml?fileID=9197481963319205126&amp;guid=68cf132b4e1f70b409248c0c2b514dcb&amp;type=3#SmartDetail" />
     <Style src="project://database/Assets/Resources/OnboardingButtonStyle.uss?fileID=7433441132597879392&amp;guid=1b0747e4727fcec4d8f80bd5fed81975&amp;type=3#OnboardingButtonStyle" />
+    <Style src="project://database/Assets/UI%20Toolkit/loopStyle.uss?fileID=7433441132597879392&amp;guid=fa55470fb90a3584ab0a15df3d04df6c&amp;type=3#loopStyle" />
     <ui:VisualElement name="Top_bar" class="Top_bar">
         <ui:GroupBox name="Top_TextGroup" style="flex-direction: row; align-items: center; position: relative; display: flex; width: 100%; height: 100%;">
             <ui:VisualElement style="opacity: 1; display: flex; width: 710px; height: 178px; position: absolute; background-image: resource(&apos;UI/02main/newHome_249_185&apos;); -unity-background-scale-mode: scale-to-fit; left: 60px; top: 0;" />
@@ -12,7 +16,7 @@
         <ui:Button display-tooltip-when-elided="true" name="Button_on_viewmap" class="Button-Onboard" style="left: 1724px; width: 290px; height: 290px; top: 605px; position: absolute;">
             <ui:VisualElement style="height: 86px; width: 122px; background-image: resource(&apos;UI/02main/vector_pers_249_186&apos;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 0; opacity: 1;" />
         </ui:Button>
-        <ui:VisualElement style="position: absolute; width: 108px; height: 64px; background-image: resource(&apos;UI/02onboarding_02/txt_perspec&apos;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 0; bottom: 500px; left: auto; right: 464px;" />
+        <ui:VisualElement style="position: absolute; width: 108px; height: 64px; background-image: resource(&apos;UI/02main/Vector_249_95&apos;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 0; bottom: 500px; left: auto; right: 464px;" />
         <ui:VisualElement name="button_space" style="position: absolute; width: 902px; height: 1022px; top: 299px; left: 742px;">
             <ui:VisualElement style="width: 100%; height: 50%; flex-direction: row; justify-content: space-between; align-items: flex-start; padding-left: 7px; padding-right: 7px; padding-top: 7px; padding-bottom: 7px;">
                 <ui:VisualElement style="position: absolute; width: 140px; height: 78px; background-image: resource(&apos;UI/02main/Vector_249_86&apos;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 0; bottom: 54px; left: 123px;" />
@@ -25,18 +29,18 @@
                 </ui:Button>
             </ui:VisualElement>
             <ui:VisualElement style="width: 100%; height: 50%; padding-left: 7px; padding-right: 7px; padding-top: 13px; padding-bottom: 7px; flex-direction: row; justify-content: space-between; align-items: flex-start;">
-                <ui:Button display-tooltip-when-elided="true" name="Button_on04" class="Button-Onboard">
+                <ui:Button display-tooltip-when-elided="true" name="Button_on02" class="Button-Onboard">
                     <ui:VisualElement style="height: 160px; width: 184px; background-image: resource(&apos;UI/02main/Vector_smart_249_85&apos;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 0;" />
                 </ui:Button>
-                <ui:Button display-tooltip-when-elided="true" name="Button_on02" class="Button-Onboard">
+                <ui:Button display-tooltip-when-elided="true" name="Button_on04" class="Button-Onboard">
                     <ui:VisualElement style="height: 180px; width: 198px; background-image: resource(&apos;UI/02main/Vector_work_249_93&apos;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 0;" />
                 </ui:Button>
                 <ui:VisualElement style="position: absolute; width: 140px; height: 78px; background-image: resource(&apos;UI/02main/Vector_249_90&apos;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 0; bottom: 58px; left: 637px; font-size: 15px;" />
                 <ui:VisualElement style="position: absolute; width: 140px; height: 78px; background-image: resource(&apos;UI/02main/Vector_249_82&apos;); -unity-background-scale-mode: scale-to-fit; flex-shrink: 0; bottom: 58px; left: 123px;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement style="position: absolute; height: 50px; width: 700px; background-image: resource(&apos;UI/02main/text01_249_77&apos;); -unity-background-scale-mode: scale-to-fit; top: 138px; left: 844px;" />
-        <ui:VisualElement name="LH_logo" style="position: absolute; width: 293px; height: 103px; top: auto; left: 29px; bottom: 33px; background-image: resource(&apos;UI/02main/LH_249_94&apos;); -unity-background-scale-mode: scale-to-fit;" />
+        <ui:VisualElement style="position: absolute; height: 50px; width: 700px; background-image: resource(&apos;UI/02main/Vector (3)&apos;); -unity-background-scale-mode: scale-to-fit; top: 138px; left: 844px;" />
+        <ui:VisualElement name="LH_logo" style="position: absolute; width: 293px; height: 103px; top: auto; left: 29px; bottom: 33px; background-image: resource(&apos;UI/02main/LH_logo&apos;); -unity-background-scale-mode: scale-to-fit;" />
     </ui:VisualElement>
     <ui:VisualElement name="House_Plan1" style="width: 100%; position: absolute; height: 100%; align-items: flex-end; display: none; visibility: visible; top: auto;">
         <ui:VisualElement name="Top_bar_space" class="Top_bar">
@@ -52,11 +56,11 @@
                 <ui:Button display-tooltip-when-elided="true" style="position: none; top: 408px; left: 469px; border-top-left-radius: 50px; border-bottom-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; width: 50px; height: 50px; background-color: rgb(255, 126, 126);" />
             </ui:VisualElement>
             <ui:VisualElement name="OptionPannel" style="position: absolute; bottom: 419px; right: 1768px; height: 588px; width: 589px;">
-                <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: resource(&apos;UI/03ARUI_Elements/Rectangle 2_5_121&apos;); width: 100%;" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: none; width: 100%;" />
                 <ui:GroupBox style="width: 100%; height: 10%; flex-direction: row; justify-content: space-around; align-items: center; flex-shrink: 1; padding-right: 0; padding-left: 0; margin-left: 0; margin-right: 0;">
-                    <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: resource(&apos;UI/03ARUI_Elements/Rectangle 2_5_121&apos;); width: 100%; height: 100%; flex-shrink: 1;" />
-                    <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: resource(&apos;UI/03ARUI_Elements/Rectangle 2_5_121&apos;); width: 100%; height: 100%; flex-shrink: 1;" />
-                    <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: resource(&apos;UI/03ARUI_Elements/Rectangle 2_5_121&apos;); width: 100%; height: 100%; flex-shrink: 1;" />
+                    <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: none; width: 100%; height: 100%; flex-shrink: 1;" />
+                    <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: none; width: 100%; height: 100%; flex-shrink: 1;" />
+                    <ui:Button text="Button" display-tooltip-when-elided="true" style="background-image: none; width: 100%; height: 100%; flex-shrink: 1;" />
                 </ui:GroupBox>
                 <ui:VisualElement style="width: 100%; height: 100%; background-image: resource(&apos;UI/04HousePlan/mockup3d 1_21_338&apos;); background-color: rgb(115, 115, 115);" />
             </ui:VisualElement>
@@ -64,6 +68,9 @@
     </ui:VisualElement>
     <ui:Instance template="menu" name="menu" picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; right: 0; bottom: 0; display: none;" />
     <ui:Instance template="ImageScreen" name="ImageScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />
+    <ui:Instance template="PopScreen" name="PopScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />
     <ui:Instance template="StartScreen" name="StartScreen" style="position: absolute; width: 100%; height: 100%; display: flex;" />
     <ui:VisualElement picking-mode="Ignore" name="mockup" style="position: absolute; width: 100%; height: 100%; background-image: resource(&apos;UI/mockup/main&apos;); display: none; opacity: 0.38;" />
+    <ui:Instance template="ImageScreen_o" name="ImageScreen_o" style="display: none; width: 100%; height: 100%; position: absolute;" />
+    <ui:Instance template="SmartDetail" name="SmartDetail" style="position: absolute; width: 100%; height: 100%; display: none;" />
 </ui:UXML>
