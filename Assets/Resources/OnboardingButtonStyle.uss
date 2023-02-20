@@ -259,7 +259,7 @@
 }
 
 .btext_pip--high {
-    -unity-background-image-tint-color: rgba(186, 37, 72, 255);
+    -unity-background-image-tint-color: rgb(186, 37, 72);
 }
 
 .Button_topBar {
@@ -279,8 +279,8 @@
 }
 
 .Button_pip:active {
-    -unity-background-image-tint-color: rgba(185, 185, 185, 255);
-    background-color: rgba(170, 94, 94, 255);
+    -unity-background-image-tint-color: rgb(185, 185, 185);
+    background-color: rgb(170, 94, 94);
 }
 
 .Button_next_last {
@@ -288,8 +288,6 @@
     height: 220px;
     width: 64px;
     top: 742px;
-    left: auto;
-    background-image: resource('UI/smart_detail/Vector (4)');
     align-items: center;
     justify-content: center;
     -unity-background-image-tint-color: rgb(186, 37, 72);
@@ -299,27 +297,12 @@
     border-right-width: 0;
     border-top-width: 0;
     border-bottom-width: 0;
-    right: 75px;
 }
 
 .Button_next_last:active {
-    -unity-background-image-tint-color: rgba(186, 37, 72, 255);
+    -unity-background-image-tint-color: rgb(250, 0, 194);
 }
 
 .Button_next_last--un {
-    position: absolute;
-    height: 220px;
-    width: 64px;
-    top: 742px;
-    left: 75px;
-    background-image: resource('UI/smart_detail/Vector_348_140');
-    align-items: center;
-    justify-content: center;
-    -unity-background-scale-mode: stretch-to-fill;
-    background-color: rgba(188, 188, 188, 0);
-    border-left-width: 0;
-    border-right-width: 0;
-    border-top-width: 0;
-    border-bottom-width: 0;
-    -unity-background-image-tint-color: rgba(214, 214, 214, 255);
+    -unity-background-image-tint-color: rgb(214, 214, 214);
 }

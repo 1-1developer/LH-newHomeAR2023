@@ -22,8 +22,8 @@
             <ui:VisualElement name="s_text05" style="position: absolute; width: 1091px; height: 207px; background-image: resource(&apos;UI/smart_detail/Group 78&apos;); top: 74%; -unity-background-scale-mode: scale-to-fit; left: auto; display: flex;" />
         </ui:VisualElement>
         <ui:VisualElement name="smart_toptext" style="position: absolute; width: 1178px; height: 201px; top: 180px; left: 148px; background-image: resource(&apos;UI/smart_detail/Group 72_348_192&apos;); -unity-background-scale-mode: scale-to-fit; display: flex;" />
-        <ui:Button display-tooltip-when-elided="true" name="Button_last" class="Button_next_last Button_next_last--un" />
-        <ui:Button display-tooltip-when-elided="true" name="Button_next" class="Button_next_last" />
     </ui:VisualElement>
     <ui:Button name="Button_Back_s" class="Button_Back_p" style="-unity-background-scale-mode: scale-to-fit; background-image: resource(&apos;UI/smart_detail/Group 71_348_191&apos;); height: 86px; top: 40px; left: 15px; width: 191px;" />
+    <ui:Button display-tooltip-when-elided="true" name="Button_next" class="Button_next_last" style="background-image: resource(&apos;UI/smart_detail/Vector (4)&apos;); right: 75px;" />
+    <ui:Button display-tooltip-when-elided="true" name="Button_last" class="Button_next_last" style="right: auto; left: 75px; background-image: resource(&apos;UI/smart_detail/Vector_348_140&apos;);" />
 </ui:UXML>
