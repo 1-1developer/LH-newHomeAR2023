@@ -73,7 +73,10 @@ public class ARImageTracker : MonoBehaviour
         }
 
     }
-
+    public GameObject GetSpwan(string name)
+    {
+        return spawnedObjects[name].gameObject;
+    }
     void Start()
     {
 
