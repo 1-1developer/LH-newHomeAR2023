@@ -21,7 +21,6 @@ public class OnScreenObjectManager : MonoBehaviour
     public void NothingOn()
     {
         ARok = false;
-        //maker.SetActive(false);
         for (int i = 0; i < Houses.Length; i++)
         {
             Houses[i].SetActive(false);
@@ -31,7 +30,6 @@ public class OnScreenObjectManager : MonoBehaviour
     public void OnMaker()
     {
         ARok = true;
-        //maker.SetActive(true);
         for (int i = 0; i < Houses.Length; i++)
         {
             Houses[i].SetActive(false);
@@ -41,7 +39,6 @@ public class OnScreenObjectManager : MonoBehaviour
     public void OnHouse(int HouseID)
     {
         ARok = false;
-       // Houses[HouseID].SetActive(true);
-        //maker.SetActive(false);
+        Houses[HouseID].SetActive(true);
     }
 }

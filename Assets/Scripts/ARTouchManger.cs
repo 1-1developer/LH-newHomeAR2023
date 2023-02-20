@@ -11,14 +11,18 @@ public class ARTouchManger : MonoBehaviour
     public UIController uIController;
     public GameObject touchedObj;
     public Text Debugtxt;
+    public ARImageTracker _ARImageTracker;
 
     RaycastHit hit;
-    Pointer[] pointers;
+    Pointer[] pointers = new Pointer[4];
     Pointer pointer;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        pointers = FindObjectsOfType<Pointer>();
+        pointers[0] = _ARImageTracker.GetSpwan("pointer_housePlan").GetComponent<Pointer>();
+        pointers[1] = _ARImageTracker.GetSpwan("pointer_outside").GetComponent<Pointer>();
+        pointers[2] = _ARImageTracker.GetSpwan("pointer_smart").GetComponent<Pointer>();
+        pointers[3] = _ARImageTracker.GetSpwan("pointer_quality").GetComponent<Pointer>();
     }
     private void Update()
     {

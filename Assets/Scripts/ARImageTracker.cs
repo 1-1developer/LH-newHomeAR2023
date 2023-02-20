@@ -23,7 +23,7 @@ public class ARImageTracker : MonoBehaviour
 
         foreach (GameObject obj in _markerPointers)
         {
-            GameObject newObject = Instantiate(obj);
+            GameObject newObject = Instantiate(obj,Vector3.zero,Quaternion.identity);
             newObject.name = obj.name;
             newObject.SetActive(false);
 
