@@ -36,11 +36,8 @@ public class UIController : MonoBehaviour
     const string TopTextGroup = "Top_TextGroup";
 
     const string BackButtonP = "Button_Back_p";
-    const string HousePlan = "House_Plan1";
+    const string HousePlan = "House";
 
-    const string TopButton_city = "topButton_city";
-    const string TopButton_scale = "topButton_scale";
-    const string TopButton_public = "topButton_public";
 
     //메인버튼 아이디
     int ID;
@@ -78,10 +75,7 @@ public class UIController : MonoBehaviour
 
     protected Button _homeButton;
     private Button _closeButton;
-    //top bar 버튼
-    private Button _topButton_city;
-    private Button _topButton_scale;
-    private Button _topButton_public;
+
 
     //private Button[] _HouseSelectButton;
     public Button _HouseSelectedButton;
@@ -120,6 +114,8 @@ public class UIController : MonoBehaviour
         s_root = m_root.Q<VisualElement>("StartScreen");
         pip_root = m_root.Q<VisualElement>(PopScreen);
         smart_root = m_root.Q<VisualElement>("SmartDetail");
+        _Onboarding = m_root.Q<VisualElement>(Onboarding);
+
     }
     protected void Start()
     {
@@ -135,7 +131,6 @@ public class UIController : MonoBehaviour
 
 
         _UIContainer = ar_root.Q<VisualElement>(UIContainer);
-        _Onboarding = m_root.Q<VisualElement>(Onboarding);
         _HousePlan = m_root.Q<VisualElement>(HousePlan);
 
         //온보딩 화면 버튼
@@ -148,10 +143,7 @@ public class UIController : MonoBehaviour
 
 
         //-------------ar트랙화면
-        //상단바버튼
-        _topButton_city = m_root.Q<Button>(TopButton_city);
-        _topButton_scale = m_root.Q<Button>(TopButton_scale);
-        _topButton_public = m_root.Q<Button>(TopButton_public);
+
 
         //홈버튼
         _homeButton = m_root.Q<Button>(HomeButton);
@@ -196,10 +188,7 @@ public class UIController : MonoBehaviour
         _homeButton.RegisterCallback<ClickEvent>(OnHomeButtonClicked);
         _closeButton.RegisterCallback<ClickEvent>(OnCloseButtonClicked);
         _BackButtonP.RegisterCallback<ClickEvent>(OnBackButtonPClicked);
-        //상단바
-        _topButton_city.RegisterCallback<ClickEvent>(OnTopButtonClicked_C);
-        _topButton_scale.RegisterCallback<ClickEvent>(OnTopButtonClicked_C);
-        _topButton_public.RegisterCallback<ClickEvent>(OnTopButtonClicked_C);
+
 
 
         //for (int i = 0; i < 5; i++)
@@ -230,7 +219,7 @@ public class UIController : MonoBehaviour
 
     private void OnHomeButtonClicked(ClickEvent evt) // 홈버튼-홈으로 돌아가기
     {
-        AudioManager.PlayDefaultButtonSound();
+        //AudioManager.PlayDefaultButtonSound();
         //시트그룹
         ar_root.style.display = DisplayStyle.None;
 
@@ -250,27 +239,34 @@ public class UIController : MonoBehaviour
 
     private void OnBoardButtonClicked(ClickEvent evt) // 주택평면
     {
+       // AudioManager.PlayDefaultButtonSound();
+
         CloseMain(_AR_House);
         ID = 0;
     }
     private void OnBoardButtonClicked_out(ClickEvent evt) // 외부공간
     {
+        //AudioManager.PlayDefaultButtonSound();
+
         CloseMain(_AR_Outside);
         ID = 1;
     }
     private void OnBoardButtonClicked_smart(ClickEvent evt) // 스마트홈
     {
+        //AudioManager.PlayDefaultButtonSound();
+
         CloseMain(_AR_Smarthome);
         ID = 2;
     }
     private void OnBoardButtonClicked_quality(ClickEvent evt) // 품질혁신
     {
+        //AudioManager.PlayDefaultButtonSound();
+
         CloseMain(_AR_Quality);
         ID = 3;
     }
     void CloseMain(VisualElement visual)
     {
-        AudioManager.PlayDefaultButtonSound();
         //시트 열기
         ar_root.style.display = DisplayStyle.Flex;
         visual.style.display = DisplayStyle.Flex;
@@ -288,18 +284,12 @@ public class UIController : MonoBehaviour
     }
     private void OnPersviewButtonClicked(ClickEvent evt)
     {
-        AudioManager.PlayDefaultButtonSound();
+        //AudioManager.PlayDefaultButtonSound();
         //시트 열기
         _perspective.style.display = DisplayStyle.Flex;
         _Onboarding.style.display = DisplayStyle.None;
     }
-    private void OnTopButtonClicked_C(ClickEvent evt) // 미리보는도시
-    {
-        AudioManager.PlayDefaultButtonSound();
 
-        pip_root.style.display = DisplayStyle.Flex;
-        _Onboarding.style.display = DisplayStyle.None;
-    }
 
     private void OnSideSheetOut(TransitionEndEvent evt)
     {
@@ -318,7 +308,7 @@ public class UIController : MonoBehaviour
     }
     private void OnCloseButtonClicked(ClickEvent evt) //사이트시트 닫기
     {
-        AudioManager.PlayDefaultButtonSound();
+        //AudioManager.PlayDefaultButtonSound();
         closeSidesheet();
     }
 
@@ -337,7 +327,7 @@ public class UIController : MonoBehaviour
 
     private void OnBackButtonPClicked(ClickEvent evt)  //투시도 뒤로가기
     {
-        AudioManager.PlayDefaultButtonSound();
+        //AudioManager.PlayDefaultButtonSound();
         _Onboarding.style.display = DisplayStyle.Flex;
         _perspective.style.display = DisplayStyle.None;
     }
@@ -346,11 +336,16 @@ public class UIController : MonoBehaviour
     public void GoHome() // 일정시간 후 홈으로 돌아가기 //수정필
     {
         //시트그룹
-        ar_root.style.display = DisplayStyle.None;
-        _AR_House.style.display = DisplayStyle.None;
-        _AR_Quality.style.display = DisplayStyle.None;
-        _AR_Outside.style.display = DisplayStyle.None;
-        _AR_Smarthome.style.display = DisplayStyle.None;
+        if(ar_root.style.display == DisplayStyle.Flex)
+            ar_root.style.display = DisplayStyle.None;
+        if (_AR_House.style.display == DisplayStyle.Flex)
+            _AR_House.style.display = DisplayStyle.None;
+        if (_AR_Quality.style.display == DisplayStyle.Flex)
+            _AR_Quality.style.display = DisplayStyle.None;
+        if (_AR_Outside.style.display == DisplayStyle.Flex)
+            _AR_Outside.style.display = DisplayStyle.None;
+        if (_AR_Smarthome.style.display == DisplayStyle.Flex)
+            _AR_Smarthome.style.display = DisplayStyle.None;
 
         _perspective.style.display = DisplayStyle.None;
 

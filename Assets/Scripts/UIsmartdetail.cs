@@ -140,9 +140,4 @@ public class UIsmartdetail : UIController
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log("cnt: "+count);
-    }
 }

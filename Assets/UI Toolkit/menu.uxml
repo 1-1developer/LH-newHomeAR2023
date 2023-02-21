@@ -18,7 +18,7 @@
                     </ui:Button>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="text_active_h" class="text_Point" style="background-image: resource(&apos;UI/03-2_houseplan/text02__h&apos;); display: flex;" />
+            <ui:VisualElement name="text_active_h" class="text_Point" style="background-image: resource(&apos;UI/03ARUI_Elements/t_h&apos;); display: flex;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="menu_outside" style="position: absolute; width: 100%; height: 100%; display: none;">
@@ -37,7 +37,7 @@
                     </ui:Button>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="text_active_out" class="text_Point" style="background-image: resource(&apos;UI/03-outside/text02__out&apos;); display: flex;" />
+            <ui:VisualElement name="text_active_out" class="text_Point" style="background-image: resource(&apos;UI/03ARUI_Elements/t_o&apos;); display: flex;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="menu_quality" style="position: absolute; width: 100%; height: 100%; display: none;">
@@ -56,7 +56,7 @@
                     </ui:Button>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="text_active_quality" class="text_Point" style="background-image: resource(&apos;UI/03-quality/text_02qq&apos;); display: flex;" />
+            <ui:VisualElement name="text_active_quality" class="text_Point" style="background-image: resource(&apos;UI/03ARUI_Elements/t_q&apos;); display: flex;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="mockup" picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%; background-image: resource(&apos;UI/mockup/mockup_ar1&apos;); opacity: 0.42; display: none; top: 0; left: 0;">
@@ -82,7 +82,7 @@
                     </ui:Button>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="text_active_smart" class="text_Point" style="display: flex; background-image: resource(&apos;UI/03-smart/text02smart&apos;);" />
+            <ui:VisualElement name="text_active_smart" class="text_Point" style="display: flex; background-image: resource(&apos;UI/03ARUI_Elements/t_s&apos;);" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:Button display-tooltip-when-elided="true" name="ButtonHOME" class="Button_Home Button_Home--in" />

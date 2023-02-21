@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.manakhovn.figma_to_unity_importer": "file:/Users/gim-yongmin/Desktop/FigmaToUnityImporter-main/Assets/FigmaImporter",
+    "com.manakhovn.figma_to_unity_importer": "file:C:/Users/user/Desktop/FigmaToUnityImporter-main/FigmaToUnityImporter-main/Assets/FigmaImporter",
     "com.unity.collab-proxy": "1.17.7",
     "com.unity.feature.ar": "1.0.0",
     "com.unity.feature.development": "1.0.1",

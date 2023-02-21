@@ -10,6 +10,8 @@ public class UIhouse : UIController
     public Sprite house84;
 
     private Button _BackButton;
+
+    private Label _plantext;
     int buttonNum = 3; // ar sidebar버튼 개수
 
     public List<Button> buttons = new List<Button>();
@@ -24,6 +26,7 @@ public class UIhouse : UIController
 
         _BackButton = m_root.Q<Button>(BackButton);
         _houseplanpic = m_root.Q<VisualElement>("HousePlanImage");
+        _plantext = m_root.Q<Label>("planeTxt");
 
         SetupSelectButton();
         _BackButton.RegisterCallback<ClickEvent>(OnBackButtonClicked);
@@ -49,6 +52,7 @@ public class UIhouse : UIController
         _BackButton.style.display = DisplayStyle.Flex;
         _HousePlan.style.display = DisplayStyle.Flex;
         ar_root.style.display = DisplayStyle.None;
+        _plantext.text = "46m²";
         _houseplanpic.style.backgroundImage = house46.texture;
         //집 오브젝트
         onScreenObjectManager.OnHouse(0);//트래커 id가져오기
@@ -61,6 +65,7 @@ public class UIhouse : UIController
         _HousePlan.style.display = DisplayStyle.Flex;
         ar_root.style.display = DisplayStyle.None;
         _houseplanpic.style.backgroundImage = house59.texture;
+        _plantext.text = "59m²";
 
 
         //집 오브젝트
@@ -73,8 +78,8 @@ public class UIhouse : UIController
         _BackButton.style.display = DisplayStyle.Flex;
         _HousePlan.style.display = DisplayStyle.Flex;
         ar_root.style.display = DisplayStyle.None;
+        _plantext.text = "84m²";
         _houseplanpic.style.backgroundImage = house84.texture;
-
 
         //집 오브젝트
         onScreenObjectManager.OnHouse(2);//트래커 id가져오기

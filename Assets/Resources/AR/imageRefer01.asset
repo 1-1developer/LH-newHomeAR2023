@@ -41,12 +41,12 @@ MonoBehaviour:
       m_GuidLow: 4714223483656957460
       m_GuidHigh: 12726570153275548052
     m_SerializedTextureGuid:
-      m_GuidLow: 16101673368809119847
-      m_GuidHigh: 7259323166533983819
-    m_Size: {x: 0.05, y: 0.040611353}
+      m_GuidLow: 13259851288479280975
+      m_GuidHigh: 7996955766265758395
+    m_Size: {x: 0.05, y: 0.04702381}
     m_SpecifySize: 1
     m_Name: pointer_smart
-    m_Texture: {fileID: 2800000, guid: 5d3c2067a29edf744b9e055bf54bbe64, type: 3}
+    m_Texture: {fileID: 2800000, guid: 40502f4f747eb804bb42c854e6e4fa6e, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 4626298893168286482
       m_GuidHigh: 17244219576136157096

@@ -1,4 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="House" src="project://database/Assets/UI%20Toolkit/House.uxml?fileID=9197481963319205126&amp;guid=e356d9e23967f144686400257234145a&amp;type=3#House" />
     <ui:Template name="menu" src="project://database/Assets/UI%20Toolkit/menu.uxml?fileID=9197481963319205126&amp;guid=6ab3c9e9552aa7149ac14b3c460ef71b&amp;type=3#menu" />
     <ui:Template name="ImageScreen" src="project://database/Assets/UI%20Toolkit/ImageScreen.uxml?fileID=9197481963319205126&amp;guid=fdd861ab796e2434b9fa69447d1f1cd4&amp;type=3#ImageScreen" />
     <ui:Template name="PopScreen" src="project://database/Assets/UI%20Toolkit/PopScreen.uxml?fileID=9197481963319205126&amp;guid=d10144ae7fab5e34a95cc1829a7f51dc&amp;type=3#PopScreen" />
@@ -42,16 +43,7 @@
         <ui:VisualElement style="position: absolute; height: 50px; width: 700px; background-image: resource(&apos;UI/02main/Vector (3)&apos;); -unity-background-scale-mode: scale-to-fit; top: 138px; left: 844px;" />
         <ui:VisualElement name="LH_logo" style="position: absolute; width: 293px; height: 103px; top: auto; left: 29px; bottom: 33px; background-image: resource(&apos;UI/02main/LH_logo&apos;); -unity-background-scale-mode: scale-to-fit;" />
     </ui:VisualElement>
-    <ui:VisualElement name="House_Plan1" style="width: 100%; position: absolute; height: 100%; align-items: flex-end; display: none; visibility: visible; top: auto;">
-        <ui:VisualElement name="Top_bar_space" class="Top_bar">
-            <ui:Button text="뒤로" display-tooltip-when-elided="true" name="BackButton" class="Button-Back">
-                <ui:VisualElement style="align-items: flex-start; flex-direction: row; width: 20px; height: 50px; background-image: resource(&apos;UI/04HousePlan/Vector_29_682&apos;); left: 119px;" />
-            </ui:Button>
-        </ui:VisualElement>
-        <ui:VisualElement name="Plan_Area" picking-mode="Ignore" style="width: 100%; height: 100%; align-items: flex-end; flex-direction: row-reverse; display: flex; justify-content: space-between; visibility: visible;">
-            <ui:VisualElement name="HousePlanImage" style="width: 600px; height: 600px; background-image: resource(&apos;UI/04HousePlan/59&apos;); -unity-background-scale-mode: scale-to-fit;" />
-        </ui:VisualElement>
-    </ui:VisualElement>
+    <ui:Instance template="House" name="House" style="display: none; position: absolute; width: 100%; height: 100%;" />
     <ui:Instance template="menu" name="menu" picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; right: 0; bottom: 0; display: none;" />
     <ui:Instance template="ImageScreen" name="ImageScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />
     <ui:Instance template="PopScreen" name="PopScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />

@@ -104,8 +104,8 @@
 
 .Button-Back {
     position: absolute;
-    width: 30%;
-    height: 130%;
+    width: 9%;
+    height: 56%;
     -unity-font: resource('UI/Fonts/AppleSDGothicNeoL');
     font-size: 70px;
     background-color: rgba(0, 0, 0, 0);
@@ -117,6 +117,9 @@
     border-top-width: 0;
     border-bottom-width: 0;
     display: flex;
+    background-image: resource('UI/04HousePlan/Group 12');
+    -unity-background-scale-mode: scale-to-fit;
+    top: 38%;
 }
 
 .Button-Back:active {
@@ -214,8 +217,8 @@
 .text_Point {
     position: absolute;
     width: 1054px;
-    height: 95px;
-    top: 1252px;
+    height: 35px;
+    top: 1282px;
     background-image: resource('UI/03ARUI_Elements/text02_249_262');
     -unity-background-scale-mode: scale-to-fit;
     left: 668px;
@@ -230,7 +233,7 @@
 
 .Button_pip {
     height: 120px;
-    width: 250px;
+    width: 450px;
     background-color: rgba(0, 0, 0, 0);
     border-left-width: 0;
     border-right-width: 0;
@@ -245,6 +248,7 @@
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
+    flex-shrink: 1;
 }
 
 .Button_pip--high {
@@ -305,4 +309,17 @@
 
 .Button_next_last--un {
     -unity-background-image-tint-color: rgb(214, 214, 214);
+}
+
+.pop_window {
+    width: 1304px;
+    height: 1220px;
+    flex-direction: column;
+    display: flex;
+    transition-duration: 0.5s;
+}
+
+.pop_window--out {
+    translate: 0 120%;
+    transition-duration: 1s;
 }
