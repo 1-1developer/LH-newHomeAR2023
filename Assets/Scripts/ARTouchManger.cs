@@ -19,10 +19,10 @@ public class ARTouchManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pointers[0] = _ARImageTracker.GetSpwan("pointer_housePlan").GetComponent<Pointer>();
-        pointers[1] = _ARImageTracker.GetSpwan("pointer_outside").GetComponent<Pointer>();
-        pointers[2] = _ARImageTracker.GetSpwan("pointer_smart").GetComponent<Pointer>();
-        pointers[3] = _ARImageTracker.GetSpwan("pointer_quality").GetComponent<Pointer>();
+        pointers[0] = _ARImageTracker.GetSpwan("hp").transform.GetChild(1).GetComponent<Pointer>();
+        pointers[1] = _ARImageTracker.GetSpwan("oq").transform.GetChild(1).GetComponent<Pointer>();
+        pointers[2] = _ARImageTracker.GetSpwan("hp").transform.GetChild(0).GetComponent<Pointer>();
+        pointers[3] = _ARImageTracker.GetSpwan("oq").transform.GetChild(0).GetComponent<Pointer>();
     }
     private void Update()
     {

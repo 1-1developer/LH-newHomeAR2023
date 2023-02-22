@@ -26,7 +26,7 @@ public class UIhouse : UIController
 
         _BackButton = m_root.Q<Button>(BackButton);
         _houseplanpic = m_root.Q<VisualElement>("HousePlanImage");
-        _plantext = m_root.Q<Label>("planeTxt");
+        _plantext = m_root.Q<Label>("planTxt");
 
         SetupSelectButton();
         _BackButton.RegisterCallback<ClickEvent>(OnBackButtonClicked);
@@ -52,10 +52,11 @@ public class UIhouse : UIController
         _BackButton.style.display = DisplayStyle.Flex;
         _HousePlan.style.display = DisplayStyle.Flex;
         ar_root.style.display = DisplayStyle.None;
-        _plantext.text = "46m²";
         _houseplanpic.style.backgroundImage = house46.texture;
         //집 오브젝트
         onScreenObjectManager.OnHouse(0);//트래커 id가져오기
+        _plantext.text = "46m²";
+
     }
     private void OnHouseButtonClicked1(ClickEvent evt)  //집내부 관람 화면
     {
@@ -65,11 +66,12 @@ public class UIhouse : UIController
         _HousePlan.style.display = DisplayStyle.Flex;
         ar_root.style.display = DisplayStyle.None;
         _houseplanpic.style.backgroundImage = house59.texture;
-        _plantext.text = "59m²";
 
 
         //집 오브젝트
         onScreenObjectManager.OnHouse(1);//트래커 id가져오기
+        _plantext.text = "59m²";
+
     }
     private void OnHouseButtonClicked2(ClickEvent evt)  //집내부 관람 화면
     {
@@ -78,11 +80,12 @@ public class UIhouse : UIController
         _BackButton.style.display = DisplayStyle.Flex;
         _HousePlan.style.display = DisplayStyle.Flex;
         ar_root.style.display = DisplayStyle.None;
-        _plantext.text = "84m²";
         _houseplanpic.style.backgroundImage = house84.texture;
 
         //집 오브젝트
         onScreenObjectManager.OnHouse(2);//트래커 id가져오기
+        _plantext.text = "84m²";
+
     }
 
     private void OnBackButtonClicked(ClickEvent evt)  //집내부 뒤로가기

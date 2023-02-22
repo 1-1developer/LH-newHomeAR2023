@@ -51,9 +51,9 @@ MonoBehaviour:
       m_GuidLow: 4626298893168286482
       m_GuidHigh: 17244219576136157096
     m_SerializedTextureGuid:
-      m_GuidLow: 4050076298657347986
-      m_GuidHigh: 8065580767195825642
-    m_Size: {x: 0.05, y: 0.06875}
+      m_GuidLow: 17641246589434456197
+      m_GuidHigh: 8039050195322954392
+    m_Size: {x: 0.05, y: 0.05419708}
     m_SpecifySize: 1
     m_Name: pointer_quality
-    m_Texture: {fileID: 2800000, guid: 76b33992c2ef3834ea05ee77f9b2ee6f, type: 3}
+    m_Texture: {fileID: 2800000, guid: 464fe8854c4ef4d29862c2578f71906f, type: 3}

@@ -7,9 +7,15 @@ public class OnScreenObjectManager : MonoBehaviour
     public bool ARok;
     public GameObject maker;
     public GameObject[] Houses;
+    public GameObject HouseRoot;
+
+    Vector3 scaleOrigin;
+    Quaternion rootRotorigin;
     // Start is called before the first frame update
     void Start()
     {
+        rootRotorigin = HouseRoot.transform.localRotation;
+        scaleOrigin = HouseRoot.transform.localScale;
         NothingOn();
     }
 
@@ -20,6 +26,9 @@ public class OnScreenObjectManager : MonoBehaviour
     }
     public void NothingOn()
     {
+        HouseRoot.transform.localRotation = rootRotorigin;
+        HouseRoot.transform.localScale = scaleOrigin;
+
         ARok = false;
         for (int i = 0; i < Houses.Length; i++)
         {
@@ -29,6 +38,10 @@ public class OnScreenObjectManager : MonoBehaviour
 
     public void OnMaker()
     {
+        HouseRoot.transform.localRotation = rootRotorigin;
+        HouseRoot.transform.localScale = scaleOrigin;
+
+
         ARok = true;
         for (int i = 0; i < Houses.Length; i++)
         {

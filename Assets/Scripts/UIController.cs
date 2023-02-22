@@ -115,6 +115,8 @@ public class UIController : MonoBehaviour
         pip_root = m_root.Q<VisualElement>(PopScreen);
         smart_root = m_root.Q<VisualElement>("SmartDetail");
         _Onboarding = m_root.Q<VisualElement>(Onboarding);
+        _HousePlan = m_root.Q<VisualElement>(HousePlan);
+
 
     }
     protected void Start()
@@ -131,7 +133,6 @@ public class UIController : MonoBehaviour
 
 
         _UIContainer = ar_root.Q<VisualElement>(UIContainer);
-        _HousePlan = m_root.Q<VisualElement>(HousePlan);
 
         //온보딩 화면 버튼
         _openButton1 = m_root.Q<Button>(OpenButton1);
