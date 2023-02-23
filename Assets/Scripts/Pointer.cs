@@ -33,9 +33,9 @@ public class Pointer : MonoBehaviour
         transform.LookAt(Camera.main.transform);
         if (this.isSelected)
         {
-            this.material.SetTexture("_BaseMap", red.texture);
+            //this.material.SetTexture("_BaseMap", red.texture);
             //this.rect.SetActive(true);
-            //rect.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", coloraa);
+            this.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", coloraa);
             /*
             if (this.ispicked)
             {

@@ -12,17 +12,26 @@ public class ARTouchManger : MonoBehaviour
     public GameObject touchedObj;
     public Text Debugtxt;
     public ARImageTracker _ARImageTracker;
+    public GameObject[] bulidings = new GameObject[4];
+
 
     RaycastHit hit;
+    
     Pointer[] pointers = new Pointer[4];
+    Material[] materials = new Material[4];
+
     Pointer pointer;
+    
     // Start is called before the first frame update
     void Start()
     {
-        pointers[0] = _ARImageTracker.GetSpwan("hp").transform.GetChild(1).GetComponent<Pointer>();
-        pointers[1] = _ARImageTracker.GetSpwan("oq").transform.GetChild(1).GetComponent<Pointer>();
-        pointers[2] = _ARImageTracker.GetSpwan("hp").transform.GetChild(0).GetComponent<Pointer>();
-        pointers[3] = _ARImageTracker.GetSpwan("oq").transform.GetChild(0).GetComponent<Pointer>();
+        for (int i = 0; i < 4; i++)
+        {
+            pointers[i] = bulidings[i].GetComponent<Pointer>();
+            materials[i] = bulidings[i].GetComponent<MeshRenderer>().material;
+        }
+       
+        //pointers[1] = _ARImageTracker.GetSpwan("oq").transform.GetChild(1).GetComponent<Pointer>();
     }
     private void Update()
     {
