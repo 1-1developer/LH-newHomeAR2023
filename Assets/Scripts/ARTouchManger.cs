@@ -25,12 +25,12 @@ public class ARTouchManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pointers = FindObjectsOfType<Pointer>();
-        //for (int i = 0; i < 4; i++)
-        //{
+        //pointers = FindObjectsOfType<Pointer>();
+        for (int i = 0; i < 4; i++)
+        {
         //    pointers[i] = bulidings[i].GetComponent<Pointer>();
         //    //materials[i] = bulidings[i].transform.GetChild(0).GetComponent<MeshRenderer>().material;
-        //}
+        }
        
         //pointers[1] = _ARImageTracker.GetSpwan("oq").transform.GetChild(1).GetComponent<Pointer>();
     }
