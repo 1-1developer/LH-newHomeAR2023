@@ -85,7 +85,7 @@
             <ui:VisualElement name="text_active_smart" class="text_Point" style="display: flex; background-image: resource(&apos;UI/03ARUI_Elements/t_s&apos;);" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:Button display-tooltip-when-elided="true" name="ButtonHOME" class="Button_Home Button_Home--in" />
+    <ui:Button display-tooltip-when-elided="true" name="ButtonHOME" class="Button_Home Button_Home--in" style="background-image: resource(&apos;UI/03ARUI_Elements/home_button&apos;); height: 171px; right: 2257px; width: 143px;" />
     <ui:VisualElement name="Top_bar_space" class="Top_bar" style="background-color: rgba(0, 0, 0, 0); opacity: 1; display: flex;">
         <ui:VisualElement name="topText_rg" style="position: absolute; width: 679px; height: 103px; left: auto; background-image: none; -unity-background-scale-mode: scale-to-fit; top: 45px; right: 74px; flex-direction: row; justify-content: space-between; align-items: center;">
             <ui:Button display-tooltip-when-elided="true" name="topButton_city" class="Button_topBar">

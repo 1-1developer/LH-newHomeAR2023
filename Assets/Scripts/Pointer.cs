@@ -23,7 +23,7 @@ public class Pointer : MonoBehaviour
     private void Awake()
     {
         this.transform.localScale = v_scale;
-        material = transform.GetChild(0).GetComponent<MeshRenderer>().material;
+        material = transform.GetComponent<MeshRenderer>().material;
         //rect = transform.GetChild(1).gameObject;
         //colororigin = rect.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         coloraa = coloralpha;
