@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1109005391483514425}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0.9, z: 0}
-  m_LocalScale: {x: 0.5, y: 1.5, z: 0.39896}
+  m_LocalScale: {x: 1, y: 1.2, z: 0.39896}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1109005392674966872}
@@ -144,8 +144,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.44273573, y: 1.6003343, z: 0.47115207}
-  m_Center: {x: -0.024702579, y: 0.63, z: 0.019402623}
+  m_Size: {x: 1.172194, y: 1.7099745, z: 0.47115204}
+  m_Center: {x: -0.051533148, y: 0.6848201, z: 0.019402625}
 --- !u!114 &8890988939729902135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,8 +161,8 @@ MonoBehaviour:
   HouseID: 3
   isSelected: 0
   ispicked: 0
-  _default: {fileID: 21300000, guid: 44fbd9add8a118c4d945193c9d645e04, type: 3}
-  red: {fileID: 21300000, guid: dbeee1ffc37a9c6438964d7ff9b84877, type: 3}
+  _default: {fileID: 21300000, guid: 358d08d780b5c264cb693a3905d53c45, type: 3}
+  red: {fileID: 21300000, guid: 83211177a1c70fe41b1b3e046de400d3, type: 3}
   pick: {fileID: 21300000, guid: 7387488f37c04aa47bb6fcc6653287ce, type: 3}
 --- !u!1 &4827090376447119668
 GameObject:

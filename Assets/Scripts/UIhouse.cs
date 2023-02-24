@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,14 +10,35 @@ public class UIhouse : UIController
     public Sprite house59;
     public Sprite house84;
 
+
+    const string BackButton = "BackButton";
+    const string DefaltButton = "house_default";
+    const string OptionButton = "house_option";
+
+
+    const string LH59 = "LH_59";
+    const string LH59_op = "LH_59_op";
+    const string LH84 = "LH_84";
+    const string LH84_op = "LH_84_op";
+    const string LH46 = "LH_46";
+    const string LH46_op = "LH_46_op";
+
+
+    const string m46 = "46m²";
+    const string m59 = "59m²";
+    const string m84 = "84m²";
+
+
+
     private Button _BackButton;
+    private Button _defaltButton;
+    private Button _optionButton;
 
     private Label _plantext;
     int buttonNum = 3; // ar sidebar버튼 개수
 
     public List<Button> buttons = new List<Button>();
 
-    const string BackButton = "BackButton";
 
     private VisualElement _houseplanpic;
 
@@ -25,16 +47,40 @@ public class UIhouse : UIController
         base.SetVisualElements();
 
         _BackButton = m_root.Q<Button>(BackButton);
+        _defaltButton = m_root.Q<Button>(DefaltButton);
+        _optionButton = m_root.Q<Button>(OptionButton);
         _houseplanpic = m_root.Q<VisualElement>("HousePlanImage");
         _plantext = m_root.Q<Label>("planTxt");
 
         SetupSelectButton();
         _BackButton.RegisterCallback<ClickEvent>(OnBackButtonClicked);
+        _defaltButton.RegisterCallback<ClickEvent>(OnDefaltButtonClicked);
+        _optionButton.RegisterCallback<ClickEvent>(OnOptionButtonClicked);
         buttons[0].RegisterCallback<ClickEvent>(OnHouseButtonClicked0);
         buttons[1].RegisterCallback<ClickEvent>(OnHouseButtonClicked1);
         buttons[2].RegisterCallback<ClickEvent>(OnHouseButtonClicked2);
 
         //집화면 단면도
+    }
+
+    private void OnDefaltButtonClicked(ClickEvent evt) //기본형
+    {
+        if(_plantext.text ==m46 )
+            onScreenObjectManager.OnHouse(LH46);//집모델띄우기
+        if (_plantext.text == m59)
+            onScreenObjectManager.OnHouse(LH59);
+        if (_plantext.text == m84)
+            onScreenObjectManager.OnHouse(LH84);
+    }
+
+    private void OnOptionButtonClicked(ClickEvent evt) //옵션형
+    {
+        if (_plantext.text == m46)
+            onScreenObjectManager.OnHouse(LH46_op);
+        if (_plantext.text == m59)
+            onScreenObjectManager.OnHouse(LH59_op);
+        if (_plantext.text == m84)
+            onScreenObjectManager.OnHouse(LH84_op);
     }
 
     void SetupSelectButton() //사이드바 버튼가져오기
@@ -54,8 +100,8 @@ public class UIhouse : UIController
         ar_root.style.display = DisplayStyle.None;
         _houseplanpic.style.backgroundImage = house46.texture;
         //집 오브젝트
-        onScreenObjectManager.OnHouse(0);//트래커 id가져오기
-        _plantext.text = "46m²";
+        onScreenObjectManager.OnHouse(LH46);//집모델띄우기
+        _plantext.text = m46;
 
     }
     private void OnHouseButtonClicked1(ClickEvent evt)  //집내부 관람 화면
@@ -69,8 +115,8 @@ public class UIhouse : UIController
 
 
         //집 오브젝트
-        onScreenObjectManager.OnHouse(1);//트래커 id가져오기
-        _plantext.text = "59m²";
+        onScreenObjectManager.OnHouse(LH84);//집모델띄우기
+        _plantext.text = m59;
 
     }
     private void OnHouseButtonClicked2(ClickEvent evt)  //집내부 관람 화면
@@ -83,8 +129,8 @@ public class UIhouse : UIController
         _houseplanpic.style.backgroundImage = house84.texture;
 
         //집 오브젝트
-        onScreenObjectManager.OnHouse(2);//트래커 id가져오기
-        _plantext.text = "84m²";
+        onScreenObjectManager.OnHouse(LH84);//집모델띄우기
+        _plantext.text = m84;
 
     }
 

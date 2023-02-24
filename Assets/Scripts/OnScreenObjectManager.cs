@@ -11,6 +11,8 @@ public class OnScreenObjectManager : MonoBehaviour
 
     Vector3 scaleOrigin;
     Quaternion rootRotorigin;
+
+    int index;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,9 +51,15 @@ public class OnScreenObjectManager : MonoBehaviour
         }
     }
 
-    public void OnHouse(int HouseID)
+    public void OnHouse(string housename)
     {
         ARok = false;
-        Houses[HouseID].SetActive(true);
+        foreach (GameObject h in Houses)
+        { 
+            if(h.gameObject.name == housename)
+                h.SetActive(true);
+            else
+                h.SetActive(false);
+        }
     }
 }

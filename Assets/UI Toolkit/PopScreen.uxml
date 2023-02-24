@@ -26,7 +26,7 @@
                     <ui:VisualElement style="width: 100%; height: 6090px; background-image: resource(&apos;UI/pipScrollview/Group_300_136&apos;); -unity-background-scale-mode: scale-and-crop; left: auto;" />
                 </ui:ScrollView>
                 <ui:ScrollView touch-scroll-type="Clamped" mode="Vertical" name="m_scroll2" horizontal-scroller-visibility="Hidden" style="width: 100%; height: 100%; -unity-background-scale-mode: scale-and-crop; display: none; align-items: stretch; position: absolute;">
-                    <ui:VisualElement style="width: 100%; height: 3636px; background-image: resource(&apos;UI/pipScrollview/Group (1)&apos;); -unity-background-scale-mode: scale-and-crop; left: auto; display: flex;" />
+                    <ui:VisualElement style="width: 100%; height: 3607px; background-image: resource(&apos;UI/pipScrollview/Group (2)&apos;); -unity-background-scale-mode: scale-and-crop; left: auto; display: flex;" />
                 </ui:ScrollView>
                 <ui:ScrollView touch-scroll-type="Clamped" mode="Vertical" name="m_scroll3" horizontal-scroller-visibility="Hidden" style="width: 100%; height: 100%; -unity-background-scale-mode: scale-and-crop; display: none; align-items: stretch; position: absolute;">
                     <ui:VisualElement style="width: 100%; height: 5038px; background-image: resource(&apos;UI/pipScrollview/Group 63 (1)&apos;); -unity-background-scale-mode: scale-and-crop; left: auto;" />
@@ -43,7 +43,7 @@
             <ui:VisualElement style="width: 100%; height: 100%; background-image: resource(&apos;UI/pipScrollview/Group 85_387_509&apos;); position: absolute; -unity-background-scale-mode: scale-to-fit;" />
             <ui:Button display-tooltip-when-elided="true" name="Button_x2" style="background-image: resource(&apos;UI/pipScrollview/button_x_305_379&apos;); -unity-background-scale-mode: scale-to-fit; background-color: rgba(188, 188, 188, 0); width: 56px; height: 56px; margin-bottom: 18px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
         </ui:VisualElement>
-        <ui:VisualElement name="pop_window3" style="width: 1814px; height: 1381px; flex-direction: column; position: absolute; display: flex;">
+        <ui:VisualElement name="pop_window3" style="width: 1814px; height: 1381px; flex-direction: column; position: absolute; display: none;">
             <ui:Button display-tooltip-when-elided="true" name="Button_x3" style="background-image: resource(&apos;UI/pipScrollview/button_x_305_379&apos;); -unity-background-scale-mode: scale-to-fit; background-color: rgba(188, 188, 188, 0); width: 56px; height: 56px; margin-bottom: 18px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
             <ui:VisualElement name="pip_top" style="background-image: resource(&apos;UI/pipScrollview/Vector_300_126&apos;); width: 100%; height: 120px; flex-direction: row; justify-content: space-between; flex-shrink: 0; align-items: center;">
                 <ui:Button display-tooltip-when-elided="true" name="button_pip11" class="Button_pip Button_pip--high" style="padding-left: 0; padding-right: 0; padding-top: 45px; padding-bottom: 45px;">

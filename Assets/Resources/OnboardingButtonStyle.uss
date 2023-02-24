@@ -323,3 +323,30 @@
     translate: 0 120%;
     transition-duration: 1s;
 }
+
+.Button_house {
+    position: absolute;
+    top: 672px;
+    left: 74px;
+    height: 123px;
+    width: 126px;
+    border-top-left-radius: 245px;
+    border-bottom-left-radius: 245px;
+    border-top-right-radius: 245px;
+    border-bottom-right-radius: 245px;
+    font-size: 31px;
+    background-color: rgba(128, 128, 128, 255);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.Button_house--active {
+    background-color: rgb(161, 25, 47);
+}
+
+.Button_house:active {
+    scale: 1.1 1.1;
+    transition-duration: 0.2s;
+}

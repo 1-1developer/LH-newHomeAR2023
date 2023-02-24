@@ -9,7 +9,6 @@ public class Pointer : MonoBehaviour
     public bool ispicked;
     public Sprite _default;
     public Sprite red;
-    public Sprite pick;
     Material material;
 
     //GameObject rect;
@@ -23,7 +22,7 @@ public class Pointer : MonoBehaviour
     private void Awake()
     {
         this.transform.localScale = v_scale;
-        material = transform.GetComponent<MeshRenderer>().material;
+        this.material = transform.GetChild(0).GetComponent<MeshRenderer>().material;
         //rect = transform.GetChild(1).gameObject;
         //colororigin = rect.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         coloraa = coloralpha;
@@ -35,7 +34,6 @@ public class Pointer : MonoBehaviour
         {
             //this.material.SetTexture("_BaseMap", red.texture);
             //this.rect.SetActive(true);
-            this.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", coloraa);
             /*
             if (this.ispicked)
             {
@@ -57,7 +55,6 @@ public class Pointer : MonoBehaviour
         {
             //this.rect.SetActive(false);
             this.ispicked = false;
-            this.material.SetTexture("_BaseMap", _default.texture);
 
             //this.transform.localScale = v_scale;
         }
