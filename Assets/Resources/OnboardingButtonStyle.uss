@@ -96,7 +96,7 @@
 }
 
 .SideSheetTwo--in {
-    translate: 0% 0;
+    translate: 0 0;
     transition-duration: 0.5s;
 }
 
@@ -232,7 +232,7 @@
 
 .Button_pip {
     height: 120px;
-    width: 450px;
+    width: 826px;
     background-color: rgba(0, 0, 0, 0);
     border-left-width: 0;
     border-right-width: 0;

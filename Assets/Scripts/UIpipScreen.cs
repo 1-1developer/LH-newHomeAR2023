@@ -112,16 +112,19 @@ public class UIpipScreen : UIController
 
     private void OnpipbuttonClicked_P0(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         _pop_pip(_buttonPips_P[0], _btextPips_P[0], _m_scrolls_P[0], _buttonPips_P, _btextPips_P, _m_scrolls_P);
 
     }
     private void OnpipbuttonClicked_P1(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         _pop_pip(_buttonPips_P[1], _btextPips_P[1], _m_scrolls_P[1], _buttonPips_P, _btextPips_P, _m_scrolls_P);
 
     }
     private void OnpipbuttonClicked_P2(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         _pop_pip(_buttonPips_P[2], _btextPips_P[2], _m_scrolls_P[2], _buttonPips_P, _btextPips_P, _m_scrolls_P);
 
     }
@@ -132,25 +135,28 @@ public class UIpipScreen : UIController
     }
     private void OnpipbuttonClicked1(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         _pop_pip(_buttonPips[1], _btextPips[1], _m_scrolls[1], _buttonPips, _btextPips, _m_scrolls);
     }
     private void OnpipbuttonClicked2(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         _pop_pip(_buttonPips[2], _btextPips[2], _m_scrolls[2], _buttonPips, _btextPips, _m_scrolls);
     }
     private void OnpipbuttonClicked3(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         _pop_pip(_buttonPips[3], _btextPips[3], _m_scrolls[3], _buttonPips, _btextPips, _m_scrolls);
     }
     private void OnpipbuttonClicked4(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         _pop_pip(_buttonPips[4], _btextPips[4], _m_scrolls[4], _buttonPips, _btextPips, _m_scrolls);
     }
 
     private void closePip(ClickEvent evt)
     {
         AudioManager.PlayDefaultButtonSound();
-
         pip_root.style.display = DisplayStyle.None;
     }
     public void _pop_pip(Button s_button,VisualElement text,ScrollView m_scroll,

@@ -65,6 +65,7 @@ public class UIsidebuttons : UIController
 
     private void Onbt_Back(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         _scrollImage.style.display = DisplayStyle.None;
         _imageContainer.style.display = DisplayStyle.None;
 
@@ -73,18 +74,23 @@ public class UIsidebuttons : UIController
 
     private void OnBt_land(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
+
         SetImage(im_land);
     }
     private void OnBt_play(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         SetImage(im_play);
     }
     private void OnBt_quality1(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         SetImage(im_qual01);
     }
     private void OnBt_quality2(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
         _imageScreen.style.display = DisplayStyle.Flex;
 
         _imageContainer.style.display = DisplayStyle.None;
@@ -98,9 +104,5 @@ public class UIsidebuttons : UIController
         _imageContainer.style.display = DisplayStyle.Flex;
         _imageContainer.style.backgroundImage = sprite.texture;
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

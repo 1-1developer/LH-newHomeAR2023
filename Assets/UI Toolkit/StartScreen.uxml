@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/loopStyle.uss?fileID=7433441132597879392&amp;guid=fa55470fb90a3584ab0a15df3d04df6c&amp;type=3#loopStyle" />
-    <ui:VisualElement name="s1" class="loopScreen" style="background-image: resource(&apos;UI/00_Splash/s1&apos;);" />
-    <ui:VisualElement name="s2" class="loopScreen loopScreen-0" style="background-image: resource(&apos;UI/00_Splash/s2&apos;); -unity-background-scale-mode: stretch-to-fill;" />
+    <ui:VisualElement name="s1" class="loopScreen" style="background-image: resource(&apos;UI/00_Splash/Frame-3&apos;);" />
+    <ui:VisualElement name="s2" class="loopScreen loopScreen-0" style="background-image: resource(&apos;UI/00_Splash/Frame-2&apos;); -unity-background-scale-mode: stretch-to-fill;" />
     <ui:VisualElement name="s3" class="loopScreen loopScreen-0" style="background-image: resource(&apos;UI/00_Splash/s3&apos;); -unity-background-scale-mode: stretch-to-fill; position: absolute;" />
     <ui:VisualElement name="s4" class="loopScreen loopScreen-0" style="background-image: resource(&apos;UI/00_Splash/s4&apos;); -unity-background-scale-mode: stretch-to-fill; position: absolute;" />
     <ui:VisualElement style="position: absolute; background-color: rgb(255, 255, 255); width: 440px; height: 172px; top: 1356px; left: 972px;" />

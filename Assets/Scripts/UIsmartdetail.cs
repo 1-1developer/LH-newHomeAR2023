@@ -43,11 +43,15 @@ public class UIsmartdetail : UIController
 
     private void GoBack(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
+
         smart_root.style.display = DisplayStyle.None;
     }
 
     private void GoNext(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
+
         count++;
         if (count >4)
         {
@@ -62,6 +66,8 @@ public class UIsmartdetail : UIController
 
     private void GoLast(ClickEvent evt)
     {
+        AudioManager.PlayDefaultButtonSound();
+
         count--;
         if (count < 0)
         {

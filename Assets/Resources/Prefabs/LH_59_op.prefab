@@ -687,7 +687,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 2.8999999
   m_SpotAngle: 105.6
   m_InnerSpotAngle: 21.80208
@@ -4162,7 +4162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6063319753662803655
 Transform:
   m_ObjectHideFlags: 0
@@ -4190,7 +4190,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.08
   m_Range: 0.75
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -5218,7 +5218,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 0.6
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -9014,7 +9014,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 0.21
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -12757,7 +12757,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 0.21
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -19068,7 +19068,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09ae872fcc807124a8e4ab66bf15ce26, type: 2}
+  - {fileID: 2100000, guid: f26590402d5bd4149bc7e72c60b89c27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19930,7 +19930,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 3
   m_SpotAngle: 116
   m_InnerSpotAngle: 21.80208
@@ -21108,7 +21108,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 0.57
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -27061,7 +27061,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09ae872fcc807124a8e4ab66bf15ce26, type: 2}
+  - {fileID: 2100000, guid: f26590402d5bd4149bc7e72c60b89c27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28714,7 +28714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5641998178003642904
 Transform:
   m_ObjectHideFlags: 0
@@ -30101,7 +30101,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09ae872fcc807124a8e4ab66bf15ce26, type: 2}
+  - {fileID: 2100000, guid: f26590402d5bd4149bc7e72c60b89c27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30703,7 +30703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3584886987466385814
 Transform:
   m_ObjectHideFlags: 0
@@ -30731,7 +30731,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 0.57
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -33487,7 +33487,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 0.57
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -34037,7 +34037,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 0.69
   m_SpotAngle: 105.6
   m_InnerSpotAngle: 21.80208
@@ -36277,7 +36277,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 0.75
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -43930,7 +43930,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09ae872fcc807124a8e4ab66bf15ce26, type: 2}
+  - {fileID: 2100000, guid: 07482a7a5cc1abc4b86145f0bbd8ff0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -47898,7 +47898,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 0.57
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -57532,7 +57532,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 3
   m_SpotAngle: 116
   m_InnerSpotAngle: 21.80208
@@ -57912,7 +57912,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09ae872fcc807124a8e4ab66bf15ce26, type: 2}
+  - {fileID: 2100000, guid: f26590402d5bd4149bc7e72c60b89c27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -61992,7 +61992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2998331620366897805
 Transform:
   m_ObjectHideFlags: 0
@@ -62512,7 +62512,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 0.11
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -62931,7 +62931,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09ae872fcc807124a8e4ab66bf15ce26, type: 2}
+  - {fileID: 2100000, guid: f26590402d5bd4149bc7e72c60b89c27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -66092,7 +66092,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 3
   m_SpotAngle: 154
   m_InnerSpotAngle: 21.80208
@@ -66290,7 +66290,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 0.54
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -70582,7 +70582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4511494884994502902
 Transform:
   m_ObjectHideFlags: 0
@@ -70610,7 +70610,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 0.75
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -70808,7 +70808,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 0.21
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -72336,7 +72336,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 0.57
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
