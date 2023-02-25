@@ -7,7 +7,9 @@ public class OnScreenObjectManager : MonoBehaviour
     public bool ARok;
     public GameObject maker;
     public GameObject[] Houses;
+    public GameObject[] houseDefault = new GameObject[3];
     public GameObject HouseRoot;
+
 
     Vector3 scaleOrigin;
     Quaternion rootRotorigin;
@@ -36,6 +38,10 @@ public class OnScreenObjectManager : MonoBehaviour
         {
             Houses[i].SetActive(false);
         }
+        for (int i = 0; i < houseDefault.Length; i++)
+        {
+            houseDefault[i].SetActive(false);
+        }
     }
 
     public void OnMaker()
@@ -49,17 +55,30 @@ public class OnScreenObjectManager : MonoBehaviour
         {
             Houses[i].SetActive(false);
         }
+        for (int i = 0; i < houseDefault.Length; i++)
+        {
+            houseDefault[i].SetActive(false);
+        }
     }
 
-    public void OnHouse(string housename)
+    public void OnHouse(string hh ,string housename)
     {
         ARok = false;
+        HouseRoot.transform.localRotation = rootRotorigin;
+        HouseRoot.transform.localScale = scaleOrigin;
         foreach (GameObject h in Houses)
         { 
             if(h.gameObject.name == housename)
                 h.SetActive(true);
             else
                 h.SetActive(false);
+        }
+        foreach (GameObject hd in houseDefault)
+        {
+            if (hd.gameObject.name == hh)
+                hd.SetActive(true);
+            else
+                hd.SetActive(false);
         }
     }
 }

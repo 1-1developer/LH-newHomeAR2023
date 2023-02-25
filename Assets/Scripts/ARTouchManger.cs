@@ -12,31 +12,19 @@ public class ARTouchManger : MonoBehaviour
     public GameObject touchedObj;
     public Text Debugtxt;
     public ARImageTracker _ARImageTracker;
-    public GameObject[] bulidings = new GameObject[4];
-
 
     RaycastHit hit;
     
-    Pointer[] pointers = new Pointer[4];
-    Material[] materials = new Material[4];
+    Material[] materials = new Material[5];
 
     Pointer pointer;
     
     // Start is called before the first frame update
     void Start()
     {
-        //pointers = FindObjectsOfType<Pointer>();
-        for (int i = 0; i < 4; i++)
-        {
-        //    pointers[i] = bulidings[i].GetComponent<Pointer>();
-        //    //materials[i] = bulidings[i].transform.GetChild(0).GetComponent<MeshRenderer>().material;
-        }
-       
-        //pointers[1] = _ARImageTracker.GetSpwan("oq").transform.GetChild(1).GetComponent<Pointer>();
     }
     private void Update()
     {
-        PointerSet(uIController.GetID());
         PopUpObjectByTouch();
     }
     private void PopUpObjectByTouch()
@@ -48,36 +36,35 @@ public class ARTouchManger : MonoBehaviour
                                              //List<RaycastHit> hits = new List<RaycastHit>();
             Ray ray = Camera.main.ScreenPointToRay(touch.position);
 
-            if (Physics.Raycast(ray, out hit, 10000, LayerMask.GetMask("Pointer")))
+            if (Physics.Raycast(ray, out hit, 10000))
             {
                 if (hit.transform.gameObject)
                 {
                     touchedObj = hit.transform.gameObject;
-                    //touchedObj.transform.GetChild(0).GetComponent<MeshRenderer>().material.SetColor("Color", Color.red);       
                     Debugtxt.text = $"터치 :{hit.transform.gameObject.name}";
-                    try
+
+                    if (touchedObj.GetComponent<Pointer>())
                     {
+                        AudioManager.PlayDefaultButtonSound();
                         pointer = touchedObj.GetComponent<Pointer>();
-                    }
-                    catch (System.Exception)
-                    {
-                        Debugtxt.text = $"포인터 가져오기 실패";
-                    }
-                    //uIController.PickHighlight(uIController.buttons[pointer.HouseID]);
-                    if (pointer)
-                    {
-                        if ((pointer.HouseID == uIController.GetID()) && pointer.isSelected)
+                        PointerSet(pointer.HouseID);
+                        if (pointer.isSelected)
                         {
-                            pointer.ispicked = true;
                             uIController.InPlanPannelAR(pointer.HouseID);
+                            Debug.Log("inplanpannel");
                         }
                     }
                     else
                     {
-                        Debugtxt.text = $"포인터없음";
+                        uIController.closeSidesheet();
+                        _ARImageTracker.GetComplex().PointerInitialize();
                     }
                 }
- 
+                else
+                {
+                    _ARImageTracker.GetComplex().PointerInitialize();
+
+                }
             }
             else
             {
@@ -87,15 +74,11 @@ public class ARTouchManger : MonoBehaviour
         }
         else
         {
-            if (touchedObj)
-            {
-                //touchedObj.transform.GetChild(0).GetComponent<MeshRenderer>().material.SetColor("Color", Color.white);
-            }
         }
     }
     public void PointerSet(int id)
     {
-        foreach (Pointer pt in pointers)
+        foreach (Pointer pt in _ARImageTracker.GetComplex().pointers)
         {
             if(pt.HouseID == id)
             {
@@ -108,29 +91,6 @@ public class ARTouchManger : MonoBehaviour
         }
     }
 
-    private void UILookAt()
-    {
-        
-        for (int i = 0; i < pointers.Length; i++)
-        {
-            //pointers[i].transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
-            pointers[i].transform.LookAt(Camera.main.transform);
-            Debug.Log("look");
-        }
-    }
-
-    private void HighlightPick()
-    {
-        var ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
-        RaycastHit hitPoint;
-
-        if(Physics.Raycast(ray, out hitPoint, 100.0f))
-        {
-
-        }
-
-        
-    }
 
     private void UpdateCenterObject()
     {

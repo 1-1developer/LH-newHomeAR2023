@@ -16,6 +16,7 @@ public class ARImageTracker : MonoBehaviour
 
     private Dictionary<string, GameObject> spawnedObjects;
 
+    Complex complex;
     private void Awake()
     {
         trackedImageManager = GetComponent<ARTrackedImageManager>();
@@ -29,6 +30,7 @@ public class ARImageTracker : MonoBehaviour
 
             spawnedObjects.Add(newObject.name, newObject);
         }
+        complex = spawnedObjects["complex"].GetComponent<Complex>();
     }
     private void OnEnable()
     {
@@ -76,6 +78,10 @@ public class ARImageTracker : MonoBehaviour
     public GameObject GetSpwan(string name)
     {
         return spawnedObjects[name].gameObject;
+    }
+    public Complex GetComplex()
+    {
+        return complex;
     }
     void Start()
     {

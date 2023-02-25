@@ -5,11 +5,15 @@
             <ui:Button display-tooltip-when-elided="true" name="BackButton" class="Button-Back" />
         </ui:VisualElement>
         <ui:VisualElement name="Plan_Area" picking-mode="Ignore" style="width: 100%; height: 100%; align-items: flex-end; flex-direction: row-reverse; display: flex; justify-content: space-between; visibility: visible;">
-            <ui:Label text="84m²" display-tooltip-when-elided="true" name="planTxt" style="position: absolute; top: 94px; right: 134px; width: 10%; height: 10%; font-size: 100px; -unity-font: url(&apos;project://database/Assets/Resources/UI/Fonts/AppleSDGothicNeoB.ttf?fileID=12800000&amp;guid=4a9284785d8729446bbdfe2d408337d7&amp;type=3#AppleSDGothicNeoB&apos;); color: rgb(255, 255, 255);" />
-            <ui:VisualElement name="HousePlanImage" style="width: 509px; height: 484px; background-image: resource(&apos;UI/04HousePlan/59&apos;); -unity-background-scale-mode: scale-to-fit; top: -177px; right: 105px;" />
-            <ui:VisualElement style="position: absolute; width: 1315px; height: 55px; right: 570px; bottom: 91px; background-image: resource(&apos;UI/04HousePlan/이해를 돕기 위한 기본구상으로, 향후 사업추진 과정에서 변동될 수 있습니다.&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            <ui:Label text="84m²" display-tooltip-when-elided="true" name="planTxt" style="position: absolute; top: 94px; right: 134px; width: 12%; height: 11%; font-size: 80px; -unity-font: url(&apos;project://database/Assets/Resources/UI/Fonts/AppleSDGothicNeoB.ttf?fileID=12800000&amp;guid=4a9284785d8729446bbdfe2d408337d7&amp;type=3#AppleSDGothicNeoB&apos;); color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.26); border-top-left-radius: 67px; border-bottom-left-radius: 67px; border-top-right-radius: 67px; border-bottom-right-radius: 67px; -unity-text-align: middle-center;" />
+            <ui:VisualElement name="HousePlanImage" style="width: 509px; height: 484px; background-image: resource(&apos;UI/04HousePlan/59&apos;); -unity-background-scale-mode: scale-to-fit; top: -177px; right: 105px; display: none;" />
+            <ui:VisualElement style="position: absolute; width: 1315px; height: 136px; right: 570px; bottom: 91px; background-image: resource(&apos;UI/03ARUI_Elements/Group 154 (1)&apos;); -unity-background-scale-mode: scale-to-fit;" />
         </ui:VisualElement>
-        <ui:Button text="기본형" display-tooltip-when-elided="true" enable-rich-text="true" name="house_default" class="Button_house Button_house--active" />
-        <ui:Button text="옵션형" display-tooltip-when-elided="true" enable-rich-text="true" name="house_option" class="Button_house" style="top: 842px;" />
+        <ui:Button display-tooltip-when-elided="true" enable-rich-text="true" name="house_default" class="Button_house Button_house--active">
+            <ui:VisualElement style="background-image: resource(&apos;UI/03-2_houseplan/Group 86&apos;); width: 93px; height: 29px; -unity-background-scale-mode: scale-to-fit;" />
+        </ui:Button>
+        <ui:Button display-tooltip-when-elided="true" enable-rich-text="true" name="house_option" class="Button_house" style="top: 842px; padding-top: 19px;">
+            <ui:VisualElement style="background-image: resource(&apos;UI/03-2_houseplan/Group 87&apos;); width: 102px; height: 34px; -unity-background-scale-mode: scale-to-fit;" />
+        </ui:Button>
     </ui:VisualElement>
 </ui:UXML>

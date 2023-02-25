@@ -6,9 +6,9 @@ using UnityEngine.UIElements;
 
 public class UIhouse : UIController
 {
-    public Sprite house46;
-    public Sprite house59;
-    public Sprite house84;
+    //public Sprite house46;
+    //public Sprite house59;
+    //public Sprite house84;
 
 
     const string BackButton = "BackButton";
@@ -17,11 +17,15 @@ public class UIhouse : UIController
 
 
     const string LH59 = "LH_59";
-    const string LH59_op = "LH_59_op";
+    const string LH59_ver2 = "59_ver2";
+    const string LH59_ver3 = "59_ver3";
     const string LH84 = "LH_84";
-    const string LH84_op = "LH_84_op";
+    const string LH84_ver2 = "84_ver2";
+    const string LH84_ver3 = "84_ver3";
     const string LH46 = "LH_46";
-    const string LH46_op = "LH_46_op";
+    const string LH46_ver2 = "46_ver2";
+    const string LH46_ver3 = "46_ver3";
+
 
 
     const string m46 = "46m²";
@@ -65,22 +69,28 @@ public class UIhouse : UIController
 
     private void OnDefaltButtonClicked(ClickEvent evt) //기본형
     {
-        if(_plantext.text ==m46 )
-            onScreenObjectManager.OnHouse(LH46);//집모델띄우기
-        if (_plantext.text == m59)
-            onScreenObjectManager.OnHouse(LH59);
-        if (_plantext.text == m84)
-            onScreenObjectManager.OnHouse(LH84);
+        AudioManager.PlayDefaultButtonSound();
+        if (_plantext.text ==m46 )
+            onScreenObjectManager.OnHouse(LH46, LH46_ver2);//집모델띄우기
+        if (_plantext.text == m59)                      
+            onScreenObjectManager.OnHouse(LH59, LH59_ver2);
+        if (_plantext.text == m84)                      
+            onScreenObjectManager.OnHouse(LH84, LH84_ver2);
+        _defaltButton.AddToClassList("Button_house--active");
+        _optionButton.RemoveFromClassList("Button_house--active");
     }
 
     private void OnOptionButtonClicked(ClickEvent evt) //옵션형
     {
+        AudioManager.PlayDefaultButtonSound();
         if (_plantext.text == m46)
-            onScreenObjectManager.OnHouse(LH46_op);
+            onScreenObjectManager.OnHouse(LH46,LH46_ver3);
         if (_plantext.text == m59)
-            onScreenObjectManager.OnHouse(LH59_op);
+            onScreenObjectManager.OnHouse(LH59, LH59_ver3);
         if (_plantext.text == m84)
-            onScreenObjectManager.OnHouse(LH84_op);
+            onScreenObjectManager.OnHouse(LH84, LH84_ver3);
+        _optionButton.AddToClassList("Button_house--active");
+        _defaltButton.RemoveFromClassList("Button_house--active");
     }
 
     void SetupSelectButton() //사이드바 버튼가져오기
@@ -98,9 +108,9 @@ public class UIhouse : UIController
         _BackButton.style.display = DisplayStyle.Flex;
         _HousePlan.style.display = DisplayStyle.Flex;
         ar_root.style.display = DisplayStyle.None;
-        _houseplanpic.style.backgroundImage = house46.texture;
+        //_houseplanpic.style.backgroundImage = house46.texture;
         //집 오브젝트
-        onScreenObjectManager.OnHouse(LH46);//집모델띄우기
+        onScreenObjectManager.OnHouse(LH46, LH46_ver2);//집모델띄우기
         _plantext.text = m46;
 
     }
@@ -111,11 +121,11 @@ public class UIhouse : UIController
         _BackButton.style.display = DisplayStyle.Flex;
         _HousePlan.style.display = DisplayStyle.Flex;
         ar_root.style.display = DisplayStyle.None;
-        _houseplanpic.style.backgroundImage = house59.texture;
+        //_houseplanpic.style.backgroundImage = house59.texture;
 
 
         //집 오브젝트
-        onScreenObjectManager.OnHouse(LH84);//집모델띄우기
+        onScreenObjectManager.OnHouse(LH59, LH59_ver2);//집모델띄우기
         _plantext.text = m59;
 
     }
@@ -126,10 +136,10 @@ public class UIhouse : UIController
         _BackButton.style.display = DisplayStyle.Flex;
         _HousePlan.style.display = DisplayStyle.Flex;
         ar_root.style.display = DisplayStyle.None;
-        _houseplanpic.style.backgroundImage = house84.texture;
+        //_houseplanpic.style.backgroundImage = house84.texture;
 
         //집 오브젝트
-        onScreenObjectManager.OnHouse(LH84);//집모델띄우기
+        onScreenObjectManager.OnHouse(LH84, LH84_ver2);//집모델띄우기
         _plantext.text = m84;
 
     }

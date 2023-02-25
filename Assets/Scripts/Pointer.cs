@@ -6,7 +6,6 @@ public class Pointer : MonoBehaviour
 {
     public int HouseID;
     public bool isSelected;
-    public bool ispicked;
     public Sprite _default;
     public Sprite red;
     Material material;
@@ -19,8 +18,11 @@ public class Pointer : MonoBehaviour
     Color coloraa;
     Color colororigin;
     Color coloralpha = new Color (1,1,1,0);
+    Transform cam;
     private void Awake()
     {
+        cam = Camera.main.transform;
+
         this.transform.localScale = v_scale;
         this.material = transform.GetChild(0).GetComponent<MeshRenderer>().material;
         //rect = transform.GetChild(1).gameObject;
@@ -29,34 +31,29 @@ public class Pointer : MonoBehaviour
     }
     private void Update()
     {
-        transform.LookAt(Camera.main.transform);
+       LookAtVector();
+
         if (this.isSelected)
         {
             //this.material.SetTexture("_BaseMap", red.texture);
             //this.rect.SetActive(true);
-            /*
-            if (this.ispicked)
-            {
-                coloraa = Color.Lerp(coloraa, colororigin, Time.deltaTime * speed);
-
-                this.material.SetTexture("_BaseMap", pick.texture);
-                this.transform.localScale = Vector3.Lerp(this.transform.localScale, v_UpScale, Time.deltaTime* speed);
-            }
-            else
-            {
-                coloraa = Color.Lerp(coloraa, coloralpha, Time.deltaTime * speed);
-
-                this.transform.localScale = Vector3.Lerp(this.transform.localScale, v_scale, Time.deltaTime* speed);
-                this.material.SetTexture("_BaseMap", red.texture);
-            }
-            */
+            //coloraa = Color.Lerp(coloraa, coloralpha, Time.deltaTime * speed);
+            this.material.SetTexture("_BaseMap", red.texture);
         }
         else
         {
             //this.rect.SetActive(false);
-            this.ispicked = false;
+            //this.ispicked = false;
+            this.material.SetTexture("_BaseMap", _default.texture);
 
             //this.transform.localScale = v_scale;
         }
+    }
+
+    void LookAtVector()
+    {
+        Vector3 targetv = new Vector3(cam.position.x, transform.position.y, cam.position.z);
+        transform.LookAt(targetv);
+        //transform.rotation = Quaternion.Euler(0, cam.rotation.y, 0);
     }
 }

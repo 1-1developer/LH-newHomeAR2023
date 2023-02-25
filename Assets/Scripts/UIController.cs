@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,8 @@ public class UIController : MonoBehaviour
 
 
     //public ARTouchManger touchManger;
-    public OnScreenObjectManager onScreenObjectManager;
+    [SerializeField] protected OnScreenObjectManager onScreenObjectManager;
+    [SerializeField] protected ARImageTracker imageTracker;
 
     const string Onboarding = "Onboarding_Main";
     const string UIContainer = "AR_screen";
@@ -97,6 +99,7 @@ public class UIController : MonoBehaviour
     protected VisualElement _AR_Smarthome; // ar트랙화면
     protected VisualElement _AR_Quality; // ar트랙화면
 
+    List<VisualElement> _ARScreens = new List<VisualElement>();
 
     RaycastHit hit;
     protected void Awake()
@@ -129,6 +132,12 @@ public class UIController : MonoBehaviour
         _AR_Smarthome = m_root.Q<VisualElement>(AR_Smarthome);
         _AR_Quality = m_root.Q<VisualElement>(AR_Quality);
 
+        _ARScreens.Add(_AR_House);
+        _ARScreens.Add(_AR_Outside);
+        _ARScreens.Add(_AR_Smarthome);
+        _ARScreens.Add(_AR_Quality);
+
+
         _perspective = m_root.Q<VisualElement>(Perspective);
 
 
@@ -157,10 +166,8 @@ public class UIController : MonoBehaviour
 
 
         //하단텍스트
-        artexts.Add(m_root.Q<VisualElement>("text_active_h"));
-        artexts.Add(m_root.Q<VisualElement>("text_active_out"));
-        artexts.Add(m_root.Q<VisualElement>("text_active_smart"));
-        artexts.Add(m_root.Q<VisualElement>("text_active_quality"));
+        artexts.Add(m_root.Q<VisualElement>("text_active"));
+
 
        _text_Point02 = m_root.Q<VisualElement>("text_active2");
 
@@ -180,9 +187,7 @@ public class UIController : MonoBehaviour
 
 
         _openButton1.RegisterCallback<ClickEvent>(OnBoardButtonClicked);
-        _openButton2.RegisterCallback<ClickEvent>(OnBoardButtonClicked_smart);
-        _openButton3.RegisterCallback<ClickEvent>(OnBoardButtonClicked_out);
-        _openButton4.RegisterCallback<ClickEvent>(OnBoardButtonClicked_quality);
+        _openButton2.RegisterCallback<ClickEvent>(OnBoardButtonClicked_explanation);
         // 동일구조 콜백함수 모듈화 ******
         _openButton5.RegisterCallback<ClickEvent>(OnPersviewButtonClicked);
 
@@ -196,6 +201,23 @@ public class UIController : MonoBehaviour
         //{
         //    _smartbuttons.Add(m_root.Q<Button>("SmartSelectButton" + $"{i + 1}"));
         //}
+    }
+
+    private void OnBoardButtonClicked(ClickEvent evt) //AR 시 작
+    {
+        AudioManager.PlayDefaultButtonSound();
+
+        CloseMain();
+        _AR_House.style.display = DisplayStyle.None;
+        _AR_Quality.style.display = DisplayStyle.None;
+        _AR_Outside.style.display = DisplayStyle.None;
+        _AR_Smarthome.style.display = DisplayStyle.None;
+    }
+    private void OnBoardButtonClicked_explanation(ClickEvent evt) //설명으로 돌아가기
+    {
+        AudioManager.PlayDefaultButtonSound();
+
+        GoHome();
     }
 
     private void OnEnable()
@@ -220,7 +242,7 @@ public class UIController : MonoBehaviour
 
     private void OnHomeButtonClicked(ClickEvent evt) // 홈버튼-홈으로 돌아가기
     {
-        //AudioManager.PlayDefaultButtonSound();
+        AudioManager.PlayDefaultButtonSound();
         //시트그룹
         ar_root.style.display = DisplayStyle.None;
 
@@ -233,18 +255,12 @@ public class UIController : MonoBehaviour
 
         _homeButton.RemoveFromClassList("Button_Home--in");
         closeSidesheet();
-
+        imageTracker.GetComplex().PointerInitialize();
         //object 제거
         onScreenObjectManager.NothingOn();
     }
 
-    private void OnBoardButtonClicked(ClickEvent evt) // 주택평면
-    {
-       // AudioManager.PlayDefaultButtonSound();
-
-        CloseMain(_AR_House);
-        ID = 0;
-    }
+    /*
     private void OnBoardButtonClicked_out(ClickEvent evt) // 외부공간
     {
         //AudioManager.PlayDefaultButtonSound();
@@ -266,11 +282,11 @@ public class UIController : MonoBehaviour
         CloseMain(_AR_Quality);
         ID = 3;
     }
-    void CloseMain(VisualElement visual)
+    */
+    void CloseMain()
     {
         //시트 열기
         ar_root.style.display = DisplayStyle.Flex;
-        visual.style.display = DisplayStyle.Flex;
         _Onboarding.style.display = DisplayStyle.None;
 
         _homeButton.AddToClassList("Button_Home--in");
@@ -279,13 +295,13 @@ public class UIController : MonoBehaviour
         onScreenObjectManager.OnMaker();
     }
 
-    public int GetID()
-    {
-        return ID;
-    }
+    //public int GetID()
+    //{
+    //    return ID;
+    //}
     private void OnPersviewButtonClicked(ClickEvent evt)
     {
-        //AudioManager.PlayDefaultButtonSound();
+        AudioManager.PlayDefaultButtonSound();
         //시트 열기
         _perspective.style.display = DisplayStyle.Flex;
         _Onboarding.style.display = DisplayStyle.None;
@@ -302,23 +318,49 @@ public class UIController : MonoBehaviour
     }
     public void InPlanPannelAR(int ID)  //마커선택시 사이트시트 열기
     {
-        sidesheets[ID].AddToClassList("SideSheetTwo--in");
-        artexts[ID].AddToClassList("text_Point--pade");
+        foreach (VisualElement s in _ARScreens)
+        {
+            if(s == _ARScreens[ID])
+            {
+                s.style.display = DisplayStyle.Flex;
+               
+                artexts[0].AddToClassList("text_Point--pade");
+            }
+            else
+            {
+                //artexts[0].RemoveFromClassList("text_Point--pade");
+                s.style.display = DisplayStyle.None;
+            }
+        }
+        foreach (VisualElement sh in sidesheets)
+        {
+            if (sh == sidesheets[ID])
+            {
+                sh?.AddToClassList("SideSheetTwo--in");
+            }
+            else
+            {
+                sh?.RemoveFromClassList("SideSheetTwo--in");
+            }
+        }
         _text_Point02.RemoveFromClassList("text_Point--pade");
-        //텍스트 나오기
+
     }
+
+
+
     private void OnCloseButtonClicked(ClickEvent evt) //사이트시트 닫기
     {
-        //AudioManager.PlayDefaultButtonSound();
+        AudioManager.PlayDefaultButtonSound();
         closeSidesheet();
     }
 
-    void closeSidesheet()
+    public void closeSidesheet()
     {
         for (int i = 0; i < sidesheets.Count; i++)
         {
             sidesheets[i].RemoveFromClassList("SideSheetTwo--in");
-            artexts[i].RemoveFromClassList("text_Point--pade");
+            artexts[0].RemoveFromClassList("text_Point--pade");
         }
         _text_Point02.AddToClassList("text_Point--pade");
     }
@@ -328,7 +370,7 @@ public class UIController : MonoBehaviour
 
     private void OnBackButtonPClicked(ClickEvent evt)  //투시도 뒤로가기
     {
-        //AudioManager.PlayDefaultButtonSound();
+        AudioManager.PlayDefaultButtonSound();
         _Onboarding.style.display = DisplayStyle.Flex;
         _perspective.style.display = DisplayStyle.None;
     }

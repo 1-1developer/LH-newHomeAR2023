@@ -25,7 +25,10 @@ public class AudioManager : MonoBehaviour
         if (clip == null)
             return;
 
-        GameObject sfxInstance = new GameObject(clip.name);
+        GameObject sfxInstance = GameObject.Find(clip.name);
+        if(sfxInstance != null)
+            return;
+        sfxInstance = new GameObject(clip.name);
         sfxInstance.transform.position = sfxPosition;
 
         AudioSource source = sfxInstance.AddComponent<AudioSource>();

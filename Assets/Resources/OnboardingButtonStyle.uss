@@ -79,7 +79,6 @@
 
 .SideSheetTwo {
     transition-duration: 0.5s;
-    background-color: rgba(0, 0, 0, 0.12);
     width: 19%;
     height: 100%;
     translate: 105% 0;
@@ -97,9 +96,8 @@
 }
 
 .SideSheetTwo--in {
-    translate: 0 0;
+    translate: 0% 0;
     transition-duration: 0.5s;
-    background-color: rgba(0, 0, 0, 0);
 }
 
 .Button-Back {
@@ -132,7 +130,7 @@
     position: relative;
     width: 100%;
     height: 200px;
-    background-color: rgba(0, 0, 0, 0.43);
+    background-color: rgba(0, 0, 0, 0.8);
     flex-direction: row;
     align-items: stretch;
     opacity: 1;
@@ -217,13 +215,14 @@
 .text_Point {
     position: absolute;
     width: 1054px;
-    height: 35px;
-    top: 1282px;
+    height: 127px;
+    top: 1464px;
     background-image: resource('UI/03ARUI_Elements/text02_249_262');
     -unity-background-scale-mode: scale-to-fit;
     left: 668px;
     display: flex;
     transition-duration: 0.3s;
+    opacity: 0.77;
 }
 
 .text_Point--pade {
@@ -272,14 +271,17 @@
     border-right-width: 0;
     border-top-width: 0;
     border-bottom-width: 0;
-    height: 111px;
-    width: 180px;
+    height: 136px;
+    width: 228px;
     justify-content: center;
     align-items: center;
+    background-image: resource('UI/03ARUI_Elements/Vector (6)');
 }
 
 .Button_topBar:active {
     background-color: rgba(224, 108, 157, 0.45);
+    scale: 0.9 0.9;
+    transition-duration: 0.2s;
 }
 
 .Button_pip:active {
@@ -327,7 +329,7 @@
 .Button_house {
     position: absolute;
     top: 672px;
-    left: 74px;
+    left: auto;
     height: 123px;
     width: 126px;
     border-top-left-radius: 245px;
@@ -335,11 +337,14 @@
     border-top-right-radius: 245px;
     border-bottom-right-radius: 245px;
     font-size: 31px;
-    background-color: rgba(128, 128, 128, 255);
+    background-color: rgb(128, 128, 128);
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
     border-bottom-width: 0;
+    justify-content: center;
+    align-items: center;
+    right: 121px;
 }
 
 .Button_house--active {
@@ -349,4 +354,38 @@
 .Button_house:active {
     scale: 1.1 1.1;
     transition-duration: 0.2s;
+}
+
+.Sheet_side {
+    width: 80%;
+    height: 100%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    flex-shrink: 0;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 49px;
+    padding-bottom: 64px;
+}
+
+.Button_sideClose {
+    height: 323px;
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 572px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
