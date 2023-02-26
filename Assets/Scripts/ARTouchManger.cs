@@ -56,8 +56,8 @@ public class ARTouchManger : MonoBehaviour
                     }
                     else
                     {
-                        uIController.closeSidesheet();
-                        _ARImageTracker.GetComplex().PointerInitialize();
+                        //uIController.closeSidesheet();
+                        //_ARImageTracker.GetComplex().PointerInitialize();
                     }
                 }
                 else

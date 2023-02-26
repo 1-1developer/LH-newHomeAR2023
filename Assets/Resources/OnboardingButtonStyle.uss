@@ -100,8 +100,8 @@
 }
 
 .SideSheetTwo--in {
-    translate: 0 0;
     transition-duration: 0.5s;
+    translate: 0 0;
 }
 
 .Button-Back {
