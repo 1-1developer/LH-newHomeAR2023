@@ -26,7 +26,7 @@
 
 .Button_Side01 {
     width: 100%;
-    height: 229px;
+    height: 270px;
     background-color: rgba(0, 0, 0, 0);
     align-items: center;
     justify-content: center;
@@ -35,8 +35,12 @@
     border-right-width: 0;
     border-top-width: 0;
     border-bottom-width: 0;
-    background-image: resource('UI/03-2_houseplan/pannel_house46_270_676');
+    background-image: none;
     -unity-background-scale-mode: scale-to-fit;
+    margin-left: 31px;
+    margin-right: 31px;
+    margin-top: 31px;
+    margin-bottom: 31px;
 }
 
 .Button_Side01:active {
@@ -319,11 +323,12 @@
     flex-direction: column;
     display: flex;
     transition-duration: 0.5s;
+    translate: 0 0;
 }
 
 .pop_window--out {
     translate: 0 120%;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
 }
 
 .Button_house {

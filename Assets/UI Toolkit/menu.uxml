@@ -9,9 +9,9 @@
         <ui:VisualElement name="Sidebar_Area" picking-mode="Ignore" style="width: 100%; height: 100%; align-items: flex-end; flex-direction: row-reverse; display: flex;">
             <ui:VisualElement name="SideSheetTwo" class="SideSheetTwo" style="display: flex;">
                 <ui:VisualElement name="SideSheetTwo_b" class="Sheet_side">
-                    <ui:Button display-tooltip-when-elided="true" name="HouseSelectButton1" view-data-key="1" class="Button_Side01" style="background-image: resource(&apos;UI/03-2_houseplan/Group 81&apos;); height: 300px;" />
-                    <ui:Button display-tooltip-when-elided="true" name="HouseSelectButton2" view-data-key="2" class="Button_Side01" style="background-image: resource(&apos;UI/03-2_houseplan/Group 82&apos;); height: 300px;" />
-                    <ui:Button display-tooltip-when-elided="true" name="HouseSelectButton3" class="Button_Side01" style="background-image: resource(&apos;UI/03-2_houseplan/Group 83&apos;); height: 300px; -unity-background-scale-mode: scale-to-fit;" />
+                    <ui:Button display-tooltip-when-elided="true" name="HouseSelectButton1" view-data-key="1" class="Button_Side01" style="background-image: resource(&apos;UI/03-2_houseplan/Group 98&apos;); height: 300px;" />
+                    <ui:Button display-tooltip-when-elided="true" name="HouseSelectButton2" view-data-key="2" class="Button_Side01" style="background-image: resource(&apos;UI/03-2_houseplan/Group 99&apos;); height: 300px;" />
+                    <ui:Button display-tooltip-when-elided="true" name="HouseSelectButton3" class="Button_Side01" style="background-image: resource(&apos;UI/03-2_houseplan/Group 100&apos;); height: 300px; -unity-background-scale-mode: scale-to-fit;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="_cButtonSpace" style="height: 100%; width: 80px; justify-content: center; align-items: stretch; flex-direction: row-reverse;">
                     <ui:Button display-tooltip-when-elided="true" name="CloseButton" class="Button_sideClose">
@@ -28,8 +28,8 @@
         <ui:VisualElement name="Sidebar_Area" picking-mode="Ignore" style="width: 100%; height: 100%; align-items: flex-end; flex-direction: row-reverse; display: flex;">
             <ui:VisualElement name="SideSheet_o" class="SideSheetTwo" style="display: flex;">
                 <ui:VisualElement name="SideSheetTwo_b" class="Sheet_side">
-                    <ui:Button display-tooltip-when-elided="true" name="OutSelectButton1" class="Button_Side01" style="background-image: resource(&apos;UI/03-outside/p_out1&apos;);" />
-                    <ui:Button display-tooltip-when-elided="true" name="OutSelectButton2" class="Button_Side01" style="background-image: resource(&apos;UI/03-outside/p_out2&apos;);" />
+                    <ui:Button display-tooltip-when-elided="true" name="OutSelectButton1" class="Button_Side01" style="background-image: resource(&apos;UI/03-outside/Group 101&apos;);" />
+                    <ui:Button display-tooltip-when-elided="true" name="OutSelectButton2" class="Button_Side01" style="background-image: resource(&apos;UI/03-outside/Group 102&apos;);" />
                 </ui:VisualElement>
                 <ui:VisualElement name="ButtonSpace" style="height: 100%; width: 80px; justify-content: center; align-items: stretch; flex-direction: row-reverse;">
                     <ui:Button display-tooltip-when-elided="true" name="CloseButton" class="Button_sideClose">
@@ -46,8 +46,8 @@
         <ui:VisualElement name="Sidebar_Area" picking-mode="Ignore" style="width: 100%; height: 100%; align-items: flex-end; flex-direction: row-reverse; display: flex;">
             <ui:VisualElement name="SideSheet_q" class="SideSheetTwo">
                 <ui:VisualElement name="SideSheetTwo_b" class="Sheet_side">
-                    <ui:Button display-tooltip-when-elided="true" name="QualitySelectButton1" class="Button_Side01" style="background-image: resource(&apos;UI/03-quality/p_quality1&apos;);" />
-                    <ui:Button display-tooltip-when-elided="true" name="QualitySelectButton2" class="Button_Side01" style="background-image: resource(&apos;UI/03-quality/p_quality2&apos;);" />
+                    <ui:Button display-tooltip-when-elided="true" name="QualitySelectButton1" class="Button_Side01" style="background-image: resource(&apos;UI/03-quality/Group 108&apos;);" />
+                    <ui:Button display-tooltip-when-elided="true" name="QualitySelectButton2" class="Button_Side01" style="background-image: resource(&apos;UI/03-quality/Group 109&apos;);" />
                 </ui:VisualElement>
                 <ui:VisualElement name="ButtonSpace" style="height: 100%; width: 80px; justify-content: center; align-items: stretch; flex-direction: row-reverse;">
                     <ui:Button display-tooltip-when-elided="true" name="CloseButton" class="Button_sideClose">
@@ -64,11 +64,11 @@
         <ui:VisualElement name="Sidebar_Area" picking-mode="Ignore" style="width: 100%; height: 100%; align-items: flex-end; flex-direction: row-reverse; display: flex;">
             <ui:VisualElement name="SideSheet_s" class="SideSheetTwo">
                 <ui:VisualElement name="SideSheetTwo_b" class="Sheet_side" style="width: 80%; height: 100%; position: relative; flex-shrink: 0; justify-content: space-around; align-items: center; padding-top: 21px; padding-bottom: 9px;">
-                    <ui:Button display-tooltip-when-elided="true" name="SmartSelectButton1" class="Button_Side01" style="background-image: resource(&apos;UI/03-smart/p_smart1&apos;);" />
-                    <ui:Button display-tooltip-when-elided="true" name="SmartSelectButton2" class="Button_Side01" style="background-image: resource(&apos;UI/03-smart/p_smart2&apos;);" />
-                    <ui:Button display-tooltip-when-elided="true" name="SmartSelectButton3" class="Button_Side01" style="background-image: resource(&apos;UI/03-smart/p_smart3&apos;);" />
-                    <ui:Button display-tooltip-when-elided="true" name="SmartSelectButton4" class="Button_Side01" style="background-image: resource(&apos;UI/03-smart/p_smart4&apos;);" />
-                    <ui:Button display-tooltip-when-elided="true" name="SmartSelectButton5" class="Button_Side01" style="background-image: resource(&apos;UI/03-smart/p_smart5&apos;);" />
+                    <ui:Button display-tooltip-when-elided="true" name="SmartSelectButton1" class="Button_Side01" style="background-image: resource(&apos;UI/03-smart/Group 103&apos;);" />
+                    <ui:Button display-tooltip-when-elided="true" name="SmartSelectButton2" class="Button_Side01" style="background-image: resource(&apos;UI/03-smart/Group 104&apos;);" />
+                    <ui:Button display-tooltip-when-elided="true" name="SmartSelectButton3" class="Button_Side01" style="background-image: resource(&apos;UI/03-smart/Group 105&apos;);" />
+                    <ui:Button display-tooltip-when-elided="true" name="SmartSelectButton4" class="Button_Side01" style="background-image: resource(&apos;UI/03-smart/Group 106&apos;);" />
+                    <ui:Button display-tooltip-when-elided="true" name="SmartSelectButton5" class="Button_Side01" style="background-image: resource(&apos;UI/03-smart/Group 107&apos;);" />
                 </ui:VisualElement>
                 <ui:VisualElement name="ButtonSpace" style="height: 100%; width: 80px; justify-content: center; align-items: stretch; flex-direction: row-reverse;">
                     <ui:Button display-tooltip-when-elided="true" name="CloseButton" class="Button_sideClose">

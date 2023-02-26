@@ -1,7 +1,7 @@
 .loopScreen {
     width: 100%;
     height: 100%;
-    background-image: resource('UI/01onboardingStart/onBoardingE01');
+    background-image: resource('UI/00_Splash/s1');
     -unity-background-scale-mode: stretch-to-fill;
     position: absolute;
     opacity: 1;
@@ -36,5 +36,5 @@
 
 .Button_start:active {
     scale: 0.9 0.9;
-    -unity-background-image-tint-color: rgba(120, 120, 120, 255);
+    -unity-background-image-tint-color: rgb(120, 120, 120);
 }

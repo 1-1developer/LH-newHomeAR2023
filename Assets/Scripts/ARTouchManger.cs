@@ -62,7 +62,7 @@ public class ARTouchManger : MonoBehaviour
                 }
                 else
                 {
-                    _ARImageTracker.GetComplex().PointerInitialize();
+                    //_ARImageTracker.GetComplex().PointerInitialize();
 
                 }
             }
