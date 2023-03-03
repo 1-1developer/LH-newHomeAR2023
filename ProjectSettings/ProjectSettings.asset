@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: yy
+  companyName: yyy
   productName: AR_LH_2023
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -162,7 +162,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: YM.AR_LH_2023
     Standalone: com.DefaultCompany.com.unity.template.ar
-    iPhone: com.yy.AR-LH-2023
+    iPhone: com.yyy.AR-LH-2023
   buildNumber:
     Standalone: 0
     iPhone: 0

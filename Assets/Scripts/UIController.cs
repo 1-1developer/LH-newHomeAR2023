@@ -82,6 +82,7 @@ public class UIController : MonoBehaviour
     //private Button[] _HouseSelectButton;
     public Button _HouseSelectedButton;
 
+    List<Button> _closeButtons = new List<Button>(); 
 
     public List<VisualElement> sidesheets = new List<VisualElement>();
     public List<VisualElement> artexts = new List<VisualElement>();
@@ -173,7 +174,12 @@ public class UIController : MonoBehaviour
 
 
         //닫기
-        _closeButton = m_root.Q<Button>(CloseButton);
+        //_closeButton = m_root.Q<Button>(CloseButton);
+
+        for (int i = 0; i < 4; i++)
+        {
+            _closeButtons.Add(m_root.Q<Button>("CloseButton" + $"{i}"));
+        }
 
         //뒤로가기
         _BackButtonP = _perspective.Q<Button>(BackButtonP);
@@ -192,9 +198,13 @@ public class UIController : MonoBehaviour
         _openButton5.RegisterCallback<ClickEvent>(OnPersviewButtonClicked);
 
         _homeButton.RegisterCallback<ClickEvent>(OnHomeButtonClicked);
-        _closeButton.RegisterCallback<ClickEvent>(OnCloseButtonClicked);
+        //_closeButton.RegisterCallback<ClickEvent>(OnCloseButtonClicked);
         _BackButtonP.RegisterCallback<ClickEvent>(OnBackButtonPClicked);
 
+        _closeButtons[0].RegisterCallback<ClickEvent>(OnCloseButtonClicked);
+        _closeButtons[1].RegisterCallback<ClickEvent>(OnCloseButtonClicked);
+        _closeButtons[2].RegisterCallback<ClickEvent>(OnCloseButtonClicked);
+        _closeButtons[3].RegisterCallback<ClickEvent>(OnCloseButtonClicked);
 
 
         //for (int i = 0; i < 5; i++)
@@ -216,7 +226,6 @@ public class UIController : MonoBehaviour
     private void OnBoardButtonClicked_explanation(ClickEvent evt) //설명으로 돌아가기
     {
         AudioManager.PlayDefaultButtonSound();
-
         GoHome();
     }
 

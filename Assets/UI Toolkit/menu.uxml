@@ -14,7 +14,7 @@
                     <ui:Button display-tooltip-when-elided="true" name="HouseSelectButton3" class="Button_Side01" style="background-image: resource(&apos;UI/03-2_houseplan/Group 100&apos;); height: 300px; -unity-background-scale-mode: scale-to-fit;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="_cButtonSpace" style="height: 100%; width: 80px; justify-content: center; align-items: stretch; flex-direction: row-reverse;">
-                    <ui:Button display-tooltip-when-elided="true" name="CloseButton" class="Button_sideClose">
+                    <ui:Button display-tooltip-when-elided="true" name="CloseButton0" class="Button_sideClose">
                         <ui:VisualElement style="align-items: center; justify-content: center; width: 23px; height: 55px; background-image: resource(&apos;UI/03-2_houseplan/Vector_29_698&apos;); top: 1px; right: -6px;" />
                     </ui:Button>
                 </ui:VisualElement>
@@ -32,7 +32,7 @@
                     <ui:Button display-tooltip-when-elided="true" name="OutSelectButton2" class="Button_Side01" style="background-image: resource(&apos;UI/03-outside/Group 102&apos;);" />
                 </ui:VisualElement>
                 <ui:VisualElement name="ButtonSpace" style="height: 100%; width: 80px; justify-content: center; align-items: stretch; flex-direction: row-reverse;">
-                    <ui:Button display-tooltip-when-elided="true" name="CloseButton" class="Button_sideClose">
+                    <ui:Button display-tooltip-when-elided="true" name="CloseButton1" class="Button_sideClose">
                         <ui:VisualElement style="align-items: center; justify-content: center; width: 23px; height: 55px; background-image: resource(&apos;UI/03-2_houseplan/Vector_29_698&apos;); top: 1px; right: -6px;" />
                     </ui:Button>
                 </ui:VisualElement>
@@ -50,7 +50,7 @@
                     <ui:Button display-tooltip-when-elided="true" name="QualitySelectButton2" class="Button_Side01" style="background-image: resource(&apos;UI/03-quality/Group 109&apos;);" />
                 </ui:VisualElement>
                 <ui:VisualElement name="ButtonSpace" style="height: 100%; width: 80px; justify-content: center; align-items: stretch; flex-direction: row-reverse;">
-                    <ui:Button display-tooltip-when-elided="true" name="CloseButton" class="Button_sideClose">
+                    <ui:Button display-tooltip-when-elided="true" name="CloseButton2" class="Button_sideClose">
                         <ui:VisualElement style="align-items: center; justify-content: center; width: 23px; height: 55px; background-image: resource(&apos;UI/03-2_houseplan/Vector_29_698&apos;); top: 1px; right: -6px;" />
                     </ui:Button>
                 </ui:VisualElement>
@@ -71,7 +71,7 @@
                     <ui:Button display-tooltip-when-elided="true" name="SmartSelectButton5" class="Button_Side01" style="background-image: resource(&apos;UI/03-smart/Group 107&apos;);" />
                 </ui:VisualElement>
                 <ui:VisualElement name="ButtonSpace" style="height: 100%; width: 80px; justify-content: center; align-items: stretch; flex-direction: row-reverse;">
-                    <ui:Button display-tooltip-when-elided="true" name="CloseButton" class="Button_sideClose">
+                    <ui:Button display-tooltip-when-elided="true" name="CloseButton3" class="Button_sideClose">
                         <ui:VisualElement style="align-items: center; justify-content: center; width: 23px; height: 55px; background-image: resource(&apos;UI/03-2_houseplan/Vector_29_698&apos;); top: 1px; right: -6px;" />
                     </ui:Button>
                 </ui:VisualElement>
