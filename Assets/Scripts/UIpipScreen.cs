@@ -28,9 +28,10 @@ public class UIpipScreen : UIController
     //미리보는 도시
     List<Button> _buttonPips = new List<Button>();
     List<VisualElement> _btextPips = new List<VisualElement>();
-    List<ScrollView> _m_scrolls = new List<ScrollView>();
+    List<VisualElement> _backimages = new List<VisualElement>();
+    //List<ScrollView> _m_scrolls = new List<ScrollView>();
 
-    int buttoncnt = 5;
+    int buttoncnt = 4;
     int _3cnt = 3;
 
     //주요입지와 규모
@@ -64,23 +65,16 @@ public class UIpipScreen : UIController
         {
             _buttonPips.Add(m_root.Q<Button>("button_pip" + $"{i + 1}"));
             _btextPips.Add(m_root.Q<VisualElement>("button_pip_text" + $"{i + 1}"));
-            _m_scrolls.Add(m_root.Q<ScrollView>("m_scroll" + $"{i + 1}"));
+            _backimages.Add(m_root.Q<VisualElement>("backimage" + $"{i + 1}"));
         }
         _buttonPips[0].RegisterCallback<ClickEvent>(OnpipbuttonClicked0);
         _buttonPips[1].RegisterCallback<ClickEvent>(OnpipbuttonClicked1);
         _buttonPips[2].RegisterCallback<ClickEvent>(OnpipbuttonClicked2);
         _buttonPips[3].RegisterCallback<ClickEvent>(OnpipbuttonClicked3);
-        _buttonPips[4].RegisterCallback<ClickEvent>(OnpipbuttonClicked4);
         
         _closebutton_pip.RegisterCallback<ClickEvent>(closePip);
 
         //주요입지와 규모
-
-
-        for (int i = 0; i < 3; i++)
-        {
-            _xbutton_pip[i].RegisterCallback<ClickEvent>(closePip);
-        }
 
         for (int i = 0; i < _3cnt; i++)
         {
@@ -88,6 +82,7 @@ public class UIpipScreen : UIController
             _btextPips_P.Add(m_root.Q<VisualElement>("button_pip_text" + $"{i + 1}" + $"{i + 1}"));
             _m_scrolls_P.Add(m_root.Q<ScrollView>("m_scroll" + $"{i + 1}" + $"{i + 1}"));
             _windows.Add( m_root.Q<VisualElement>("pop_window" + $"{i + 1}"));
+            _xbutton_pip[i].RegisterCallback<ClickEvent>(closePip);
         }
         _buttonPips_P[0].RegisterCallback<ClickEvent>(OnpipbuttonClicked_P0);
         _buttonPips_P[1].RegisterCallback<ClickEvent>(OnpipbuttonClicked_P1);
@@ -98,6 +93,7 @@ public class UIpipScreen : UIController
     {
         AudioManager.PlayDefaultButtonSound();
         ShowPipWindow(0);
+        _pop_pip(_buttonPips_P[0], _btextPips_P[0], _m_scrolls_P[0], _buttonPips_P, _btextPips_P, _m_scrolls_P);
     }
     private void OnTopButtonClicked_S(ClickEvent evt) // 규모
     {
@@ -131,27 +127,22 @@ public class UIpipScreen : UIController
 
     private void OnpipbuttonClicked0(ClickEvent evt)
     {
-        _pop_pip(_buttonPips[0], _btextPips[0],_m_scrolls[0], _buttonPips, _btextPips, _m_scrolls);
+        _pop_pip(_buttonPips[0], _btextPips[0], _backimages[0], _buttonPips, _btextPips, _backimages);
     }
     private void OnpipbuttonClicked1(ClickEvent evt)
     {
         AudioManager.PlayDefaultButtonSound();
-        _pop_pip(_buttonPips[1], _btextPips[1], _m_scrolls[1], _buttonPips, _btextPips, _m_scrolls);
+        _pop_pip(_buttonPips[1], _btextPips[1], _backimages[1], _buttonPips, _btextPips, _backimages);
     }
     private void OnpipbuttonClicked2(ClickEvent evt)
     {
         AudioManager.PlayDefaultButtonSound();
-        _pop_pip(_buttonPips[2], _btextPips[2], _m_scrolls[2], _buttonPips, _btextPips, _m_scrolls);
+        _pop_pip(_buttonPips[2], _btextPips[2], _backimages[2], _buttonPips, _btextPips, _backimages);
     }
     private void OnpipbuttonClicked3(ClickEvent evt)
     {
         AudioManager.PlayDefaultButtonSound();
-        _pop_pip(_buttonPips[3], _btextPips[3], _m_scrolls[3], _buttonPips, _btextPips, _m_scrolls);
-    }
-    private void OnpipbuttonClicked4(ClickEvent evt)
-    {
-        AudioManager.PlayDefaultButtonSound();
-        _pop_pip(_buttonPips[4], _btextPips[4], _m_scrolls[4], _buttonPips, _btextPips, _m_scrolls);
+        _pop_pip(_buttonPips[3], _btextPips[3], _backimages[3], _buttonPips, _btextPips, _backimages);
     }
 
     private void closePip(ClickEvent evt)
@@ -159,6 +150,7 @@ public class UIpipScreen : UIController
         AudioManager.PlayDefaultButtonSound();
         pip_root.style.display = DisplayStyle.None;
     }
+
     public void _pop_pip(Button s_button,VisualElement text,ScrollView m_scroll,
         List<Button> buttonPips, List<VisualElement> btextPips,List<ScrollView> m_scrolls) // 선택버튼 하이라이트, 선택창
     {
@@ -197,14 +189,51 @@ public class UIpipScreen : UIController
             }
         }
     }
+    public void _pop_pip(Button s_button, VisualElement text, VisualElement backimage,
+        List<Button> buttonPips, List<VisualElement> btextPips, List<VisualElement> backimages) //  오버라이딩
+    {
+        foreach (Button bt in buttonPips)
+        {
+            if (bt == s_button)
+            {
+                bt?.AddToClassList("Button_pip--high");
+            }
+            else
+            {
+                bt?.RemoveFromClassList("Button_pip--high");
+            }
+        }
+        foreach (VisualElement t in btextPips)
+        {
+            if (t == text)
+            {
+                t?.AddToClassList("btext_pip--high");
+            }
+            else
+            {
+                t?.RemoveFromClassList("btext_pip--high");
+            }
+        }
+        foreach (VisualElement bi in backimages)
+        {
+            if (bi == backimage)
+            {
+                bi.style.display = DisplayStyle.Flex;
+            }
+            else
+            {
+                bi.style.display = DisplayStyle.None;
+
+            }
+        }
+    }
 
     void ShowPipWindow(int index)
     {
-        _Onboarding.style.display = DisplayStyle.None;
-        pip_root.style.display = DisplayStyle.Flex;
+        pip_root.style.display = DisplayStyle.None;
         foreach (VisualElement win in _windows)
         {
-            if(win == _windows[index])
+            if (win == _windows[index])
             {
                 win.style.display = DisplayStyle.Flex;
             }
@@ -213,5 +242,8 @@ public class UIpipScreen : UIController
                 win.style.display = DisplayStyle.None;
             }
         }
+        _Onboarding.style.display = DisplayStyle.None;
+        pip_root.style.display = DisplayStyle.Flex;
+
     }
 }

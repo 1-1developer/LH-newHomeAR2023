@@ -235,8 +235,8 @@
 }
 
 .Button_pip {
-    height: 120px;
-    width: 826px;
+    height: auto;
+    width: 523px;
     background-color: rgba(0, 0, 0, 0);
     border-left-width: 0;
     border-right-width: 0;
@@ -252,21 +252,31 @@
     margin-top: 0;
     margin-bottom: 0;
     flex-shrink: 1;
+    justify-content: flex-end;
+    align-items: stretch;
+    transition-duration: 0.2s;
 }
 
 .Button_pip--high {
-    background-color: rgb(245, 245, 245);
+    justify-content: flex-end;
+    flex-shrink: 0;
+    width: 672px;
+    transition-duration: 0.3s;
 }
 
 .btext_pip {
-    background-image: resource('UI/pipScrollview/Vector (1)');
     width: 100%;
     height: 100%;
     -unity-background-scale-mode: scale-to-fit;
+    transition-duration: 0.2s;
 }
 
 .btext_pip--high {
-    -unity-background-image-tint-color: rgb(186, 37, 72);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    transition-duration: 0.3s;
+    scale: 1.3 1.3;
+    bottom: 35px;
+    left: 132px;
 }
 
 .Button_topBar {
@@ -289,8 +299,7 @@
 }
 
 .Button_pip:active {
-    -unity-background-image-tint-color: rgb(185, 185, 185);
-    background-color: rgb(170, 94, 94);
+    -unity-background-image-tint-color: rgb(255, 109, 109);
 }
 
 .Button_next_last {
