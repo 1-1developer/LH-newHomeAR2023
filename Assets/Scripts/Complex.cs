@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Complex : MonoBehaviour
 {
-    public Pointer[] pointers = new Pointer[4];
+    public Pointer[] pointers = new Pointer[5];
     public Material _m_default;
     public Material _m_default_glass;
     public Material _m_ghost;

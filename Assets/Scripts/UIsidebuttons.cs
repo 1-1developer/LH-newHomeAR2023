@@ -105,4 +105,35 @@ public class UIsidebuttons : UIController
         _imageContainer.style.backgroundImage = sprite.texture;
     }
 
+    public void OnBt_landcall()
+    {
+        AudioManager.PlayDefaultButtonSound();
+        SetImage(im_land);
+    }
+    public void OnBt_playcall()
+    {
+        AudioManager.PlayDefaultButtonSound();
+        SetImage(im_play);
+    }
+    public void OnBt_quality1call()
+    {
+        AudioManager.PlayDefaultButtonSound();
+        SetImage(im_qual01);
+    }
+    public void OnBt_quality2call()
+    {
+        AudioManager.PlayDefaultButtonSound();
+        _imageScreen.style.display = DisplayStyle.Flex;
+
+        _imageContainer.style.display = DisplayStyle.None;
+        _scrollImage.style.display = DisplayStyle.Flex;
+    }
+    public void OnBt_quality3call() //// 필로티화면으로 채우기
+    {
+        AudioManager.PlayDefaultButtonSound();
+        _imageScreen.style.display = DisplayStyle.Flex;
+
+        _imageContainer.style.display = DisplayStyle.None;
+        _scrollImage.style.display = DisplayStyle.Flex;
+    }
 }

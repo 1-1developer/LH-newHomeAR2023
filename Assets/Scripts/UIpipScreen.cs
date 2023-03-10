@@ -158,22 +158,22 @@ public class UIpipScreen : UIController
         {
             if (bt == s_button)
             {
-                bt?.AddToClassList("Button_pip--high");
+                bt?.AddToClassList("Button_pip2--high");
             }
             else
             {
-                bt?.RemoveFromClassList("Button_pip--high");
+                bt?.RemoveFromClassList("Button_pip2--high");
             }
         }
         foreach (VisualElement t in btextPips)
         {
             if (t == text)
             {
-                t?.AddToClassList("btext_pip--high");
+                t?.AddToClassList("btext_pip2--high");
             }
             else
             {
-                t?.RemoveFromClassList("btext_pip--high");
+                t?.RemoveFromClassList("btext_pip2--high");
             }
         }
         foreach (ScrollView sc in m_scrolls)

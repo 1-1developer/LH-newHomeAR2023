@@ -100,6 +100,10 @@ public class UIController : MonoBehaviour
     protected VisualElement _AR_Smarthome; // ar트랙화면
     protected VisualElement _AR_Quality; // ar트랙화면
 
+
+    bool videoOn = false; // video
+
+
     List<VisualElement> _ARScreens = new List<VisualElement>();
 
     RaycastHit hit;
@@ -314,9 +318,13 @@ public class UIController : MonoBehaviour
         //시트 열기
         _perspective.style.display = DisplayStyle.Flex;
         _Onboarding.style.display = DisplayStyle.None;
+        videoOn = true;
     }
 
-
+    public bool GetVideoOn()
+    {
+        return videoOn;
+    }
     private void OnSideSheetOut(TransitionEndEvent evt)
     {
         if (!_sideSheetTwo.ClassListContains("SideSheet--in"))
@@ -382,6 +390,7 @@ public class UIController : MonoBehaviour
         AudioManager.PlayDefaultButtonSound();
         _Onboarding.style.display = DisplayStyle.Flex;
         _perspective.style.display = DisplayStyle.None;
+        videoOn = false;
     }
 
 

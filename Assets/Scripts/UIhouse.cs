@@ -157,6 +157,18 @@ public class UIhouse : UIController
         onScreenObjectManager.OnMaker();
     }
 
+    public void onHouseCall(string hh, string housename,string htext)
+    {
+        _TopTextGroup.style.display = DisplayStyle.None;
+        _BackButton.style.display = DisplayStyle.Flex;
+        _HousePlan.style.display = DisplayStyle.Flex;
+        ar_root.style.display = DisplayStyle.None;
+
+        onScreenObjectManager.OnHouse(hh, housename);//집모델띄우기
+        _plantext.text = htext;
+
+    }
+
     /*
      * public void PickHighlight(Button s_button) // 선택버튼 하이라이트 효과
     {

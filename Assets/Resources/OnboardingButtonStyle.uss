@@ -261,7 +261,7 @@
     justify-content: flex-end;
     flex-shrink: 0;
     width: 672px;
-    transition-duration: 0.3s;
+    transition-duration: 0.5s;
 }
 
 .btext_pip {
@@ -273,7 +273,7 @@
 
 .btext_pip--high {
     -unity-background-image-tint-color: rgb(255, 255, 255);
-    transition-duration: 0.3s;
+    transition-duration: 0.5s;
     scale: 1.3 1.3;
     bottom: 35px;
     left: 132px;
@@ -402,4 +402,46 @@
     padding-right: 0;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.Button_pip2 {
+    height: 120px;
+    width: 826px;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-shrink: 1;
+}
+
+.Button_pip2--high {
+    background-color: rgb(245, 245, 245);
+}
+
+.Button_pip2:active {
+    -unity-background-image-tint-color: rgb(185, 185, 185);
+    background-color: rgb(170, 94, 94);
+}
+
+.btext_pip2 {
+    background-image: resource('UI/pipScrollview/Vector (1)');
+    width: 100%;
+    height: 100%;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.btext_pip2--high {
+    -unity-background-image-tint-color: rgb(186, 37, 72);
+    transition-duration: 0.2s;
+    scale: 1.3 1.3;
 }

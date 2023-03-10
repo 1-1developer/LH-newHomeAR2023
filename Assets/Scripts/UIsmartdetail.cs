@@ -145,5 +145,11 @@ public class UIsmartdetail : UIController
             }
         }
     }
-
+    public void onClickSmart()
+    {
+        AudioManager.PlayDefaultButtonSound();
+        count = 0;
+        openSmartpannel(smartpannels[0]);
+        updateButton();
+    }
 }

@@ -8,9 +8,12 @@ public class Pointer : MonoBehaviour
     public bool isSelected;
     public Sprite _default;
     public Sprite red;
+    public Sprite s_detail;
     Material material;
 
     //GameObject rect;
+    GameObject g_default;
+    GameObject _detail;
 
     Vector3 v_scale = new Vector3(.03f, .03f, .03f);
     Vector3 v_UpScale = new Vector3(.065f, .06f, .05f);
@@ -25,7 +28,12 @@ public class Pointer : MonoBehaviour
 
         this.transform.localScale = v_scale;
         this.material = transform.GetChild(0).GetComponent<MeshRenderer>().material;
-        //rect = transform.GetChild(1).gameObject;
+        g_default = transform.GetChild(0).gameObject;
+        _detail = transform.GetChild(1).gameObject;
+        _detail.GetComponent<MeshRenderer>().material.SetTexture("_BaseMap", s_detail.texture);
+
+        _detail.SetActive(false);
+
         //colororigin = rect.GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         coloraa = coloralpha;
     }
@@ -39,12 +47,16 @@ public class Pointer : MonoBehaviour
             //this.rect.SetActive(true);
             //coloraa = Color.Lerp(coloraa, coloralpha, Time.deltaTime * speed);
             this.material.SetTexture("_BaseMap", red.texture);
+            this._detail.SetActive(true);
+            this.g_default.SetActive(false);
         }
         else
         {
             //this.rect.SetActive(false);
             //this.ispicked = false;
             this.material.SetTexture("_BaseMap", _default.texture);
+            this._detail.SetActive(false);
+            this.g_default.SetActive(true);
 
             //this.transform.localScale = v_scale;
         }

@@ -50,7 +50,7 @@ public class ARTouchManger : MonoBehaviour
                         PointerSet(pointer.HouseID);
                         if (pointer.isSelected)
                         {
-                            uIController.InPlanPannelAR(pointer.HouseID);
+                            //uIController.InPlanPannelAR(pointer.HouseID);
                             Debug.Log("inplanpannel");
                         }
                     }
@@ -91,24 +91,6 @@ public class ARTouchManger : MonoBehaviour
         }
     }
 
-
-    private void UpdateCenterObject()
-    {
-        Vector3 screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, .5f));
-
-        List<ARRaycastHit> hits = new List<ARRaycastHit>();
-        //arRaycaster.Raycast(screenCenter, hits, TrackableType.Planes);
-
-        if (hits.Count > 0)
-        {
-            Pose placementPose = hits[0].pose;
-            touchedObj.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
-        }
-        else
-        {
-            touchedObj.SetActive(false);
-        }
-    }
 
 
 }
