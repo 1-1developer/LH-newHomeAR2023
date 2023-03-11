@@ -29,6 +29,7 @@ public class UIController : MonoBehaviour
     const string AR_Outside = "menu_outside"; 
     const string AR_Smarthome = "menu_smart"; 
     const string AR_Quality = "menu_quality";
+    const string AR_Community = "menu_community";
 
 
 
@@ -75,6 +76,8 @@ public class UIController : MonoBehaviour
     private Button _openButton4;
     private Button _openButton5;
 
+    private Button _perspectivebt;
+
     protected Button _homeButton;
     private Button _closeButton;
 
@@ -99,6 +102,7 @@ public class UIController : MonoBehaviour
     protected VisualElement _AR_Outside; // ar트랙화면
     protected VisualElement _AR_Smarthome; // ar트랙화면
     protected VisualElement _AR_Quality; // ar트랙화면
+    protected VisualElement _AR_community; // ar트랙화면
 
 
     bool videoOn = false; // video
@@ -124,23 +128,26 @@ public class UIController : MonoBehaviour
         smart_root = m_root.Q<VisualElement>("SmartDetail");
         _Onboarding = m_root.Q<VisualElement>(Onboarding);
         _HousePlan = m_root.Q<VisualElement>(HousePlan);
+        ar_root = m_root.Q<VisualElement>("menu");
+        _TopTextGroup = m_root.Q<GroupBox>(TopTextGroup);
 
 
     }
     protected void Start()
     {
         // root visualElement참조
-        ar_root = m_root.Q<VisualElement>("menu");
 
         _AR_House = m_root.Q<VisualElement>(AR_House);
         _AR_Outside = m_root.Q<VisualElement>(AR_Outside);
         _AR_Smarthome = m_root.Q<VisualElement>(AR_Smarthome);
         _AR_Quality = m_root.Q<VisualElement>(AR_Quality);
+        _AR_community = m_root.Q<VisualElement>(AR_Community);
 
         _ARScreens.Add(_AR_House);
         _ARScreens.Add(_AR_Outside);
         _ARScreens.Add(_AR_Smarthome);
         _ARScreens.Add(_AR_Quality);
+        _ARScreens.Add(_AR_community);
 
 
         _perspective = m_root.Q<VisualElement>(Perspective);
@@ -154,10 +161,10 @@ public class UIController : MonoBehaviour
         _openButton3 = m_root.Q<Button>(OpenButton3);
         _openButton4 = m_root.Q<Button>(OpenButton4);
         _openButton5 = m_root.Q<Button>(OpenButton5);
-        _TopTextGroup = m_root.Q<GroupBox>(TopTextGroup);
 
 
-        //-------------ar트랙화면
+        //-------------투시도조감도
+        _perspectivebt = m_root.Q<Button>("per_bt");
 
 
         //홈버튼
@@ -210,7 +217,7 @@ public class UIController : MonoBehaviour
         _closeButtons[2].RegisterCallback<ClickEvent>(OnCloseButtonClicked);
         _closeButtons[3].RegisterCallback<ClickEvent>(OnCloseButtonClicked);
 
-
+        _perspectivebt.RegisterCallback<ClickEvent>(Onper_bt);
         //for (int i = 0; i < 5; i++)
         //{
         //    _smartbuttons.Add(m_root.Q<Button>("SmartSelectButton" + $"{i + 1}"));
@@ -226,6 +233,7 @@ public class UIController : MonoBehaviour
         _AR_Quality.style.display = DisplayStyle.None;
         _AR_Outside.style.display = DisplayStyle.None;
         _AR_Smarthome.style.display = DisplayStyle.None;
+        _AR_community.style.display = DisplayStyle.None;
     }
     private void OnBoardButtonClicked_explanation(ClickEvent evt) //설명으로 돌아가기
     {
@@ -262,6 +270,7 @@ public class UIController : MonoBehaviour
         _AR_House.style.display = DisplayStyle.None;
         _AR_Quality.style.display = DisplayStyle.None;
         _AR_Outside.style.display = DisplayStyle.None;
+        _AR_community.style.display = DisplayStyle.None;
         _AR_Smarthome.style.display = DisplayStyle.None;
 
         _Onboarding.style.display = DisplayStyle.Flex;
@@ -318,9 +327,13 @@ public class UIController : MonoBehaviour
         //시트 열기
         _perspective.style.display = DisplayStyle.Flex;
         _Onboarding.style.display = DisplayStyle.None;
-        videoOn = true;
-    }
 
+    }
+    private void Onper_bt(ClickEvent evt)
+    {
+        videoOn = true;
+        _perspectivebt.style.display = DisplayStyle.None;
+    }
     public bool GetVideoOn()
     {
         return videoOn;
@@ -390,6 +403,7 @@ public class UIController : MonoBehaviour
         AudioManager.PlayDefaultButtonSound();
         _Onboarding.style.display = DisplayStyle.Flex;
         _perspective.style.display = DisplayStyle.None;
+        _perspectivebt.style.display = DisplayStyle.Flex;
         videoOn = false;
     }
 
@@ -407,6 +421,8 @@ public class UIController : MonoBehaviour
             _AR_Outside.style.display = DisplayStyle.None;
         if (_AR_Smarthome.style.display == DisplayStyle.Flex)
             _AR_Smarthome.style.display = DisplayStyle.None;
+        if (_AR_community.style.display == DisplayStyle.Flex)
+            _AR_community.style.display = DisplayStyle.None;
 
         _perspective.style.display = DisplayStyle.None;
 
@@ -431,7 +447,4 @@ public class UIController : MonoBehaviour
         onScreenObjectManager.NothingOn();
     }
 
-    void Update()
-    {
-    }
 }

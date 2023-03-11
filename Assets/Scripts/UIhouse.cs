@@ -97,50 +97,43 @@ public class UIhouse : UIController
     {
         for (int i = 0; i < buttonNum; i++)
         {
-            buttons.Add(m_root.Q<Button>("HouseSelectButton" + $"{i + 1}"));
+            buttons.Add(m_root.Q<Button>("s_bt_h" + $"{i + 1}"));
         }
     }
 
     private void OnHouseButtonClicked0(ClickEvent evt)  //집내부 관람 화면
     {
         AudioManager.PlayDefaultButtonSound();
-        _TopTextGroup.style.display = DisplayStyle.None;
-        _BackButton.style.display = DisplayStyle.Flex;
-        _HousePlan.style.display = DisplayStyle.Flex;
-        ar_root.style.display = DisplayStyle.None;
+
         //_houseplanpic.style.backgroundImage = house46.texture;
         //집 오브젝트
         onScreenObjectManager.OnHouse(LH46, LH46_ver2);//집모델띄우기
         _plantext.text = m46;
-
+        updateHousebt(buttons[0]);
     }
     private void OnHouseButtonClicked1(ClickEvent evt)  //집내부 관람 화면
     {
         AudioManager.PlayDefaultButtonSound();
-        _TopTextGroup.style.display = DisplayStyle.None;
-        _BackButton.style.display = DisplayStyle.Flex;
-        _HousePlan.style.display = DisplayStyle.Flex;
-        ar_root.style.display = DisplayStyle.None;
+
         //_houseplanpic.style.backgroundImage = house59.texture;
 
 
         //집 오브젝트
         onScreenObjectManager.OnHouse(LH59, LH59_ver2);//집모델띄우기
         _plantext.text = m59;
+        updateHousebt(buttons[1]);
 
     }
     private void OnHouseButtonClicked2(ClickEvent evt)  //집내부 관람 화면
     {
         AudioManager.PlayDefaultButtonSound();
-        _TopTextGroup.style.display = DisplayStyle.None;
-        _BackButton.style.display = DisplayStyle.Flex;
-        _HousePlan.style.display = DisplayStyle.Flex;
-        ar_root.style.display = DisplayStyle.None;
+
         //_houseplanpic.style.backgroundImage = house84.texture;
 
         //집 오브젝트
         onScreenObjectManager.OnHouse(LH84, LH84_ver2);//집모델띄우기
         _plantext.text = m84;
+        updateHousebt(buttons[2]);
 
     }
 
@@ -169,6 +162,20 @@ public class UIhouse : UIController
 
     }
 
+    void updateHousebt(Button bb)
+    {
+        foreach (Button bt in buttons)
+        {
+            if (bt == bb)
+            {
+                bt?.AddToClassList("Button_hs--high");
+            }
+            else
+            {
+                bt?.RemoveFromClassList("Button_hs--high");
+            }
+        }
+    }
     /*
      * public void PickHighlight(Button s_button) // 선택버튼 하이라이트 효과
     {

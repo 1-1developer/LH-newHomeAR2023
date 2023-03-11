@@ -1845,7 +1845,7 @@ PrefabInstance:
     - target: {fileID: 1109005392674966874, guid: c7a95b64ee8c5544ba32cab87e4a6bec,
         type: 3}
       propertyPath: m_Name
-      value: pointer_comunity
+      value: pointer_community
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a95b64ee8c5544ba32cab87e4a6bec, type: 3}

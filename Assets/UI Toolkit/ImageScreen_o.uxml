@@ -1,10 +1,45 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Resources/OnboardingButtonStyle.uss?fileID=7433441132597879392&amp;guid=1b0747e4727fcec4d8f80bd5fed81975&amp;type=3#OnboardingButtonStyle" />
-    <ui:VisualElement style="width: 100%; height: 100%; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.26);">
-        <ui:VisualElement name="imageContainer" style="width: 100%; height: 100%; background-image: resource(&apos;UI/02-1_perspecitve/Group 67&apos;); -unity-background-scale-mode: scale-to-fit; top: initial; left: auto;" />
+    <ui:VisualElement style="width: 100%; height: 100%; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.7);">
+        <ui:VisualElement name="imageContainer" style="width: 100%; height: 100%; background-image: resource(&apos;UI/02-1_perspecitve/Group 67&apos;); -unity-background-scale-mode: scale-to-fit; top: initial; left: auto; display: none;" />
         <ui:ScrollView name="Scrollimage" horizontal-scroller-visibility="Hidden" touch-scroll-type="Clamped" style="position: absolute; width: 100%; height: 100%; display: none;">
             <ui:VisualElement style="width: 100%; height: 2988px; background-image: resource(&apos;UI/02-1_perspecitve/Group (1)&apos;);" />
         </ui:ScrollView>
+        <ui:VisualElement name="Scrollimage2" style="display: none; width: 100%; height: 100%; position: absolute; align-items: flex-start; justify-content: flex-end;">
+            <ui:VisualElement style="height: 10%; width: 28%; background-image: resource(&apos;UI/03-Communitycentor/Group 225&apos;); -unity-background-scale-mode: scale-to-fit; margin-left: 20px; position: absolute; top: 3px; left: 15px;" />
+            <ui:ScrollView name="ScrollimageP" horizontal-scroller-visibility="AlwaysVisible" touch-scroll-type="Clamped" vertical-scroller-visibility="Hidden" mode="Horizontal" style="position: relative; width: 100%; height: 67%; display: flex; -unity-background-scale-mode: scale-to-fit; top: auto; left: auto; justify-content: flex-start; align-items: stretch; flex-direction: column; bottom: 12%;">
+                <ui:VisualElement style="height: 1128px; width: 4286px; background-image: resource(&apos;UI/03-Communitycentor/Group 224&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="scroll_commu" style="width: 100%; height: 100%; position: absolute; justify-content: center; display: none;">
+            <ui:VisualElement style="position: absolute; left: 28px; top: 31px; width: 22%; height: 8%; background-image: resource(&apos;UI/03-Communitycentor/title_commu&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            <ui:VisualElement name="Button_container_c" style="position: absolute; width: 100%; height: 2.7%; top: 19%; flex-direction: row; justify-content: space-around; align-items: center;">
+                <ui:Button display-tooltip-when-elided="true" name="cBt_1" class="Button_c Button_c--high" style="background-image: resource(&apos;UI/03-Communitycentor/경로당&apos;);" />
+                <ui:Button display-tooltip-when-elided="true" name="cBt_2" class="Button_c" style="background-image: resource(&apos;UI/03-Communitycentor/골프, 사우나, 피트니스&apos;); flex-shrink: 0; width: 20%;" />
+                <ui:Button display-tooltip-when-elided="true" name="cBt_3" class="Button_c" style="background-image: resource(&apos;UI/03-Communitycentor/수영장&apos;); width: 20%;" />
+                <ui:Button display-tooltip-when-elided="true" name="cBt_4" class="Button_c" style="background-image: resource(&apos;UI/03-Communitycentor/스마트 오피스&apos;);" />
+                <ui:Button display-tooltip-when-elided="true" name="cBt_5" class="Button_c" style="background-image: resource(&apos;UI/03-Communitycentor/실내 어린이집&apos;);" />
+                <ui:Button display-tooltip-when-elided="true" name="cBt_6" class="Button_c" style="background-image: resource(&apos;UI/03-Communitycentor/주민카페, 도서관, 스터디룸&apos;); flex-shrink: 0; width: 23%;" />
+            </ui:VisualElement>
+            <ui:ScrollView name="sC01" horizontal-scroller-visibility="AlwaysVisible" touch-scroll-type="Clamped" vertical-scroller-visibility="Hidden" mode="Horizontal" style="position: absolute; width: 100%; height: 70%; display: flex; -unity-background-scale-mode: scale-to-fit; top: 23%;">
+                <ui:VisualElement style="height: 1154px; width: 5147px; background-image: resource(&apos;UI/03-Communitycentor/k&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            </ui:ScrollView>
+            <ui:ScrollView name="sC02" horizontal-scroller-visibility="AlwaysVisible" touch-scroll-type="Clamped" vertical-scroller-visibility="Hidden" mode="Horizontal" style="position: absolute; width: 100%; height: 70%; display: none; -unity-background-scale-mode: scale-to-fit; top: 23%;">
+                <ui:VisualElement style="height: 1154px; width: 15319px; background-image: resource(&apos;UI/03-Communitycentor/golf&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            </ui:ScrollView>
+            <ui:ScrollView name="sC03" horizontal-scroller-visibility="AlwaysVisible" touch-scroll-type="Clamped" vertical-scroller-visibility="Hidden" mode="Horizontal" style="position: absolute; width: 100%; height: 70%; display: none; -unity-background-scale-mode: scale-to-fit; top: 23%;">
+                <ui:VisualElement style="height: 1154px; width: 3486px; background-image: resource(&apos;UI/03-Communitycentor/pool&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            </ui:ScrollView>
+            <ui:ScrollView name="sC04" horizontal-scroller-visibility="AlwaysVisible" touch-scroll-type="Clamped" vertical-scroller-visibility="Hidden" mode="Horizontal" style="position: absolute; width: 100%; height: 70%; display: none; -unity-background-scale-mode: scale-to-fit; top: 23%;">
+                <ui:VisualElement style="height: 1154px; width: 5080px; background-image: resource(&apos;UI/03-Communitycentor/office&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            </ui:ScrollView>
+            <ui:ScrollView name="sC05" horizontal-scroller-visibility="AlwaysVisible" touch-scroll-type="Clamped" vertical-scroller-visibility="Hidden" mode="Horizontal" style="position: absolute; width: 100%; height: 70%; display: none; -unity-background-scale-mode: scale-to-fit; top: 23%;">
+                <ui:VisualElement style="height: 1154px; width: 9500px; background-image: resource(&apos;UI/03-Communitycentor/kinder&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            </ui:ScrollView>
+            <ui:ScrollView name="sC06" horizontal-scroller-visibility="AlwaysVisible" touch-scroll-type="Clamped" vertical-scroller-visibility="Hidden" mode="Horizontal" style="position: absolute; width: 100%; height: 70%; display: flex; -unity-background-scale-mode: scale-to-fit; top: 23%;">
+                <ui:VisualElement style="height: 1154px; width: 15412px; background-image: resource(&apos;UI/03-Communitycentor/cafe&apos;); -unity-background-scale-mode: scale-to-fit;" />
+            </ui:ScrollView>
+        </ui:VisualElement>
     </ui:VisualElement>
-    <ui:Button name="Button_Back_o" class="Button_Back_p" style="-unity-background-scale-mode: scale-to-fit; left: auto; right: 1%; top: 2%;" />
+    <ui:Button name="Button_Back_o" class="Button_Back_p" style="-unity-background-scale-mode: scale-to-fit; left: auto; right: 1%; top: 2%; width: 209px;" />
 </ui:UXML>

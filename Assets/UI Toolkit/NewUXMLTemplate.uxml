@@ -33,7 +33,7 @@
     <ui:Instance template="menu" name="menu" picking-mode="Ignore" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; right: 0; bottom: 0; display: none;" />
     <ui:Instance template="ImageScreen" name="ImageScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />
     <ui:Instance template="PopScreen" name="PopScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />
-    <ui:Instance template="StartScreen" name="StartScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />
+    <ui:Instance template="StartScreen" name="StartScreen" style="position: absolute; width: 100%; height: 100%; display: flex;" />
     <ui:Instance template="ImageScreen_o" name="ImageScreen_o" style="display: none; width: 100%; height: 100%; position: absolute;" />
     <ui:Instance template="SmartDetail" name="SmartDetail" style="position: absolute; width: 100%; height: 100%; display: none;" />
 </ui:UXML>

@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/Resources/OnboardingButtonStyle.uss?fileID=7433441132597879392&amp;guid=1b0747e4727fcec4d8f80bd5fed81975&amp;type=3#OnboardingButtonStyle" />
     <ui:VisualElement name="text_active2" class="text_Point text_Point--pade" style="background-image: resource(&apos;UI/03ARUI_Elements/Group 155&apos;); -unity-background-scale-mode: scale-to-fit; display: flex;" />
     <ui:VisualElement name="text_active" class="text_Point" style="background-image: resource(&apos;UI/03ARUI_Elements/Group 153 (1)&apos;); display: flex;" />
-    <ui:VisualElement name="menu_house" style="position: absolute; width: 100%; height: 100%; display: flex;">
+    <ui:VisualElement name="menu_house" style="position: absolute; width: 100%; height: 100%; display: none;">
         <ui:VisualElement name="Top_text_h" class="Top_bar" style="background-color: rgba(0, 0, 0, 0); opacity: 1; position: relative; display: flex;">
             <ui:VisualElement name="topText01" style="position: relative; width: 323px; height: 145px; left: 809px; background-image: resource(&apos;UI/03ARUI_Elements/text_top_lp_249_265&apos;); -unity-background-scale-mode: scale-to-fit; top: 25px;" />
         </ui:VisualElement>
@@ -23,7 +23,7 @@
     </ui:VisualElement>
     <ui:VisualElement name="menu_outside" style="position: absolute; width: 100%; height: 100%; display: flex;">
         <ui:VisualElement name="Top_text_o" class="Top_bar" style="background-color: rgba(0, 0, 0, 0); opacity: 1; position: relative; display: flex;">
-            <ui:VisualElement name="topText02" style="position: absolute; width: 323px; height: 145px; left: 809px; background-image: resource(&apos;UI/03-outside/top_text_out&apos;); -unity-background-scale-mode: scale-to-fit; top: 25px; display: flex;" />
+            <ui:VisualElement name="topText02" style="position: absolute; width: 260px; height: 145px; left: 809px; background-image: resource(&apos;UI/03-Communitycentor/놀이터&apos;); -unity-background-scale-mode: scale-to-fit; top: 25px; display: flex;" />
         </ui:VisualElement>
         <ui:VisualElement name="Sidebar_Area" picking-mode="Ignore" style="width: 100%; height: 100%; align-items: flex-end; flex-direction: row-reverse; display: flex;">
             <ui:VisualElement name="SideSheet_o" class="SideSheetTwo" style="display: flex;">
@@ -39,7 +39,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="menu_quality" style="position: absolute; width: 100%; height: 100%; display: flex;">
+    <ui:VisualElement name="menu_quality" style="position: absolute; width: 100%; height: 100%; display: none;">
         <ui:VisualElement name="Top_text_q" class="Top_bar" style="background-color: rgba(0, 0, 0, 0); opacity: 1; position: relative; display: flex;">
             <ui:VisualElement name="topText04" style="position: absolute; width: 323px; height: 145px; left: 809px; background-image: resource(&apos;UI/03-quality/top_text_q&apos;); -unity-background-scale-mode: scale-to-fit; top: 25px; display: flex;" />
         </ui:VisualElement>
@@ -78,10 +78,16 @@
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:VisualElement name="menu_community" style="position: absolute; width: 100%; height: 100%; display: flex;">
+        <ui:VisualElement name="Top_text_s" class="Top_bar" style="background-color: rgba(0, 0, 0, 0); opacity: 1; position: relative; display: flex;">
+            <ui:VisualElement name="topText05" style="position: absolute; width: 411px; height: 145px; left: 809px; background-image: resource(&apos;UI/03-Communitycentor/커뮤니티센터&apos;); -unity-background-scale-mode: scale-to-fit; top: 25px; display: flex;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Sidebar_Area" picking-mode="Ignore" style="width: 100%; height: 100%; align-items: flex-end; flex-direction: row-reverse; display: flex;" />
+    </ui:VisualElement>
     <ui:Button display-tooltip-when-elided="true" name="ButtonHOME" class="Button_Home Button_Home--in" style="background-image: resource(&apos;UI/03ARUI_Elements/home_button&apos;); height: 171px; right: 2257px; width: 143px;" />
     <ui:VisualElement name="AR_screen_frame" style="width: 1078px; position: absolute; height: 926px; align-items: flex-end; display: flex; visibility: visible; top: 372px; left: 656px; background-image: resource(&apos;UI/03ARUI_Elements/frame_249_247&apos;);" />
     <ui:VisualElement name="Top_bar_space" class="Top_bar" style="background-color: rgba(0, 0, 0, 0); opacity: 1; display: flex; align-items: center;">
-        <ui:VisualElement name="touchThis" style="position: relative; width: 410px; height: 48px; left: 1178px; background-image: resource(&apos;UI/03ARUI_Elements/Group 88&apos;); -unity-background-scale-mode: scale-to-fit;" />
+        <ui:VisualElement name="touchThis" style="position: relative; width: 361px; height: 48px; left: 1224px; background-image: resource(&apos;UI/03ARUI_Elements/Group 88&apos;); -unity-background-scale-mode: scale-to-fit;" />
         <ui:VisualElement name="topText_rg" style="position: absolute; width: 746px; height: 103px; left: auto; background-image: none; -unity-background-scale-mode: scale-to-fit; top: 45px; right: 74px; flex-direction: row; justify-content: space-between; align-items: center;">
             <ui:Button display-tooltip-when-elided="true" name="topButton_city" class="Button_topBar">
                 <ui:VisualElement name="topText01" style="width: 188px; height: 86px; background-image: resource(&apos;UI/03ARUI_Elements/text_top01_249_266&apos;); -unity-background-scale-mode: scale-to-fit;" />
