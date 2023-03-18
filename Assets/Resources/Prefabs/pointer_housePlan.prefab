@@ -282,7 +282,7 @@ MonoBehaviour:
   isSelected: 0
   _default: {fileID: 21300000, guid: dba89c5fc6985564b821aebca1d567ac, type: 3}
   red: {fileID: 21300000, guid: d022af16cc1623f4d8cf6ec4831fed3c, type: 3}
-  s_detail: {fileID: 21300000, guid: 4a2c38becccf51f44bf94da748d92ea7, type: 3}
+  s_detail: {fileID: 21300000, guid: 2c5f1d99cdb6e4e1d987dfb0915129a6, type: 3}
 --- !u!1 &6011993775163587330
 GameObject:
   m_ObjectHideFlags: 0

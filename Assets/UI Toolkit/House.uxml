@@ -17,7 +17,7 @@
         </ui:Button>
         <ui:VisualElement name="sbt_con" style="position: absolute; bottom: 35%; left: 4%; width: 10%; height: 26%; justify-content: space-around;">
             <ui:Button text="46m²" display-tooltip-when-elided="true" name="s_bt_h1" class="Button_hs Button_hs--high" />
-            <ui:Button text="56m²" display-tooltip-when-elided="true" name="s_bt_h2" class="Button_hs" />
+            <ui:Button text="59m²" display-tooltip-when-elided="true" name="s_bt_h2" class="Button_hs" />
             <ui:Button text="84m²" display-tooltip-when-elided="true" name="s_bt_h3" class="Button_hs" />
         </ui:VisualElement>
     </ui:VisualElement>

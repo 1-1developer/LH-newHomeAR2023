@@ -16,18 +16,6 @@ public class ARPointerTouch : MonoBehaviour
     public UIsidebuttons uIsidebuttons;
     public UIsmartdetail uIsmartdetail;
 
-    [Header("sprites")]
-    [Header("Piloti")]
-    public Sprite[] s_Pilotis;
-
-    [Header("community")]
-    public Sprite[] communities1;
-    public Sprite[] communities2;
-    public Sprite[] communities3;
-    public Sprite[] communities4;
-    public Sprite[] communities5;
-    public Sprite[] communities6;
-
     RaycastHit hit;
 
     Material[] materials = new Material[5];

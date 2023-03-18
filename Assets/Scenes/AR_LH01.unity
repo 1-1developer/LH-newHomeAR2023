@@ -2533,13 +2533,6 @@ MonoBehaviour:
   uIhouse: {fileID: 367806770}
   uIsidebuttons: {fileID: 785727172}
   uIsmartdetail: {fileID: 1901628350}
-  s_Pilotis: []
-  communities1: []
-  communities2: []
-  communities3: []
-  communities4: []
-  communities5: []
-  communities6: []
 --- !u!1 &746138327
 GameObject:
   m_ObjectHideFlags: 0

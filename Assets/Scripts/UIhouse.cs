@@ -110,6 +110,8 @@ public class UIhouse : UIController
         onScreenObjectManager.OnHouse(LH46, LH46_ver2);//집모델띄우기
         _plantext.text = m46;
         updateHousebt(buttons[0]);
+        _defaltButton.AddToClassList("Button_house--active");
+        _optionButton.RemoveFromClassList("Button_house--active");
     }
     private void OnHouseButtonClicked1(ClickEvent evt)  //집내부 관람 화면
     {
@@ -122,6 +124,8 @@ public class UIhouse : UIController
         onScreenObjectManager.OnHouse(LH59, LH59_ver2);//집모델띄우기
         _plantext.text = m59;
         updateHousebt(buttons[1]);
+        _defaltButton.AddToClassList("Button_house--active");
+        _optionButton.RemoveFromClassList("Button_house--active");
 
     }
     private void OnHouseButtonClicked2(ClickEvent evt)  //집내부 관람 화면
@@ -134,6 +138,8 @@ public class UIhouse : UIController
         onScreenObjectManager.OnHouse(LH84, LH84_ver2);//집모델띄우기
         _plantext.text = m84;
         updateHousebt(buttons[2]);
+        _defaltButton.AddToClassList("Button_house--active");
+        _optionButton.RemoveFromClassList("Button_house--active");
 
     }
 
@@ -159,7 +165,8 @@ public class UIhouse : UIController
 
         onScreenObjectManager.OnHouse(hh, housename);//집모델띄우기
         _plantext.text = htext;
-
+        _defaltButton.AddToClassList("Button_house--active");
+        _optionButton.RemoveFromClassList("Button_house--active");
     }
 
     void updateHousebt(Button bb)

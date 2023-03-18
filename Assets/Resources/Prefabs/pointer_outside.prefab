@@ -184,7 +184,7 @@ MonoBehaviour:
   isSelected: 0
   _default: {fileID: 21300000, guid: 0f6f4aec4b1eabb41a0b9999f07955e8, type: 3}
   red: {fileID: 21300000, guid: 253edeac8305cd04e846c39c41838a78, type: 3}
-  s_detail: {fileID: 21300000, guid: 2b00cb4a4e32ae24e81667ca2191074e, type: 3}
+  s_detail: {fileID: 21300000, guid: 77a9b97b5071c4c30a8cd5fa14ba20c6, type: 3}
 --- !u!1 &2026913646002849837
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 8149911110289016791}
   - component: {fileID: 8727615771614088985}
   - component: {fileID: 646656876473444919}
-  - component: {fileID: 5301719805850251134}
+  - component: {fileID: 7174628340645272178}
   m_Layer: 7
   m_Name: Quad (3)
   m_TagString: Untagged
@@ -286,7 +286,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &5301719805850251134
+--- !u!95 &7174628340645272178
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ Animator:
   m_GameObject: {fileID: 2026913646002849837}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 70d2d522e3df31f40a011f17493014b0, type: 2}
+  m_Controller: {fileID: 9100000, guid: d1e4c0cef3c9e4262937726de8722246, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
