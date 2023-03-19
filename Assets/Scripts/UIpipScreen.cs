@@ -60,6 +60,7 @@ public class UIpipScreen : UIController
         {
             _xbutton_pip[i] = m_root.Q<Button>("Button_x"+$"{i+1}");
         }
+
         //미리보는도시
         for (int i = 0; i < buttoncnt; i++)
         {
@@ -185,7 +186,6 @@ public class UIpipScreen : UIController
             else
             {
                 sc.style.display = DisplayStyle.None;
-
             }
         }
     }
