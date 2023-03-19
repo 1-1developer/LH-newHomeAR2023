@@ -44,6 +44,7 @@ public class UIsmartdetail : UIController
     private void GoBack(ClickEvent evt)
     {
         AudioManager.PlayDefaultButtonSound();
+        onScreenObjectManager.ARok = true;
 
         smart_root.style.display = DisplayStyle.None;
     }
@@ -148,6 +149,7 @@ public class UIsmartdetail : UIController
     public void onClickSmart()
     {
         AudioManager.PlayDefaultButtonSound();
+        onScreenObjectManager.ARok = false;
         count = 0;
         openSmartpannel(smartpannels[0]);
         updateButton();

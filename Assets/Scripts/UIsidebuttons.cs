@@ -125,6 +125,7 @@ public class UIsidebuttons : UIController
         _imageScreen.style.display = DisplayStyle.None;
         _TopTextGroup.style.display = DisplayStyle.Flex;
         ar_root.style.display = DisplayStyle.Flex;
+        onScreenObjectManager.ARok = true;
     }
 
     private void OnBt_land(ClickEvent evt)
@@ -166,6 +167,7 @@ public class UIsidebuttons : UIController
 
     public void OnBt_landcall()
     {
+        onScreenObjectManager.ARok = false;
         _TopTextGroup.style.display = DisplayStyle.None;
         ar_root.style.display = DisplayStyle.None;
         AudioManager.PlayDefaultButtonSound();
@@ -173,6 +175,7 @@ public class UIsidebuttons : UIController
     }
     public void OnBt_playcall()
     {
+        onScreenObjectManager.ARok = false;
         _TopTextGroup.style.display = DisplayStyle.None;
         ar_root.style.display = DisplayStyle.None;
         AudioManager.PlayDefaultButtonSound();
@@ -180,6 +183,7 @@ public class UIsidebuttons : UIController
     }
     public void OnBt_quality1call()
     {
+        onScreenObjectManager.ARok = false;
         _TopTextGroup.style.display = DisplayStyle.None;
         ar_root.style.display = DisplayStyle.None;
         AudioManager.PlayDefaultButtonSound();
@@ -187,6 +191,7 @@ public class UIsidebuttons : UIController
     }
     public void OnBt_quality2call()
     {
+        onScreenObjectManager.ARok = false;
         _TopTextGroup.style.display = DisplayStyle.None;
         ar_root.style.display = DisplayStyle.None;
         AudioManager.PlayDefaultButtonSound();
@@ -200,6 +205,7 @@ public class UIsidebuttons : UIController
     }
     public void OnBt_quality3call() //// 필로티화면으로 채우기
     {
+        onScreenObjectManager.ARok = false;
         _TopTextGroup.style.display = DisplayStyle.None;
         ar_root.style.display = DisplayStyle.None;
         AudioManager.PlayDefaultButtonSound();
@@ -213,6 +219,7 @@ public class UIsidebuttons : UIController
     }
     public void OnBt_community()
     {
+        onScreenObjectManager.ARok = false;
         ar_root.style.display = DisplayStyle.None;
         _TopTextGroup.style.display = DisplayStyle.None;
 

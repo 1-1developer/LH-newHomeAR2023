@@ -20,11 +20,13 @@ public class ARPointerTouch : MonoBehaviour
 
     Material[] materials = new Material[5];
 
+    OnScreenObjectManager OjManager;
     Pointer pointer;
     string ptName;
     // Start is called before the first frame update
     void Start()
     {
+        OjManager = GetComponent<OnScreenObjectManager>();
     }
     private void Update()
     {
@@ -32,7 +34,7 @@ public class ARPointerTouch : MonoBehaviour
     }
     private void PopUpObjectByTouch()
     {
-        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && OjManager.ARok)
         {
             Touch touch = Input.GetTouch(0); 
             Ray ray = Camera.main.ScreenPointToRay(touch.position);

@@ -93,17 +93,20 @@ public class UIpipScreen : UIController
     private void OnTopButtonClicked_C(ClickEvent evt) // 미리보는도시
     {
         AudioManager.PlayDefaultButtonSound();
+        onScreenObjectManager.ARok = false;
         ShowPipWindow(0);
         _pop_pip(_buttonPips_P[0], _btextPips_P[0], _m_scrolls_P[0], _buttonPips_P, _btextPips_P, _m_scrolls_P);
     }
     private void OnTopButtonClicked_S(ClickEvent evt) // 규모
     {
         AudioManager.PlayDefaultButtonSound();
+        onScreenObjectManager.ARok = false;
         ShowPipWindow(1);
     }
     private void OnTopButtonClicked_P(ClickEvent evt) // 공공
     {
         AudioManager.PlayDefaultButtonSound();
+        onScreenObjectManager.ARok = false;
         ShowPipWindow(2);
     }
 
@@ -149,6 +152,7 @@ public class UIpipScreen : UIController
     private void closePip(ClickEvent evt)
     {
         AudioManager.PlayDefaultButtonSound();
+        onScreenObjectManager.ARok = true;
         pip_root.style.display = DisplayStyle.None;
     }
 

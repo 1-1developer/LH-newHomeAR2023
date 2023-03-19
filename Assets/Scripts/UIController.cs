@@ -19,10 +19,10 @@ public class UIController : MonoBehaviour
     const string Perspective = "ImageScreen";
     const string PopScreen = "PopScreen";
 
-    const string OpenButton1 = "Button_on01"; //메인화면 버튼-주택평면
-    const string OpenButton2 = "Button_on02"; //메인화면 버튼-스마트홈
-    const string OpenButton3 = "Button_on03"; //메인화면 버튼 -외부공간
-    const string OpenButton4= "Button_on04"; //메인화면 버튼 - 품질혁신
+    const string OpenButton1 = "Button_on01"; //메인화면 버튼-주택평면 //말고 AR시작 버튼
+    const string OpenButton2 = "Button_on02"; //메인화면 버튼-스마트홈 //이었는데 설명으로 가기 버튼
+    const string OpenButton3 = "Button_on03"; //메인화면 버튼 -외부공간 /x
+    const string OpenButton4= "Button_on04"; //메인화면 버튼 - 품질혁신 /x
     const string OpenButton5 = "Button_on_viewmap"; //메인화면 - 투시도
 
     const string AR_House = "menu_house"; //ar트랙화면 - 주택평면
@@ -104,6 +104,7 @@ public class UIController : MonoBehaviour
     protected VisualElement _AR_Quality; // ar트랙화면
     protected VisualElement _AR_community; // ar트랙화면
 
+    protected int _Scount = 0;
 
     bool videoOn = false; // video
 
@@ -431,6 +432,8 @@ public class UIController : MonoBehaviour
         pip_root.style.display = DisplayStyle.None;
         smart_root.style.display = DisplayStyle.None;
 
+        _Scount = 0;
+
         _Onboarding.style.display = DisplayStyle.Flex;
         s_root.style.display = DisplayStyle.Flex;
 
@@ -445,6 +448,7 @@ public class UIController : MonoBehaviour
 
         //object 제거
         onScreenObjectManager.NothingOn();
+
     }
 
 }
