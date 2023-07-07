@@ -14,7 +14,7 @@ public class UIsmartdetail : UIController
 
     int count;
 
-    int smartpannelcnt = 5;
+    int smartpannelcnt = 3;
 
     protected override void SetVisualElements()
     {
@@ -23,7 +23,6 @@ public class UIsmartdetail : UIController
         for (int i = 0; i < smartpannelcnt; i++)
         {
             smartpannels.Add(m_root.Q<VisualElement>("smartpannel" + $"{i + 1}"));
-            _smartbuttons.Add(m_root.Q<Button>("SmartSelectButton" + $"{i + 1}"));
         }
 
         _lastButton = m_root.Q<Button>("Button_last");
@@ -34,11 +33,6 @@ public class UIsmartdetail : UIController
         _nextButton.RegisterCallback<ClickEvent>(GoNext);
         _backButton_s.RegisterCallback<ClickEvent>(GoBack);
 
-        _smartbuttons[0].RegisterCallback<ClickEvent>(OnsmartbuttonClicked0);
-        _smartbuttons[1].RegisterCallback<ClickEvent>(OnsmartbuttonClicked1);
-        _smartbuttons[2].RegisterCallback<ClickEvent>(OnsmartbuttonClicked2);
-        _smartbuttons[3].RegisterCallback<ClickEvent>(OnsmartbuttonClicked3);
-        _smartbuttons[4].RegisterCallback<ClickEvent>(OnsmartbuttonClicked4);
     }
 
     private void GoBack(ClickEvent evt)
@@ -54,17 +48,14 @@ public class UIsmartdetail : UIController
         AudioManager.PlayDefaultButtonSound();
 
         count++;
-        if (count >4)
+        if (count >2)
         {
-            count = 4;
+            count = 2;
             return;
         }
         openSmartpannel(smartpannels[count]);
         updateButton(); 
     }
-
-    
-
     private void GoLast(ClickEvent evt)
     {
         AudioManager.PlayDefaultButtonSound();
@@ -81,7 +72,7 @@ public class UIsmartdetail : UIController
 
     void updateButton()
     {
-        if (count == 4)
+        if (count == 2)
         {
             _nextButton.AddToClassList("Button_next_last--un");
         }
@@ -98,38 +89,6 @@ public class UIsmartdetail : UIController
         }
     }
 
-    private void OnsmartbuttonClicked0(ClickEvent evt)
-    {
-        AudioManager.PlayDefaultButtonSound();
-        count = 0;
-        openSmartpannel(smartpannels[0]);
-        updateButton();
-    }
-    private void OnsmartbuttonClicked1(ClickEvent evt)
-    {
-        AudioManager.PlayDefaultButtonSound();
-        count = 1;
-        openSmartpannel(smartpannels[1]);
-    }
-    private void OnsmartbuttonClicked2(ClickEvent evt)
-    {
-        AudioManager.PlayDefaultButtonSound();
-        count = 2;
-        openSmartpannel(smartpannels[2]);
-    }
-    private void OnsmartbuttonClicked3(ClickEvent evt)
-    {
-        AudioManager.PlayDefaultButtonSound();
-        count = 3;
-        openSmartpannel(smartpannels[3]);
-    }
-    private void OnsmartbuttonClicked4(ClickEvent evt)
-    {
-        AudioManager.PlayDefaultButtonSound();
-        count = 4;
-        openSmartpannel(smartpannels[4]);
-        updateButton();
-    }
     void openSmartpannel( VisualElement pannel)
     {
         smart_root.style.display = DisplayStyle.Flex;

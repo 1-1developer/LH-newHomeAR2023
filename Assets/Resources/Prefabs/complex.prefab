@@ -1661,6 +1661,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: pointer_outside
       objectReference: {fileID: 0}
+    - target: {fileID: 5801461734084472110, guid: cf0d54c90fbc248a0a2ff642df1c22c6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.2410686
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801461734084472110, guid: cf0d54c90fbc248a0a2ff642df1c22c6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.6040083
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801461734084472110, guid: cf0d54c90fbc248a0a2ff642df1c22c6,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.37315068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801461734084472110, guid: cf0d54c90fbc248a0a2ff642df1c22c6,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.30200478
+      objectReference: {fileID: 0}
     - target: {fileID: 8890988939729902135, guid: cf0d54c90fbc248a0a2ff642df1c22c6,
         type: 3}
       propertyPath: red
@@ -1672,6 +1692,12 @@ PrefabInstance:
       propertyPath: _default
       value: 
       objectReference: {fileID: 21300000, guid: 49a99344d0a59794498ad51f708c75d5,
+        type: 3}
+    - target: {fileID: 8890988939729902135, guid: cf0d54c90fbc248a0a2ff642df1c22c6,
+        type: 3}
+      propertyPath: s_detail
+      value: 
+      objectReference: {fileID: 21300000, guid: 85912ed07758d434e82c47d584a74a8c,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf0d54c90fbc248a0a2ff642df1c22c6, type: 3}
@@ -1760,6 +1786,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: pointer_smart
       objectReference: {fileID: 0}
+    - target: {fileID: 8397349376627875619, guid: 42deed4cff9bd0a40b3f9d110789b506,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.0392954
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397349376627875619, guid: 42deed4cff9bd0a40b3f9d110789b506,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.3537303
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397349376627875619, guid: 42deed4cff9bd0a40b3f9d110789b506,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397349376627875619, guid: 42deed4cff9bd0a40b3f9d110789b506,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.04442828
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397349376627875619, guid: 42deed4cff9bd0a40b3f9d110789b506,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.17686534
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397349376627875619, guid: 42deed4cff9bd0a40b3f9d110789b506,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890988939729902135, guid: 42deed4cff9bd0a40b3f9d110789b506,
+        type: 3}
+      propertyPath: s_detail
+      value: 
+      objectReference: {fileID: 21300000, guid: a2f3aead9a4d04daa96e5f732b442c29,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42deed4cff9bd0a40b3f9d110789b506, type: 3}
 --- !u!114 &3848224386384907758 stripped
@@ -1847,6 +1909,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: pointer_community
       objectReference: {fileID: 0}
+    - target: {fileID: 7613959102580592590, guid: c7a95b64ee8c5544ba32cab87e4a6bec,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.0666317
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613959102580592590, guid: c7a95b64ee8c5544ba32cab87e4a6bec,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.2333537
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613959102580592590, guid: c7a95b64ee8c5544ba32cab87e4a6bec,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613959102580592590, guid: c7a95b64ee8c5544ba32cab87e4a6bec,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.033315714
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613959102580592590, guid: c7a95b64ee8c5544ba32cab87e4a6bec,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.116677016
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613959102580592590, guid: c7a95b64ee8c5544ba32cab87e4a6bec,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890988939729902135, guid: c7a95b64ee8c5544ba32cab87e4a6bec,
+        type: 3}
+      propertyPath: s_detail
+      value: 
+      objectReference: {fileID: 21300000, guid: 563417ef96d4c4257b8785a22fad0b33,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a95b64ee8c5544ba32cab87e4a6bec, type: 3}
 --- !u!114 &3047699746943649267 stripped
@@ -1934,6 +2032,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: pointer_housePlan
       objectReference: {fileID: 0}
+    - target: {fileID: 7314458541545614409, guid: 5288c90d442885e44a6088363aa26498,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.6184585
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314458541545614409, guid: 5288c90d442885e44a6088363aa26498,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.3213297
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314458541545614409, guid: 5288c90d442885e44a6088363aa26498,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -1.3092289
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314458541545614409, guid: 5288c90d442885e44a6088363aa26498,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.16066489
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890988939729902135, guid: 5288c90d442885e44a6088363aa26498,
+        type: 3}
+      propertyPath: s_detail
+      value: 
+      objectReference: {fileID: 21300000, guid: 4238d7209fdcf4a0d99fe38cecc37f4b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5288c90d442885e44a6088363aa26498, type: 3}
 --- !u!114 &2274089929488516598 stripped
@@ -2021,6 +2145,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: pointer_quality
       objectReference: {fileID: 0}
+    - target: {fileID: 6605885957703086038, guid: 27b85b0e5a8e10240a1355bc68762ed4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.1639006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605885957703086038, guid: 27b85b0e5a8e10240a1355bc68762ed4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.2531503
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605885957703086038, guid: 27b85b0e5a8e10240a1355bc68762ed4,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -1.5686885
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605885957703086038, guid: 27b85b0e5a8e10240a1355bc68762ed4,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.63416
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890988939729902135, guid: 27b85b0e5a8e10240a1355bc68762ed4,
+        type: 3}
+      propertyPath: s_detail
+      value: 
+      objectReference: {fileID: 21300000, guid: cce35268abece441db0c89c7526506b8,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27b85b0e5a8e10240a1355bc68762ed4, type: 3}
 --- !u!114 &1317411220645715159 stripped

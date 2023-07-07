@@ -63,27 +63,27 @@ public class ARPointerTouch : MonoBehaviour
                         case "houseBt1":
                             uIhouse.onHouseCall("LH_46", "46_ver2", "46m²");
                             break;
-                        case "houseBt2":
-                            uIhouse.onHouseCall("LH_59", "59_ver2", "59m²");
-                            break;
-                        case "houseBt3":
-                            uIhouse.onHouseCall("LH_84", "84_ver2", "84m²");
-                            break;
-                        case "outBt1":
-                            uIsidebuttons.OnBt_landcall();
-                            break;
+                        //case "houseBt2":
+                        //    uIhouse.onHouseCall("LH_59", "59_ver2", "59m²");
+                        //    break;
+                        //case "houseBt3":
+                        //    uIhouse.onHouseCall("LH_84", "84_ver2", "84m²");
+                        //    break;
+                        //case "outBt1":
+                        //    uIsidebuttons.OnBt_landcall();
+                        //    break;
                         case "outBt2":
                             uIsidebuttons.OnBt_playcall();
                             break;
                         case "smartBt":
                             uIsmartdetail.onClickSmart();
                             break;
-                        case "qualBt1":
-                            uIsidebuttons.OnBt_quality1call();
-                            break;
-                        case "qualBt2":
-                            uIsidebuttons.OnBt_quality2call();
-                            break;
+                        //case "qualBt1":
+                        //    uIsidebuttons.OnBt_quality1call();
+                        //    break;
+                        //case "qualBt2":
+                        //    uIsidebuttons.OnBt_quality2call();
+                        //    break;
                         case "qualBt3":
                             uIsidebuttons.OnBt_quality3call();
                             break;

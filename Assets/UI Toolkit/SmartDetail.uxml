@@ -2,28 +2,19 @@
     <Style src="project://database/Assets/Resources/OnboardingButtonStyle.uss?fileID=7433441132597879392&amp;guid=1b0747e4727fcec4d8f80bd5fed81975&amp;type=3#OnboardingButtonStyle" />
     <ui:VisualElement name="smartContainer" style="width: 100%; height: 100%; background-image: none; -unity-background-scale-mode: stretch-to-fill;">
         <ui:VisualElement name="smartpannel1" style="position: absolute; width: 100%; height: 100%; background-image: resource(&apos;UI/smart_detail/Vector_348_132&apos;); align-items: center; display: flex;">
-            <ui:VisualElement name="pic01" style="position: absolute; width: 1260px; height: 794px; background-image: resource(&apos;UI/smart_detail/Vector_348_136&apos;); top: 458px; -unity-background-scale-mode: scale-to-fit;" />
-            <ui:VisualElement name="s_text01" style="position: absolute; width: 750px; height: 160px; background-image: resource(&apos;UI/smart_detail/Group 73_351_257&apos;); top: 1298px; -unity-background-scale-mode: scale-to-fit; left: 815px; display: flex;" />
+            <ui:VisualElement name="pic01" style="position: absolute; width: 1596px; height: 1006px; background-image: resource(&apos;UI/0706_renew/newSmart/image 54&apos;); top: 458px; -unity-background-scale-mode: scale-to-fit; left: 408px;" />
+            <ui:VisualElement name="smart_toptext1" style="position: absolute; width: 1614px; height: 173px; top: 180px; left: 148px; background-image: resource(&apos;UI/0706_renew/newSmart/Group 284&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; -unity-background-image-tint-color: rgb(255, 255, 255);" />
         </ui:VisualElement>
         <ui:VisualElement name="smartpannel2" style="position: absolute; width: 100%; height: 100%; background-image: resource(&apos;UI/smart_detail/Vector_348_132&apos;); align-items: center; display: none;">
-            <ui:VisualElement name="pic02" style="position: absolute; width: 1260px; height: 794px; background-image: resource(&apos;UI/smart_detail/Vector_348_150&apos;); top: 458px; -unity-background-scale-mode: scale-to-fit;" />
-            <ui:VisualElement name="s_text02" style="position: absolute; width: 806px; height: 170px; background-image: resource(&apos;UI/smart_detail/Group 74_351_258&apos;); top: 74%; -unity-background-scale-mode: scale-to-fit; left: auto; display: flex;" />
+            <ui:VisualElement name="pic02" style="position: absolute; width: 1656px; height: 1210px; background-image: resource(&apos;UI/0706_renew/newSmart/LH_스마트홈-인포그래픽-5차수정(합본)-(2)2&apos;); top: 458px; -unity-background-scale-mode: scale-to-fit; left: 384px;" />
+            <ui:VisualElement name="smart_toptext2" style="position: absolute; width: 1614px; height: 173px; top: 180px; left: 148px; background-image: resource(&apos;UI/0706_renew/newSmart/Group 286&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; -unity-background-image-tint-color: rgb(255, 255, 255);" />
         </ui:VisualElement>
         <ui:VisualElement name="smartpannel3" style="position: absolute; width: 100%; height: 100%; background-image: resource(&apos;UI/smart_detail/Vector_348_132&apos;); align-items: center; display: none;">
-            <ui:VisualElement name="pic03" style="position: absolute; width: 1260px; height: 794px; background-image: resource(&apos;UI/smart_detail/Vector&apos;); top: 458px; -unity-background-scale-mode: scale-to-fit;" />
-            <ui:VisualElement name="s_text03" style="position: absolute; width: 900px; height: 163px; background-image: resource(&apos;UI/smart_detail/Group 75&apos;); top: 74%; -unity-background-scale-mode: scale-to-fit; left: auto; display: flex;" />
+            <ui:VisualElement name="pic03" style="position: absolute; width: 1868px; height: 1126px; background-image: resource(&apos;UI/0706_renew/newSmart/Group 287&apos;); top: 458px; -unity-background-scale-mode: scale-to-fit; left: 264px;" />
+            <ui:VisualElement name="smart_toptext3" style="position: absolute; width: 1454px; height: 173px; top: 180px; left: 148px; background-image: resource(&apos;UI/0706_renew/newSmart/Group 285&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; -unity-background-image-tint-color: rgb(255, 255, 255);" />
         </ui:VisualElement>
-        <ui:VisualElement name="smartpannel4" style="position: absolute; width: 100%; height: 100%; background-image: resource(&apos;UI/smart_detail/Vector_348_132&apos;); align-items: center; display: none;">
-            <ui:VisualElement name="pic04" style="position: absolute; width: 1260px; height: 794px; background-image: resource(&apos;UI/smart_detail/Vector-1&apos;); top: 458px; -unity-background-scale-mode: scale-to-fit;" />
-            <ui:VisualElement name="s_text04" style="position: absolute; width: 613px; height: 201px; background-image: resource(&apos;UI/smart_detail/Group 76&apos;); top: 74%; -unity-background-scale-mode: scale-to-fit; left: auto; display: flex;" />
-        </ui:VisualElement>
-        <ui:VisualElement name="smartpannel5" style="position: absolute; width: 100%; height: 100%; background-image: resource(&apos;UI/smart_detail/Vector_348_132&apos;); align-items: center; display: none;">
-            <ui:VisualElement name="pic05" style="position: absolute; width: 1260px; height: 794px; background-image: resource(&apos;UI/smart_detail/Vector-2&apos;); top: 458px; -unity-background-scale-mode: scale-to-fit;" />
-            <ui:VisualElement name="s_text05" style="position: absolute; width: 1091px; height: 207px; background-image: resource(&apos;UI/smart_detail/Group 78&apos;); top: 74%; -unity-background-scale-mode: scale-to-fit; left: auto; display: flex;" />
-        </ui:VisualElement>
-        <ui:VisualElement name="smart_toptext" style="position: absolute; width: 1178px; height: 201px; top: 180px; left: 148px; background-image: resource(&apos;UI/smart_detail/Group 72_348_192&apos;); -unity-background-scale-mode: scale-to-fit; display: flex; -unity-background-image-tint-color: rgb(255, 255, 255);" />
     </ui:VisualElement>
-    <ui:Button name="Button_Back_s" class="Button_Back_p" style="-unity-background-scale-mode: scale-to-fit; background-image: resource(&apos;UI/smart_detail/Group 71_348_191&apos;); height: 86px; top: 36px; left: 2175px; width: 191px;" />
+    <ui:Button name="Button_Back_s" class="Button_Back_p" style="-unity-background-scale-mode: scale-to-fit; background-image: resource(&apos;UI/0706_renew/Group 101-2&apos;); height: 78px; top: 36px; left: 2239px; width: 127px;" />
     <ui:Button display-tooltip-when-elided="true" name="Button_next" class="Button_next_last" style="background-image: resource(&apos;UI/smart_detail/Vector (4)&apos;); right: 75px;" />
     <ui:Button display-tooltip-when-elided="true" name="Button_last" class="Button_next_last" style="right: auto; left: 75px; background-image: resource(&apos;UI/smart_detail/Vector_348_140&apos;);" />
 </ui:UXML>

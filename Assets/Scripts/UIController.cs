@@ -56,7 +56,6 @@ public class UIController : MonoBehaviour
 
     //좌측 버튼 ui
     private VisualElement _UIContainer;
-    private VisualElement _sideSheetTwo;
     protected VisualElement _HousePlan;
     private VisualElement _text_Point01;
     private VisualElement _text_Point02;
@@ -64,22 +63,16 @@ public class UIController : MonoBehaviour
     private VisualElement _text_Point_smart;
     private VisualElement _text_Point_qual;
 
-    private VisualElement _sideSheet_o;
-    private VisualElement _sideSheet_s;
-    private VisualElement _sideSheet_q;
-
 
     //버튼
     private Button _openButton1;
     private Button _openButton2;
-    private Button _openButton3;
-    private Button _openButton4;
+
     private Button _openButton5;
 
     private Button _perspectivebt;
 
     protected Button _homeButton;
-    private Button _closeButton;
 
 
     //private Button[] _HouseSelectButton;
@@ -159,8 +152,7 @@ public class UIController : MonoBehaviour
         //온보딩 화면 버튼
         _openButton1 = m_root.Q<Button>(OpenButton1);
         _openButton2 = m_root.Q<Button>(OpenButton2);
-        _openButton3 = m_root.Q<Button>(OpenButton3);
-        _openButton4 = m_root.Q<Button>(OpenButton4);
+
         _openButton5 = m_root.Q<Button>(OpenButton5);
 
 
@@ -212,11 +204,6 @@ public class UIController : MonoBehaviour
         _homeButton.RegisterCallback<ClickEvent>(OnHomeButtonClicked);
         //_closeButton.RegisterCallback<ClickEvent>(OnCloseButtonClicked);
         _BackButtonP.RegisterCallback<ClickEvent>(OnBackButtonPClicked);
-
-        _closeButtons[0].RegisterCallback<ClickEvent>(OnCloseButtonClicked);
-        _closeButtons[1].RegisterCallback<ClickEvent>(OnCloseButtonClicked);
-        _closeButtons[2].RegisterCallback<ClickEvent>(OnCloseButtonClicked);
-        _closeButtons[3].RegisterCallback<ClickEvent>(OnCloseButtonClicked);
 
         _perspectivebt.RegisterCallback<ClickEvent>(Onper_bt);
         //for (int i = 0; i < 5; i++)
@@ -277,35 +264,11 @@ public class UIController : MonoBehaviour
         _Onboarding.style.display = DisplayStyle.Flex;
 
         _homeButton.RemoveFromClassList("Button_Home--in");
-        closeSidesheet();
         imageTracker.GetComplex().PointerInitialize();
         //object 제거
         onScreenObjectManager.NothingOn();
     }
 
-    /*
-    private void OnBoardButtonClicked_out(ClickEvent evt) // 외부공간
-    {
-        //AudioManager.PlayDefaultButtonSound();
-
-        CloseMain(_AR_Outside);
-        ID = 1;
-    }
-    private void OnBoardButtonClicked_smart(ClickEvent evt) // 스마트홈
-    {
-        //AudioManager.PlayDefaultButtonSound();
-
-        CloseMain(_AR_Smarthome);
-        ID = 2;
-    }
-    private void OnBoardButtonClicked_quality(ClickEvent evt) // 품질혁신
-    {
-        //AudioManager.PlayDefaultButtonSound();
-
-        CloseMain(_AR_Quality);
-        ID = 3;
-    }
-    */
     void CloseMain()
     {
         //시트 열기
@@ -318,10 +281,6 @@ public class UIController : MonoBehaviour
         onScreenObjectManager.OnMaker();
     }
 
-    //public int GetID()
-    //{
-    //    return ID;
-    //}
     private void OnPersviewButtonClicked(ClickEvent evt)
     {
         AudioManager.PlayDefaultButtonSound();
@@ -339,14 +298,7 @@ public class UIController : MonoBehaviour
     {
         return videoOn;
     }
-    private void OnSideSheetOut(TransitionEndEvent evt)
-    {
-        if (!_sideSheetTwo.ClassListContains("SideSheet--in"))
-        {
-            //AR시트그룹 감추기
-            ar_root.style.display = DisplayStyle.None;
-        }
-    }
+
     public void InPlanPannelAR(int ID)  //마커선택시 사이트시트 열기
     {
         foreach (VisualElement s in _ARScreens)
@@ -377,26 +329,6 @@ public class UIController : MonoBehaviour
         _text_Point02.RemoveFromClassList("text_Point--pade");
 
     }
-
-
-
-    private void OnCloseButtonClicked(ClickEvent evt) //사이트시트 닫기
-    {
-        AudioManager.PlayDefaultButtonSound();
-        closeSidesheet();
-    }
-
-    public void closeSidesheet()
-    {
-        for (int i = 0; i < sidesheets.Count; i++)
-        {
-            sidesheets[i].RemoveFromClassList("SideSheetTwo--in");
-            artexts[0].RemoveFromClassList("text_Point--pade");
-        }
-        _text_Point02.AddToClassList("text_Point--pade");
-    }
-
-
 
 
     private void OnBackButtonPClicked(ClickEvent evt)  //투시도 뒤로가기
